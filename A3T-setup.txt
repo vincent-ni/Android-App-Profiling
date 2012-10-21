@@ -1,0 +1,304 @@
+===============================================================================
+0. Introduction
+===============================================================================
+
+Author: Lazaro Clapp
+Last Modified: June 8, 2012
+
+This document describes step by step a procedure to get the A3T infrastructure 
+up and running, as well as sane development environment for A3T hacking.
+
+This document will assume that you have a full checkout of the stamp-test-tools 
+repository on a local directory called [STAMP_DIR]. Additionally, we assume the 
+presence of certain common utilities and development packages such as:
+
+    * Java SDK 1.6+
+    * Ant
+    * Gzip
+    
+    [TODO: This list is grossly incomplete, add missing standard tools as 
+    needed. No Android specific tools belong to this list (see section 1).]
+    
+===============================================================================
+1. Building Android
+===============================================================================
+Note:
+Suggest to download android source code from our lab SVN, and skip 1.1 and 1.2 here.
+I have followed 1.1-1.2 here, but got an error when compiling the sdk
+
+by Juyuan
+
+
+   ( See also.
+        http://source.android.com/source/initializing.html
+        http://source.android.com/source/downloading.html
+        http://source.android.com/source/building.html )
+
+1.0. Get all pre-requisite packages listed in:
+
+    http://source.android.com/source/initializing.html
+    
+   ( As of this writing, the following should suffice for Ubuntu/Linux Mint:
+    
+    $ sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+    $ sudo aptitude update
+    $ sudo aptitude install sun-java6-jdk
+    $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
+      zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
+      x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z-dev \
+      libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
+      libxml2-utils xsltproc ant libx11-dev
+    )
+
+1.1. Get the source code for android 2.3.5 (this specific version is currently 
+     needed to build A3T):
+
+    1) [If needed] Create a user local binaries directory and add it to the path:
+    
+        $ mkdir ~/bin
+        $ export PATH=~/bin:$PATH
+        
+        [Line 'export PATH=~/bin:$PATH' should be added to ~/.bashrc for 
+        persistence across sessions.]
+    
+    2) Download the google 'repo' tool:
+        
+        $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
+        $ chmod a+x ~/bin/repo
+        
+    3) Initialize android sources directory
+    
+        $ mkdir [ANDROID_SRC_DIR]
+        $ cd [ANDROID_SRC_DIR]
+        $ repo init -u https://android.googlesource.com/platform/manifest -b android-2.3.5_r1
+        [repo might prompt for user configuration]
+    
+    4) Update repo with the version downloaded with the android sources
+     
+        $ cp [ANDROID_SRC_DIR]/.repo/repo/repo ~/bin/repo
+        [SHA-1 checksum for repo 1.16 (newest version as of this writing) is 
+        f3bfa7fd2d0a44aa40579bb0242cc20df37b5e17]
+        
+    5) Download the android source code
+    
+        $ repo sync
+        
+1.2. Patch the android build files (needed for Ubuntu 11.04 / Linux Mint 12, 
+     at least)
+
+    1) In [ANDROID_SRC_DIR]/build/core/combo/HOST_linux-x86.mk
+    
+        Change:
+            'HOST_GLOBAL_CFLAGS += -D_FORTIFY_SOURCE=0'
+        To:
+            'HOST_GLOBAL_CFLAGS += -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0'
+            
+    2) In [ANDROID_SRC_DIR]/frameworks/base/libs/utils/Android.mk
+    
+        Change:
+            'LOCAL_CFLAGS += -DLIBUTILS_NATIVE=1 $(TOOL_CFLAGS)'
+        To:
+            'LOCAL_CFLAGS += -DLIBUTILS_NATIVE=1 $(TOOL_CFLAGS) -fpermissive'
+            
+1.3. Build the Android source
+
+    1) Configure the build:
+        
+        [Inside ANDROID_SRC_DIR]
+        $ . build/envsetup.sh
+        $ lunch
+        [Select release build, should be the default option]
+        
+    2) Build the main sources
+    
+        $ make
+        
+    3) Build the SDK
+    
+        $ make sdk
+        
+1.4. Incorporate the Android SDK tools into your PATH
+
+    $ export PATH=[ANDROID_SRC_DIR]/out/host/linux-x86/sdk/android-sdk_eng.[HOST_NAME]-x86/tools:[ANDROID_SRC_DIR]/out/host/linux-x86/sdk/android-sdk_eng.[HOST_NAME]-x86/platform-tools:$PATH
+    [Previous line should also be added to ~/.bashrc ]
+    
+    NOTE: If another installation or version of the SDK is already in $PATH, it 
+          should be replaced by this one.
+        
+1.5. Update the SDK tools
+
+    1) Run the graphical Android SDK Manager
+    
+        $ android
+    
+    2) Update 'Android SDK Tools' and 'Android SDK Platform Tools' to their 
+       latest available revision.
+       
+       At the time of this writing, A3T has been verified to work with:
+        Android SDK Tools : Rev 19
+        Android SDK Platform Tools : Rev 11
+        
+       NOTE 1: You might need to re-start and re-run the Android SDK Manager 
+       multiple times, as updating the tools also updates this program.
+    
+       NOTE 2 [IMPORTANT]: Do not download any other versions of the Android 
+       API, this means you should uncheck the latest version, which is 
+       automatically selected by default (At the time of this writing: 
+       'Android 4.0.3 (API 15)'). Additionally, the installed revision of the 
+       "SDK Platform" for 'Android 2.3.5 (API 10)' should not be changed and 
+       should remain at 'Rev 1'. Again, the android tool will select this 
+       component for upgrade by default, and it must be manually unchecked.
+       
+1.6. Create an AVD image
+
+    1) Run the graphical Android SDK Manager
+    
+        $ android
+        
+    2) Go to tools->Manage AVDs...->New...
+    
+    3) Create new AVD with name [MY_AVD]
+    
+       Configuration:
+        Target : Android 2.3.3 - API Level 10
+        SD Card Size : 1024 MiB
+    
+===============================================================================
+2. Installing the Z3 SMT solver
+===============================================================================
+
+    Binary Linux version available here: 
+    http://research.microsoft.com/en-us/um/redmond/projects/z3/download.html
+
+===============================================================================
+3. Setting required environment variables
+===============================================================================
+    
+Set the following environment variables:
+
+    $ export A3T_DIR=[STAMP_DIR]/a3t
+    $ export Z3_BIN=[path to z3 binary]
+    $ export ANDROID_BUILD_DIR=[ANDROID_SRC_DIR]
+    $ export SDK_DIR=[ANDROID_SRC_DIR]/out/host/linux-x86/sdk/android-sdk_eng.[HOST_NAME]-x86/platforms/android-2.3.5
+    $ export JavaHeap=4000m
+
+    These should also be added to ~/.bashrc.
+    
+    NOTE: JavaHeap size might be set to a lower or higher value depending on 
+          available system memory.
+
+===============================================================================
+4. Instrumenting the API
+===============================================================================
+
+Run postbuild script:
+
+    $ $A3T_DIR/postsdkbuild
+    
+    Note: Re-compiling or updating the SDK (e.g. via the Android SDK Manager),
+          or modifying the instrumentation code, requires re-running this
+          script.
+    
+===============================================================================
+5. Instrumenting the App
+===============================================================================
+
+Inside the app's directory:
+
+    $ ant -Da3t=  debug
+    
+    Note: Space between '-Da3t=' and 'debug' is NOT a typo.
+    Note: This must be rerun whenever the instrumentation code changes.
+    
+===============================================================================
+6. Running the App
+===============================================================================
+
+6.1. Start the emulator, using the AVD created in step 1.6 and the instrumented 
+     API system image.
+     
+     $ emulator -avd [MY_AVD] -wipe-data -system $A3T_DIR/a3t_sdk/system.img &
+     
+    Note: -wipe-data instructs the emulator to start with a clean android 
+          installation. As opposed to rebooting a persistent disk between runs.
+     
+6.2. Wait until Android reaches the (locked) home screen.
+
+    Note: Because of the nature of the instrumentation. The emulator might fail 
+          with multiple errors if directly interacted with. App testing must be 
+          done through testing scrips (see step 6.4).
+          
+6.3. Load the app into the emulator.
+
+    [In the app directory:]
+    $ ant installd
+    
+    Note/TODO: This has been known to fail intermittently. 
+               Re-try if 'Build Failed' is returned.
+
+6.4. Start the log reader, preferably on a separate terminal.
+
+    [In the app directory:]
+    adb logcat *:W
+
+6.5. Run the test script
+
+    [In the app directory:]
+    $ ant -Da3t.K=1 -f $A3T_DIR/build.xml -propertyfile a3t.app.properties $* run
+    
+    TODO: This custom test code should eventually be replaced with a monkey 
+          script. The current code just runs multiple tests consisting of one 
+          click on the application interface each. 
+
+    To simply start the app remotely, run:
+
+    [In the app directory:]
+    adb shell am start -a android.intent.action.MAIN -n [APP_PACKAGE]/[APP_MAIN_ACTIVITY]
+
+    You can find the required information in the app's AndroidManifest.xml
+    file. The main activity is the one that corresponds to the intent
+    android.intent.action.MAIN. Be careful that the name of the activity may
+    include a starting period, which you must copy on your command line.
+    
+===============================================================================
+7. Options: Debugging options
+===============================================================================
+
+The infrastructure provides a series of debugging and introspection options 
+than can be enabled selectively and in any combination to provide more insight 
+on the (otherwise very opaque) behavior of our injected instrumentation.
+
+7.1. Verbose logging of taint propagation
+
+    The 'a3t.debug.log' option controls additional logging of taint 
+    propagation. Setting it to true will produce a series of additional 
+    DEBUG messages in the standard android log, describing how taint is 
+    propagated from every source.
+    
+    Note: At the time of this writing, this messages only track when taint is 
+          propagated through the arguments or return value of a method call.
+    
+    To enable verbose logging while instrumenting both the Android API and the 
+    app code, just add the following line to a3t.common.properties:
+       
+        a3t.debug.log=true
+        
+    Note: At the time of this writing this is set up by default.
+
+7.2. Dumping JIMPLE code
+    
+    The instrumentor can be made to dump the JIMPLE code for all instrumented 
+    classes into a namespace-organized directory hierarchy of .jimple files. 
+    Two configuration parameters control this behavior:
+    
+        a3t.debug.jimple.dir
+                and
+        a3t.debug.dump_jimple
+    
+    To enable  dumping JIMPLE code while instrumenting both the Android API and  
+    the app code, just add the following line to a3t.common.properties:
+       
+        a3t.debug.dump_jimple=true
+    
+    Additionally, a3t.debug.jimple.dir should be set up to a destination path 
+    in a3t.sdk.properties (for the apps, [APP_BUILD_DIR]/a3t/jimple is used).
