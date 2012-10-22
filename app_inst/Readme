@@ -1,0 +1,15 @@
+This project is only designed to instrument android applications.
+
+The general structure is:
+--edu.gatech.appInst
+ --- Main, 			the entry point of the program. It will initialize all the command line arguments 
+ 					for Soot. And will decide about which class to instrument.
+ --- Instrumentor, 	the key part for instrumenting. It will go through each classes and methods.
+ --- AddUninstrClassesToJar, after instrumenting, put all the instrumented and un-instrumented class file
+					into a jar file.
+ --- DummyMain, 	seems useless, just used to support Soot.
+ --- G, 			contains all the global functions, especially to help add a new method when instrumenting.
+ --- Printer,		helper class to output the class files before and after instrumenting.
+ 
+--edu.gatech.util
+ --- innerClass,	all the implementations for methods to be added into class files.
