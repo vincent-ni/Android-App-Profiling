@@ -1,0 +1,63 @@
+1. Put comment with each svn commit, and commit one logical thing at a time, so that it is easy to revert.
+
+2. Put lots of delay between and after Tap events in monkey script:
+
+  count = 2
+  speed = 1000
+  start data >>
+  DispatchKey(0,0,0,82,0,0,0,0)
+  UserWait(4000)
+  Tap(136.0,351.0)
+  UserWait(4000)
+
+  It appears that increasing the delay can never hurt (but we might be wrong).
+
+3. Android SDK has native methods and object recycling (e.g., of MotionEvent objects).  Since we do not
+   instrument entire SDK but instead introduce symbolic input variables at special functions designated
+   by us (e.g., deliverPointerEvent), we must be careful to capture the effect of parts of the SDK that
+   are bypassed by our instrumentation.  For instance, symbolic variables attached to recyled objects
+   must be reset.
+
+4. Do not output too much stuff to the log (via Slog or Log).  The buffer size is limited and it will
+   get truncated.  Increase size of log (default = 16 KB) in logcat.cpp in SDK.
+
+5. PROBLEM: Seeing the following lines in logcat:
+
+	TODO
+
+   SOLUTION: Ensure that you are using the instrumented system.img:
+
+   emulator -avd <avd name> -system ./instr_image/system.img  
+
+6. PROBLEM: Seeing the following output. That is it finishes after 1 run, even if the max iter is set 
+   to more.
+
+     [java] ============= Run 0 ===============
+     [java] Seed run = 0
+     [java] Hijack index = 0
+     [java] the process has already died...did it crash?
+     [java] branch cov. = 0 (0 new)
+     [java] change in dang. branches = 0 (0 total)
+     [java] traceLength 0 depth 0
+     [java] =====================================
+     [java] Total number of runs = 1
+ 
+  SOLUTION: Ensure that you have installed the app.
+
+7. PROBLEM: Seeing the following when installing an app
+    -dex:
+     [echo] Converting compiled files and external libraries into /export/pag/users/saswat/apps/RandomMusicPlayer/bin/classes.dex...
+    [apply] unknown option: --output
+    [apply] usage:
+    [apply]   dx --dex [--debug] [--verbose] [--positions=<style>] [--no-locals]
+  
+  SOLUTION: change <sdk-dir>/tools/ant/main_rules.xml to  
+          <arg value="--output=${intermediate.dex.file}" />   
+
+8. PROBLEM: Seeing the following when running emulator on instrumented code:
+
+   Cannot open file /sdcard/pkg.txt (Permission Denied)
+
+   SOLUTION: Happens if you click on (0, y) where y < 39 (e.g., y == 38.9).
+   Fix it by adding a constraint y >= 39
+

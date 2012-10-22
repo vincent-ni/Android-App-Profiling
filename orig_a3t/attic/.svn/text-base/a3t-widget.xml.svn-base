@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<project name="A3T-widget" default="coverage">
+   <!--property file="run.settings"/-->
+
+   <dirname property="a3t.dir" file="${ant.file.A3T-widget}"/>
+
+   <property environment="env"/>
+
+   <target name="find">
+	 <fail unless="env.SDK_DIR" message="Set environment variable SDK_DIR to absolute location of Android SDK directory."/>
+	 <java
+          classname="a3t.coverage.WidgetFinder"
+          fork="true"
+          failonerror="true"
+          dir="${user.dir}"
+          maxmemory="${env.JavaHeap}"
+		 >
+		<jvmarg value="-ea"/>
+		<classpath>
+		  <pathelement location="${a3t.dir}/a3t.jar"/>
+		  <pathelement location="${a3t.dir}/libs/soot.jar"/>
+		</classpath>
+		<arg value="-pkg"/>
+		<arg value="${pkg}"/>
+		<arg value="-injars"/>
+		<arg value="${injars}"/>
+		<arg value="-libraryjars"/>
+		<arg value="${libraryjars}:${env.SDK_DIR}/android.jar"/>
+      </java>
+   </target>
+
+   <target name="coverage">
+	 <java
+          classname="a3t.coverage.WidgetCoverage"
+          fork="true"
+          failonerror="true"
+          dir="${user.dir}"
+          maxmemory="${env.JavaHeap}"
+		 >
+		<jvmarg value="-ea"/>
+		<classpath>
+		  <pathelement location="${a3t.dir}/a3t.jar"/>
+		</classpath>
+		<arg value="-logcatdir"/>
+		<arg value="."/>
+      </java>
+   </target>
+
+</project>

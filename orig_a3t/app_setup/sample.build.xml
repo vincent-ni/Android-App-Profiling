@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RandomMusicPlayer">
+
+	<property environment="env"/>
+	<fail unless="env.SDK_DIR" message="Set environment variable SDK_DIR to absolute location of Android SDK."/>
+	<!-- set the below property because Ant files in the Android SDK require it to be set -->
+	<property name="sdk.dir" location="${env.SDK_DIR}/../.."/>
+
+    <fail unless="env.A3T_DIR" message="Set environment variable A3T_DIR to absolute location of a3t/."/>
+
+    <condition property="a3t.xml" value="${env.A3T_DIR}/a3t.xml">
+      <isset property="a3t"/>
+	</condition>     
+	<import file="${a3t.xml}" optional="true"/> 
+	
+    <property file="default.properties"/>
+
+    <import file="${sdk.dir}/tools/ant/pre_setup.xml"/>
+
+    <setup/>
+
+</project>
