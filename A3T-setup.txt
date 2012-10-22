@@ -23,7 +23,7 @@ presence of certain common utilities and development packages such as:
 1. Building Android
 ===============================================================================
 Note:
-Suggest to download android source code from our lab SVN, and skip 1.1 and 1.2 here.
+Suggest to download android source code from our lab SVN(in the folder /opt), and skip 1.1 and 1.2 here.
 I have followed 1.1-1.2 here, but got an error when compiling the sdk
 
 by Juyuan
