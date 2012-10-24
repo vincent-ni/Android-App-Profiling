@@ -1,0 +1,622 @@
+public class testA extends java.lang.Object implements java.io.Serializable
+{
+    public int i;
+
+    public void <init>()
+    {
+        testA r0;
+
+        r0 := @this: testA;
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+        r0.<testA: int i> = 1;
+        return;
+    }
+
+    public void func(testA)
+    {
+        testA r0, r1;
+        int $i0;
+
+        r0 := @this: testA;
+        r1 := @parameter0: testA;
+        $i0 = r1.<testA: int i>;
+        r0.<testA: int i> = $i0;
+        return;
+    }
+}
+public class test extends java.lang.Object implements java.io.Serializable
+{
+    private static final long serialVersionUID;
+
+    public void <init>()
+    {
+        test r0;
+
+        r0 := @this: test;
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+        byte b0;
+        int[] r1;
+        int i1, i2, $i3;
+        testA r2, $r3, r4, $r5;
+
+        r0 := @parameter0: java.lang.String[];
+        b0 = 5;
+        r1 = newarray (int)[10];
+        staticinvoke <test: void getArrayArg(int[],int)>(r1, b0);
+        i1 = 0;
+        i2 = 0;
+        goto label1;
+
+     label0:
+        $i3 = staticinvoke <test: int calculate(int)>(i2);
+        i1 = i1 + $i3;
+        i2 = i2 + 1;
+
+     label1:
+        if i2 < 10 goto label0;
+
+        $r3 = new testA;
+        specialinvoke $r3.<testA: void <init>()>();
+        r4 = $r3;
+        $r5 = new testA;
+        specialinvoke $r5.<testA: void <init>()>();
+        r2 = $r5;
+        virtualinvoke r4.<testA: void func(testA)>(r2);
+        return;
+    }
+
+    public static void getArrayArg(int[], int)
+    {
+        int[] r0;
+        int i0, i1, i2;
+
+        r0 := @parameter0: int[];
+        i0 := @parameter1: int;
+        i1 = r0[i0];
+        i2 = i1 + 1;
+        return;
+    }
+
+    public static int calculate(int)
+    {
+        int i0, i1, i2, $i3, $i4;
+
+        i0 := @parameter0: int;
+        i1 = i0;
+        i2 = 0;
+        goto label1;
+
+     label0:
+        i2 = i2 + 1;
+
+     label1:
+        if i2 < 100000 goto label0;
+
+        $i3 = i1 * i1;
+        $i4 = $i3 % 73;
+        return $i4;
+    }
+
+    public static int[] getArray(int)
+    {
+        int i0;
+        int[] r0;
+
+        i0 := @parameter0: int;
+        r0 = newarray (int)[i0];
+        return r0;
+    }
+}
+public class edu.gatech.util.innerClass extends java.lang.Object
+{
+    public static java.util.List allMethods;
+    public static java.util.Stack methodStack;
+    public static int runSeq;
+
+    static void <clinit>()
+    {
+        java.util.ArrayList $r0;
+        java.util.Stack $r1;
+
+        $r0 = new java.util.ArrayList;
+        specialinvoke $r0.<java.util.ArrayList: void <init>()>();
+        <edu.gatech.util.innerClass: java.util.List allMethods> = $r0;
+        $r1 = new java.util.Stack;
+        specialinvoke $r1.<java.util.Stack: void <init>()>();
+        <edu.gatech.util.innerClass: java.util.Stack methodStack> = $r1;
+        <edu.gatech.util.innerClass: int runSeq> = 0;
+        return;
+    }
+
+    public void <init>()
+    {
+        edu.gatech.util.innerClass r0;
+
+        r0 := @this: edu.gatech.util.innerClass;
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void test()
+    {
+        java.io.PrintStream $r0;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("testing");
+        return;
+    }
+
+    public static void callMethod(java.lang.String)
+    {
+        java.lang.String r0, $r6;
+        java.io.PrintStream $r1;
+        java.lang.StringBuilder $r2, $r5;
+        java.util.Date r3, $r7;
+        edu.gatech.util.MethodInfo r4, $r8;
+        int $i0, $i1, $i2;
+        long $l3;
+        java.util.List $r9;
+        java.util.Stack $r10;
+
+        r0 := @parameter0: java.lang.String;
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("calling: ");
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r6);
+        $i0 = <edu.gatech.util.innerClass: int runSeq>;
+        $i1 = $i0 + 1;
+        <edu.gatech.util.innerClass: int runSeq> = $i1;
+        $r7 = new java.util.Date;
+        specialinvoke $r7.<java.util.Date: void <init>()>();
+        r3 = $r7;
+        $r8 = new edu.gatech.util.MethodInfo;
+        $i2 = <edu.gatech.util.innerClass: int runSeq>;
+        $l3 = virtualinvoke r3.<java.util.Date: long getTime()>();
+        specialinvoke $r8.<edu.gatech.util.MethodInfo: void <init>(java.lang.String,int,long)>(r0, $i2, $l3);
+        r4 = $r8;
+        $r9 = <edu.gatech.util.innerClass: java.util.List allMethods>;
+        interfaceinvoke $r9.<java.util.List: boolean add(java.lang.Object)>(r4);
+        $r10 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        virtualinvoke $r10.<java.util.Stack: java.lang.Object push(java.lang.Object)>(r4);
+        return;
+    }
+
+    public static void endMethod(java.lang.String)
+    {
+        java.lang.String r0, $r6, $r13, $r17;
+        java.io.PrintStream $r1, $r10, $r14;
+        java.lang.StringBuilder $r2, $r5, $r11, $r12, $r15, $r16;
+        java.util.Date r3, $r7;
+        edu.gatech.util.MethodInfo r4;
+        java.util.Stack $r8;
+        java.lang.Object $r9;
+        long $l0, $l2;
+        int $i1;
+
+        r0 := @parameter0: java.lang.String;
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("end calling: ");
+        $r5 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r6);
+        $r7 = new java.util.Date;
+        specialinvoke $r7.<java.util.Date: void <init>()>();
+        r3 = $r7;
+        $r8 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r9 = virtualinvoke $r8.<java.util.Stack: java.lang.Object pop()>();
+        r4 = (edu.gatech.util.MethodInfo) $r9;
+        $l0 = virtualinvoke r3.<java.util.Date: long getTime()>();
+        virtualinvoke r4.<edu.gatech.util.MethodInfo: void setRunTime(long)>($l0);
+        $r10 = <java.lang.System: java.io.PrintStream out>;
+        $r11 = new java.lang.StringBuilder;
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("  Seq: ");
+        $i1 = r4.<edu.gatech.util.MethodInfo: int runSeq>;
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r10.<java.io.PrintStream: void println(java.lang.String)>($r13);
+        $r14 = <java.lang.System: java.io.PrintStream out>;
+        $r15 = new java.lang.StringBuilder;
+        specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("  Runtime: ");
+        $l2 = r4.<edu.gatech.util.MethodInfo: long runTime>;
+        $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l2);
+        $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r14.<java.io.PrintStream: void println(java.lang.String)>($r17);
+        return;
+    }
+
+    public static void runningMethod(java.lang.String)
+    {
+        java.lang.String r0, $r4;
+        java.io.PrintStream $r1;
+        java.lang.StringBuilder $r2, $r3;
+
+        r0 := @parameter0: java.lang.String;
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("running: ");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r4);
+        return;
+    }
+
+    public static void setNonPrimBase(java.lang.Object, java.lang.String)
+    {
+        java.lang.Object r0, $r4;
+        java.lang.String r1, $r5, $r9, $r13;
+        java.util.Stack $r2;
+        edu.gatech.util.MethodInfo r3;
+        int i0;
+        java.lang.Boolean $r6;
+        java.io.PrintStream $r7;
+        java.lang.StringBuilder $r8, $r10, $r11, $r12;
+
+        r0 := @parameter0: java.lang.Object;
+        r1 := @parameter1: java.lang.String;
+        $r2 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r4 = virtualinvoke $r2.<java.util.Stack: java.lang.Object peek()>();
+        r3 = (edu.gatech.util.MethodInfo) $r4;
+        i0 = staticinvoke <edu.gatech.util.innerClass: int getSerializedSize(java.lang.Object)>(r0);
+        $r5 = virtualinvoke r0.<java.lang.Object: java.lang.String toString()>();
+        $r6 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        virtualinvoke r3.<edu.gatech.util.MethodInfo: void setBase(java.lang.String,java.lang.String,java.lang.Boolean,int)>(r1, $r5, $r6, i0);
+        $r7 = <java.lang.System: java.io.PrintStream out>;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("    Base: ");
+        $r9 = virtualinvoke r0.<java.lang.Object: java.lang.String toString()>();
+        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", and the size is: ");
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r13);
+        return;
+    }
+
+    public static void setPrimBase(java.lang.String)
+    {
+        java.lang.String r0;
+        java.util.Stack $r1;
+        edu.gatech.util.MethodInfo r2;
+        java.lang.Object $r3;
+        java.lang.Boolean $r4;
+
+        r0 := @parameter0: java.lang.String;
+        $r1 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r3 = virtualinvoke $r1.<java.util.Stack: java.lang.Object peek()>();
+        r2 = (edu.gatech.util.MethodInfo) $r3;
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+        virtualinvoke r2.<edu.gatech.util.MethodInfo: void setBase(java.lang.String,java.lang.String,java.lang.Boolean,int)>(r0, null, $r4, -1);
+        return;
+    }
+
+    public static void setNonPrimReturnVal(java.lang.Object, java.lang.String)
+    {
+        java.lang.Object r0, $r4;
+        java.lang.String r1, $r5, $r9, $r13;
+        java.util.Stack $r2;
+        edu.gatech.util.MethodInfo r3;
+        int i0;
+        java.lang.Boolean $r6;
+        java.io.PrintStream $r7;
+        java.lang.StringBuilder $r8, $r10, $r11, $r12;
+
+        r0 := @parameter0: java.lang.Object;
+        r1 := @parameter1: java.lang.String;
+        $r2 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r4 = virtualinvoke $r2.<java.util.Stack: java.lang.Object peek()>();
+        r3 = (edu.gatech.util.MethodInfo) $r4;
+        i0 = staticinvoke <edu.gatech.util.innerClass: int getSerializedSize(java.lang.Object)>(r0);
+        $r5 = virtualinvoke r0.<java.lang.Object: java.lang.String toString()>();
+        $r6 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        virtualinvoke r3.<edu.gatech.util.MethodInfo: void setReturnVal(java.lang.String,java.lang.String,java.lang.Boolean,int)>(r1, $r5, $r6, i0);
+        $r7 = <java.lang.System: java.io.PrintStream out>;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("    ReturnVal: ");
+        $r9 = virtualinvoke r0.<java.lang.Object: java.lang.String toString()>();
+        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", and the size is: ");
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r13);
+        return;
+    }
+
+    public static void setPrimReturnVal(java.lang.String)
+    {
+        java.lang.String r0;
+        java.util.Stack $r1;
+        edu.gatech.util.MethodInfo r2;
+        java.lang.Object $r3;
+        java.lang.Boolean $r4;
+
+        r0 := @parameter0: java.lang.String;
+        $r1 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r3 = virtualinvoke $r1.<java.util.Stack: java.lang.Object peek()>();
+        r2 = (edu.gatech.util.MethodInfo) $r3;
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+        virtualinvoke r2.<edu.gatech.util.MethodInfo: void setReturnVal(java.lang.String,java.lang.String,java.lang.Boolean,int)>(r0, null, $r4, -1);
+        return;
+    }
+
+    public static void setNonPrimParam(java.lang.Object, int, java.lang.String)
+    {
+        java.lang.Object r0, $r4;
+        int i0, i1;
+        java.lang.String r1, $r5, $r9, $r13;
+        java.util.Stack $r2;
+        edu.gatech.util.MethodInfo r3;
+        java.lang.Boolean $r6;
+        java.io.PrintStream $r7;
+        java.lang.StringBuilder $r8, $r10, $r11, $r12;
+
+        r0 := @parameter0: java.lang.Object;
+        i0 := @parameter1: int;
+        r1 := @parameter2: java.lang.String;
+        $r2 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r4 = virtualinvoke $r2.<java.util.Stack: java.lang.Object peek()>();
+        r3 = (edu.gatech.util.MethodInfo) $r4;
+        i1 = staticinvoke <edu.gatech.util.innerClass: int getSerializedSize(java.lang.Object)>(r0);
+        $r5 = virtualinvoke r0.<java.lang.Object: java.lang.String toString()>();
+        $r6 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+        virtualinvoke r3.<edu.gatech.util.MethodInfo: void setParam(int,java.lang.String,java.lang.String,java.lang.Boolean,int)>(i0, r1, $r5, $r6, i1);
+        $r7 = <java.lang.System: java.io.PrintStream out>;
+        $r8 = new java.lang.StringBuilder;
+        specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("    Param: ");
+        $r9 = virtualinvoke r0.<java.lang.Object: java.lang.String toString()>();
+        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", and the size is: ");
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r13);
+        return;
+    }
+
+    public static void setPrimParam(int, java.lang.String)
+    {
+        int i0;
+        java.lang.String r0;
+        java.util.Stack $r1;
+        edu.gatech.util.MethodInfo r2;
+        java.lang.Object $r3;
+        java.lang.Boolean $r4;
+
+        i0 := @parameter0: int;
+        r0 := @parameter1: java.lang.String;
+        $r1 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r3 = virtualinvoke $r1.<java.util.Stack: java.lang.Object peek()>();
+        r2 = (edu.gatech.util.MethodInfo) $r3;
+        $r4 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+        virtualinvoke r2.<edu.gatech.util.MethodInfo: void setParam(int,java.lang.String,java.lang.String,java.lang.Boolean,int)>(i0, r0, null, $r4, -1);
+        return;
+    }
+
+    public static void setParamCount(int)
+    {
+        int i0;
+        java.util.Stack $r0;
+        edu.gatech.util.MethodInfo r1;
+        java.lang.Object $r2;
+
+        i0 := @parameter0: int;
+        $r0 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r2 = virtualinvoke $r0.<java.util.Stack: java.lang.Object peek()>();
+        r1 = (edu.gatech.util.MethodInfo) $r2;
+        virtualinvoke r1.<edu.gatech.util.MethodInfo: void initParamList(int)>(i0);
+        return;
+    }
+
+    private static int getSerializedSize(java.lang.Object)
+    {
+        java.lang.Object r0;
+        int i0;
+        java.io.ByteArrayOutputStream r1, $r3;
+        null_type n0;
+        byte[] r2;
+        java.io.ObjectOutputStream $r4, r5;
+        java.lang.Exception $r6, r7;
+
+        r0 := @parameter0: java.lang.Object;
+        i0 = -1;
+        $r3 = new java.io.ByteArrayOutputStream;
+        specialinvoke $r3.<java.io.ByteArrayOutputStream: void <init>()>();
+        r1 = $r3;
+        n0 = null;
+
+     label0:
+        $r4 = new java.io.ObjectOutputStream;
+        specialinvoke $r4.<java.io.ObjectOutputStream: void <init>(java.io.OutputStream)>(r1);
+        r5 = $r4;
+        interfaceinvoke r5.<java.io.ObjectOutput: void writeObject(java.lang.Object)>(r0);
+        r2 = virtualinvoke r1.<java.io.ByteArrayOutputStream: byte[] toByteArray()>();
+        i0 = lengthof r2;
+        interfaceinvoke r5.<java.io.ObjectOutput: void close()>();
+        virtualinvoke r1.<java.io.ByteArrayOutputStream: void close()>();
+
+     label1:
+        goto label3;
+
+     label2:
+        $r6 := @caughtexception;
+        r7 = $r6;
+        virtualinvoke r7.<java.lang.Exception: void printStackTrace()>();
+
+     label3:
+        return i0;
+
+        catch java.lang.Exception from label0 to label1 with label2;
+    }
+}
+public class edu.gatech.util.MethodInfo extends java.lang.Object
+{
+    public int runSeq;
+    public java.lang.String methodSig;
+    public edu.gatech.util.ObjectInfo base;
+    public edu.gatech.util.ObjectInfo returnVal;
+    public edu.gatech.util.ObjectInfo[] paramList;
+    public long startTime;
+    public long runTime;
+
+    public void <init>(java.lang.String, int, long)
+    {
+        edu.gatech.util.MethodInfo r0;
+        java.lang.String r1;
+        int i0;
+        long l1;
+
+        r0 := @this: edu.gatech.util.MethodInfo;
+        r1 := @parameter0: java.lang.String;
+        i0 := @parameter1: int;
+        l1 := @parameter2: long;
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+        r0.<edu.gatech.util.MethodInfo: java.lang.String methodSig> = r1;
+        r0.<edu.gatech.util.MethodInfo: int runSeq> = i0;
+        r0.<edu.gatech.util.MethodInfo: long startTime> = l1;
+        return;
+    }
+
+    public void setRunTime(long)
+    {
+        edu.gatech.util.MethodInfo r0;
+        long l0, $l1, $l2;
+
+        r0 := @this: edu.gatech.util.MethodInfo;
+        l0 := @parameter0: long;
+        $l1 = r0.<edu.gatech.util.MethodInfo: long startTime>;
+        $l2 = l0 - $l1;
+        r0.<edu.gatech.util.MethodInfo: long runTime> = $l2;
+        return;
+    }
+
+    public void initParamList(int)
+    {
+        edu.gatech.util.MethodInfo r0;
+        int i0;
+        edu.gatech.util.ObjectInfo[] $r1;
+
+        r0 := @this: edu.gatech.util.MethodInfo;
+        i0 := @parameter0: int;
+        $r1 = newarray (edu.gatech.util.ObjectInfo)[i0];
+        r0.<edu.gatech.util.MethodInfo: edu.gatech.util.ObjectInfo[] paramList> = $r1;
+        return;
+    }
+
+    public void setParam(int, java.lang.String, java.lang.String, java.lang.Boolean, int)
+    {
+        edu.gatech.util.MethodInfo r0;
+        int i0, i1;
+        java.lang.String r1, r2;
+        java.lang.Boolean r3;
+        edu.gatech.util.ObjectInfo $r4, $r7;
+        edu.gatech.util.ObjectInfo[] $r5, $r6;
+        boolean $z0;
+
+        r0 := @this: edu.gatech.util.MethodInfo;
+        i0 := @parameter0: int;
+        r1 := @parameter1: java.lang.String;
+        r2 := @parameter2: java.lang.String;
+        r3 := @parameter3: java.lang.Boolean;
+        i1 := @parameter4: int;
+        $r5 = r0.<edu.gatech.util.MethodInfo: edu.gatech.util.ObjectInfo[] paramList>;
+        $r4 = new edu.gatech.util.ObjectInfo;
+        $z0 = virtualinvoke r3.<java.lang.Boolean: boolean booleanValue()>();
+        specialinvoke $r4.<edu.gatech.util.ObjectInfo: void <init>(java.lang.String,java.lang.String,boolean,int)>(r1, r2, $z0, i1);
+        $r5[i0] = $r4;
+        if i1 == -1 goto label0;
+
+        $r6 = r0.<edu.gatech.util.MethodInfo: edu.gatech.util.ObjectInfo[] paramList>;
+        $r7 = $r6[i0];
+        $r7.<edu.gatech.util.ObjectInfo: boolean isSerialized> = 0;
+
+     label0:
+        return;
+    }
+
+    public void setBase(java.lang.String, java.lang.String, java.lang.Boolean, int)
+    {
+        edu.gatech.util.MethodInfo r0;
+        java.lang.String r1, r2;
+        java.lang.Boolean r3;
+        int i0;
+        edu.gatech.util.ObjectInfo $r4;
+        boolean $z0;
+
+        r0 := @this: edu.gatech.util.MethodInfo;
+        r1 := @parameter0: java.lang.String;
+        r2 := @parameter1: java.lang.String;
+        r3 := @parameter2: java.lang.Boolean;
+        i0 := @parameter3: int;
+        $r4 = new edu.gatech.util.ObjectInfo;
+        $z0 = virtualinvoke r3.<java.lang.Boolean: boolean booleanValue()>();
+        specialinvoke $r4.<edu.gatech.util.ObjectInfo: void <init>(java.lang.String,java.lang.String,boolean,int)>(r1, r2, $z0, i0);
+        r0.<edu.gatech.util.MethodInfo: edu.gatech.util.ObjectInfo base> = $r4;
+        return;
+    }
+
+    public void setReturnVal(java.lang.String, java.lang.String, java.lang.Boolean, int)
+    {
+        edu.gatech.util.MethodInfo r0;
+        java.lang.String r1, r2;
+        java.lang.Boolean r3;
+        int i0;
+        edu.gatech.util.ObjectInfo $r4;
+        boolean $z0;
+
+        r0 := @this: edu.gatech.util.MethodInfo;
+        r1 := @parameter0: java.lang.String;
+        r2 := @parameter1: java.lang.String;
+        r3 := @parameter2: java.lang.Boolean;
+        i0 := @parameter3: int;
+        $r4 = new edu.gatech.util.ObjectInfo;
+        $z0 = virtualinvoke r3.<java.lang.Boolean: boolean booleanValue()>();
+        specialinvoke $r4.<edu.gatech.util.ObjectInfo: void <init>(java.lang.String,java.lang.String,boolean,int)>(r1, r2, $z0, i0);
+        r0.<edu.gatech.util.MethodInfo: edu.gatech.util.ObjectInfo returnVal> = $r4;
+        return;
+    }
+}
+public class edu.gatech.util.ObjectInfo extends java.lang.Object
+{
+    public java.lang.String type;
+    public java.lang.String value;
+    public boolean isPrimType;
+    public boolean isSerialized;
+    int serializedSize;
+
+    public void <init>(java.lang.String, java.lang.String, boolean, int)
+    {
+        edu.gatech.util.ObjectInfo r0;
+        java.lang.String r1, r2;
+        boolean z0, $z1;
+        int i0;
+
+        r0 := @this: edu.gatech.util.ObjectInfo;
+        r1 := @parameter0: java.lang.String;
+        r2 := @parameter1: java.lang.String;
+        z0 := @parameter2: boolean;
+        i0 := @parameter3: int;
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+        r0.<edu.gatech.util.ObjectInfo: java.lang.String type> = r1;
+        r0.<edu.gatech.util.ObjectInfo: java.lang.String value> = r2;
+        r0.<edu.gatech.util.ObjectInfo: boolean isPrimType> = z0;
+        r0.<edu.gatech.util.ObjectInfo: int serializedSize> = i0;
+        if i0 == -1 goto label0;
+
+        $z1 = 1;
+        goto label1;
+
+     label0:
+        $z1 = 0;
+
+     label1:
+        r0.<edu.gatech.util.ObjectInfo: boolean isSerialized> = $z1;
+        return;
+    }
+}
