@@ -22,11 +22,8 @@ public class Main extends SceneTransformer {
 	private static List<SootClass> classes = new ArrayList<SootClass>();
 	private static Map<String,List<String>> uninstrumentedClasses = new HashMap<String, List<String>>();
 	private static final String dummyMainClassName = "edu.gatech.appInst.DummyMain";
+	private static Config config;
 	private static boolean DEBUG = true;
-
-	static String inJars = "libs/app.jar";
-	static String libJars = "libs/core.jar:libs/ext.jar:libs/junit.jar:libs/bouncycastle.jar:bin:libs/android.jar";
-	static String outJar = "output/intrumentedApp.jar";
 	
 	@Override
 	protected void internalTransform(String arg0, Map arg1) {
@@ -39,7 +36,9 @@ public class Main extends SceneTransformer {
 	}
 	
 	public static void main(String[] args) {
-		Scene.v().setSootClassPath(inJars + File.pathSeparator + libJars);
+		config = Config.g();
+		
+		Scene.v().setSootClassPath(config.inJars + File.pathSeparator + config.libJars);
 
 		loadClassesToInstrument();
 		
@@ -53,25 +52,25 @@ public class Main extends SceneTransformer {
 //		builder.append("-dynamic-class ");
 //		builder.append("edu.gatech.util.innerClass ");
 		builder.append("-soot-classpath ");
-		builder.append(inJars + File.pathSeparator + libJars + " ");
+		builder.append(config.inJars + File.pathSeparator + config.libJars + " ");
 		builder.append("-dynamic-package ");
 		builder.append("edu.gatech.util. ");
 //		builder.append("-dynamic-package ");
 //		builder.append("models. ");
 		builder.append("-outjar -d ");
-		builder.append(outJar+" ");
+		builder.append(config.outJar+" ");
 		builder.append("-O ");
 		builder.append("-validate ");
 		builder.append(dummyMainClassName);
 		String[] sootArgs = builder.toString().split(" ");
 		soot.Main.main(sootArgs);
 
-		new AddUninstrClassesToJar(uninstrumentedClasses, outJar).apply();
+		new AddUninstrClassesToJar(uninstrumentedClasses, config.outJar).apply();
 	}
 	
 	private static void loadClassesToInstrument()
     {
-		for (String pname : inJars.split(File.pathSeparator)) {
+		for (String pname : config.inJars.split(File.pathSeparator)) {
 			if (pname.endsWith(".jar")) {
 				System.out.println("pname "+pname);
 				JarFile jar = null;

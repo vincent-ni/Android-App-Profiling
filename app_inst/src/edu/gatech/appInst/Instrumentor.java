@@ -8,6 +8,7 @@ import soot.Body;
 import soot.PrimType;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.Type;
 import soot.Unit;
 import soot.Value;
@@ -60,35 +61,31 @@ public class Instrumentor extends AbstractStmtSwitch {
 			if(u.containsInvokeExpr()){
 				InvokeExpr exp = u.getInvokeExpr();
 				
-				InvokeExpr newExp1 = G.jimple.newStaticInvokeExpr(G.callMethodRef, 
-						StringConstant.v(exp.getMethod().getSignature()));
-				Stmt newStmt1 = G.jimple.newInvokeStmt(newExp1);
-				currentUnits.insertBefore(newStmt1, u);
+				if(exp.getMethod().getSignature().contains("<java.lang.Object: void <init>()>"))
+					continue;
 				
-				InvokeExpr newExpr2 = G.jimple.newStaticInvokeExpr(G.endMethodRef,
-						StringConstant.v(exp.getMethod().getSignature()));
-				Stmt newStmt2 = G.jimple.newInvokeStmt(newExpr2);
-				currentUnits.insertAfter(newStmt2, u);
+				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
+				
+				currentUnits.insertAfter(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+						G.endMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
 				
 				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
 						G.setParamCountRef, IntConstant.v(exp.getArgCount()))), u);
+				
 				for(int i = 0; i < exp.getArgCount(); i++){
 					Value arg = exp.getArg(i);
 					Type type = arg.getType();
-					if(type instanceof PrimType)
-					currentUnits.insertBefore(G.jimple.newInvokeStmt(
-							G.jimple.newStaticInvokeExpr(G.setPrimParamRef, IntConstant.v(i), 
-							StringConstant.v(type.toString()))), u);
-					else {
-						currentUnits.insertBefore(G.jimple.newInvokeStmt(
-								G.jimple.newStaticInvokeExpr(G.setNonPrimParamRef, arg, IntConstant.v(i), 
-								StringConstant.v(type.toString()))), u);
-					}
-					
-					// TODO: update arrayType part
-					if(type instanceof ArrayType){
-						int numDim = ((ArrayType) type).numDimensions;
-						Type type2 = ((ArrayType) type).getElementType();
+					if(type instanceof PrimType){
+						insertInvokeStmtForPrim(G.setPrimParamRef, arg, i, "param", true, u);
+//						currentUnits.insertBefore(G.jimple.newInvokeStmt(
+//								G.jimple.newStaticInvokeExpr(G.setPrimParamRef, IntConstant.v(i), 
+//								StringConstant.v(type.toString()))), u);
+					} else {
+						insertInvokeStmtForNonPrim(G.setNonPrimParamRef, arg, i, "param", true, u);
+//						currentUnits.insertBefore(G.jimple.newInvokeStmt(
+//								G.jimple.newStaticInvokeExpr(G.setNonPrimParamRef, arg, IntConstant.v(i), 
+//								StringConstant.v(type.toString()))), u);
 					}
 				}
 				
@@ -96,31 +93,104 @@ public class Instrumentor extends AbstractStmtSwitch {
 					Value returnVal = ((AssignStmt) u).getLeftOp();
 					
 					Type type = returnVal.getType();
-					if(type instanceof PrimType)
-					currentUnits.insertAfter(G.jimple.newInvokeStmt(
-							G.jimple.newStaticInvokeExpr(G.setPrimReturnValRef, StringConstant.v(
-									type.toString()))), u);
-					else {
-						currentUnits.insertAfter(G.jimple.newInvokeStmt(
-								G.jimple.newStaticInvokeExpr(G.setNonPrimReturnValRef, returnVal, 
-										StringConstant.v(type.toString()))), u);
+					if(type instanceof PrimType){
+						insertInvokeStmtForPrim(G.setPrimReturnValRef, returnVal, -1, "returnVal", 
+								false, u);
+//						currentUnits.insertAfter(G.jimple.newInvokeStmt(
+//								G.jimple.newStaticInvokeExpr(G.setPrimReturnValRef, StringConstant.v(
+//										type.toString()))), u);
+					} else {
+						insertInvokeStmtForNonPrim(G.setNonPrimReturnValRef, returnVal, -1, 
+								"returnVal", false, u);
+//						currentUnits.insertAfter(G.jimple.newInvokeStmt(
+//								G.jimple.newStaticInvokeExpr(G.setNonPrimReturnValRef, returnVal, 
+//										StringConstant.v(type.toString()))), u);
 					}
 				}
 				
 				if(exp instanceof InstanceInvokeExpr){
 					Value base = ((InstanceInvokeExpr) exp).getBase();
-					
+
 					Type type = base.getType();
-					if(type instanceof PrimType)
-					currentUnits.insertBefore(G.jimple.newInvokeStmt(
-							G.jimple.newStaticInvokeExpr(G.setPrimBaseRef, StringConstant.v(
-									type.toString()))), u);
-					else {
-						currentUnits.insertBefore(G.jimple.newInvokeStmt(
-								G.jimple.newStaticInvokeExpr(G.setNonPrimBaseRef, base, 
-										StringConstant.v(type.toString()))), u);
+					if(type instanceof PrimType){
+						insertInvokeStmtForPrim(G.setPrimBaseRef, base, -1, "base", true, u);
+//						currentUnits.insertBefore(G.jimple.newInvokeStmt(
+//						G.jimple.newStaticInvokeExpr(G.setPrimBaseRef, StringConstant.v(
+//								type.toString()))), u);
+					} else {
+						insertInvokeStmtForNonPrim(G.setNonPrimBaseRef, base, -1, "base", true, u);
+//						currentUnits.insertBefore(G.jimple.newInvokeStmt(
+//								G.jimple.newStaticInvokeExpr(G.setNonPrimBaseRef, base, 
+//										StringConstant.v(type.toString()))), u);
 					}
 				}
+			}
+		}
+	}
+	
+	/*
+	 * which could be "base", "returnVal", "param"
+	 */
+	private void insertInvokeStmtForPrim(SootMethodRef ref, Value value, int index, String which, 
+			boolean before, Stmt u){
+		Type type = value.getType();
+		InvokeExpr expr;
+		
+		if(which.equals("param")){
+			expr = G.jimple.newStaticInvokeExpr(ref, IntConstant.v(index), 
+					StringConstant.v(type.toString()));
+		} else {
+			expr = G.jimple.newStaticInvokeExpr(ref, StringConstant.v(type.toString()));
+		}
+		if(before){
+			currentUnits.insertBefore(G.jimple.newInvokeStmt(expr), u);
+		} else {
+			currentUnits.insertAfter(G.jimple.newInvokeStmt(expr), u);
+		}
+	}
+	
+	/*
+	 * which could be "base", "returnVal", "param"
+	 */
+	private void insertInvokeStmtForNonPrim(SootMethodRef ref, Value value, int index, 
+			String which, boolean before, Stmt u){
+		Type type = value.getType();
+		InvokeExpr expr;
+		
+		if(which.equals("param")){
+			expr = G.jimple.newStaticInvokeExpr(ref, value, IntConstant.v(index), 
+					StringConstant.v(type.toString()));
+		} else {
+			expr = G.jimple.newStaticInvokeExpr(ref, value, StringConstant.v(type.toString()));
+		}
+		if(before){
+			currentUnits.insertBefore(G.jimple.newInvokeStmt(expr), u);
+		} else {
+			currentUnits.insertAfter(G.jimple.newInvokeStmt(expr), u);
+		}
+		
+		// TODO: update arrayType part
+		if(type instanceof ArrayType){
+			int numDim = ((ArrayType) type).numDimensions;
+			Type elementType = ((ArrayType) type).getElementType();
+			
+			InvokeExpr exp;
+			if(which.equals("param")){
+				exp = G.jimple.newStaticInvokeExpr(G.updateArrayForParamRef, value,
+						IntConstant.v(index), StringConstant.v(elementType.toString()), 
+						IntConstant.v(numDim));
+			} else if(which.equals("base")){
+				exp = G.jimple.newStaticInvokeExpr(G.updateArrayForBaseRef, value, 
+						StringConstant.v(elementType.toString()), IntConstant.v(numDim));
+			} else {
+				exp = G.jimple.newStaticInvokeExpr(G.updateArrayForReturnRef, value,
+						StringConstant.v(elementType.toString()), IntConstant.v(numDim));
+			}
+			
+			if(before){
+				currentUnits.insertBefore(G.jimple.newInvokeStmt(exp), u);
+			} else {
+				currentUnits.insertAfter(G.jimple.newInvokeStmt(exp), u);
 			}
 		}
 	}

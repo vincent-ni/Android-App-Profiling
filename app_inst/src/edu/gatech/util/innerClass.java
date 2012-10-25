@@ -77,6 +77,21 @@ public class innerClass {
 		info.setParam(index, type, null, true, -1);
 	}
 	
+	public static void updateArrayForParam(Object obj, int index, String elementType, int dimen){
+		MethodInfo info = methodStack.peek();
+		info.paramList[index].updateArrayInfo(obj, elementType, dimen);
+	}
+	
+	public static void updateArrayForBase(Object obj, String elementType, int dimen){
+		MethodInfo info = methodStack.peek();
+		info.base.updateArrayInfo(obj, elementType, dimen);
+	}
+	
+	public static void updateArrayForReturn(Object obj, String elementType, int dimen){
+		MethodInfo info = methodStack.peek();
+		info.returnVal.updateArrayInfo(obj, elementType, dimen);
+	}
+	
 	public static void setParamCount(int count){
 		MethodInfo info = methodStack.peek();
 		info.initParamList(count);

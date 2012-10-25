@@ -22,6 +22,9 @@ public class G {
 	static final SootMethodRef setPrimReturnValRef;
 	static final SootMethodRef setPrimParamRef;
 	static final SootMethodRef setParamCountRef;
+	static final SootMethodRef updateArrayForBaseRef;
+	static final SootMethodRef updateArrayForReturnRef;
+	static final SootMethodRef updateArrayForParamRef;
 	
 	static{
 		innerClass = Scene.v().getSootClass(innerClassStr);
@@ -37,5 +40,8 @@ public class G {
 		setPrimReturnValRef = innerClass.getMethod("void setPrimReturnVal(java.lang.String)").makeRef();
 		setPrimParamRef = innerClass.getMethod("void setPrimParam(int,java.lang.String)").makeRef();
 		setParamCountRef = innerClass.getMethod("void setParamCount(int)").makeRef();
+		updateArrayForBaseRef = innerClass.getMethod("void updateArrayForBase(java.lang.Object,java.lang.String,int)").makeRef();
+		updateArrayForReturnRef = innerClass.getMethod("void updateArrayForReturn(java.lang.Object,java.lang.String,int)").makeRef();
+		updateArrayForParamRef = innerClass.getMethod("void updateArrayForParam(java.lang.Object,int,java.lang.String,int)").makeRef();
 	}
 }
