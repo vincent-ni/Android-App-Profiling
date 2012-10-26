@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/hello"
+    />
+<EditText android:layout_height="wrap_content" android:text="1" android:id="@+id/editCPUNum" android:layout_width="match_parent"></EditText>
+<Button android:text="Start" android:id="@+id/buttonStart" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Listen" android:id="@+id/buttonListen" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="Send" android:id="@+id/buttonSend" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<TextView android:text="" android:id="@+id/textView1" android:layout_width="match_parent" android:layout_height="match_parent"></TextView>
+</LinearLayout>

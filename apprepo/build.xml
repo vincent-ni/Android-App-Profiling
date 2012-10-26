@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LeakLocation">
+	<property name="sdk.dir" location="$SDK_INSTALL"/>
+	<property name="appInst.dir" location="$PROJ_DIR/app_inst"/>
+
+	<property name="a3t.libraryjars" value="${appInst.dir}/jars/appInst.jar:${appInst.dir}/libs/framework.jar:${appInst.dir}/libs/core.jar:${appInst.dir}/libs/ext.jar:${appInst.dir}/libs/junit.jar:${appInst.dir}/libs/bouncycastle.jar"/>
+	<property name="app.jarfile" value="bin/app.jar" />
+	<property name="app.instrumented.jar" value="bin/app.instrumented.jar" />
+	<property name="app.class.folder" value="bin/classes" />
+
+	<target name="-post-compile">
+		<jar destfile="${app.jarfile}" >
+			<fileset dir="bin/classes/" includes="**/*.class"
+				excludes="**/BuildConfig.class **/R.class **/R$*.class"/>
+		</jar>
+		<property name="a3t.in.jars" value="${app.jarfile}"/>
+                <property name="a3t.out.jar" value="${app.instrumented.jar}"/>
+                <property name="a3t.lib.jars" value="${a3t.libraryjars}"/>
+                <ant antfile="${appInst.dir}/build.xml" target="appInst"/>
+
+		<unzip src="${app.instrumented.jar}" dest="${app.class.folder}" failOnEmptyArchive="true"/>
+
+	</target>
+	
+	<import file="${sdk.dir}/tools/ant/build.xml"/>
+
+	<property file="project.properties"/>
+
+</project>
