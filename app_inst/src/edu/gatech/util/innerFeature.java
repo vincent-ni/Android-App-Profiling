@@ -3,7 +3,6 @@ package edu.gatech.util;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class innerFeature {
 	static int counter = 0;

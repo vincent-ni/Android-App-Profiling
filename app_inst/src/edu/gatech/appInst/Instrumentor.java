@@ -95,10 +95,11 @@ public class Instrumentor extends AbstractStmtSwitch {
 		while(iter.hasNext()) {
 			
 			Stmt u = (Stmt)iter.next();
+			
 			if(u.containsInvokeExpr()){
 				InvokeExpr exp = u.getInvokeExpr();
 				
-				if(exp.getMethod().getSignature().contains("<java.lang.Object: void <init>()>"))
+				if(exp.getMethod().getSignature().contains("void <init>()>"))
 					continue;
 				
 				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
@@ -130,12 +131,6 @@ public class Instrumentor extends AbstractStmtSwitch {
 					Value returnVal = ((AssignStmt) u).getLeftOp();
 					
 					Type type = returnVal.getType();
-					if(type instanceof IntType){
-						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(innerFeature.getNextName()), returnVal);
-						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
-						units.insertAfter(incStmt, u);
-					}
 					if(type instanceof PrimType){
 						insertInvokeStmtForPrim(G.setPrimReturnValRef, returnVal, -1, "returnVal", 
 								false, u);
@@ -200,6 +195,9 @@ public class Instrumentor extends AbstractStmtSwitch {
 		Type type = value.getType();
 		InvokeExpr expr;
 		
+		if(true) return;
+		if(type.toString().contains("StringBuilder"))
+			return;
 		if(which.equals("param")){
 			expr = G.jimple.newStaticInvokeExpr(ref, value, IntConstant.v(index), 
 					StringConstant.v(type.toString()));

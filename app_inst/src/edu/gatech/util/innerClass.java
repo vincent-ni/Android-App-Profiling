@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
+import android.util.Log;
+
 public class innerClass {
 	
 	public static List<MethodInfo> allMethods = new ArrayList<MethodInfo>();
@@ -20,6 +22,7 @@ public class innerClass {
 	
 	public static void callMethod(String method){
 		System.out.println("calling: " + method);
+		Log.e("Profile", "calling: " + method);
 		runSeq++;
 		Date currentDate = new Date();
 		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime());
@@ -114,7 +117,7 @@ public class innerClass {
 			out.close();
 			bos.close();
 		} catch(Exception e){
-			e.printStackTrace();
+//			xe.printStackTrace();
 		}
 		return size;
 	}
