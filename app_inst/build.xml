@@ -13,6 +13,7 @@
 			<pathelement location="libs/soot.jar"/>
 			<pathelement location="libs/ant.jar"/>
 			<pathelement location="libs/ant-launcher.jar"/>
+			<pathelement location="libs/framework.jar"/>
 		</path>
 		<property name="appInst.class.path" refid="appInst.class.path"/>
 		<sequential>
