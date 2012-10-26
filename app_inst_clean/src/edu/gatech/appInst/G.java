@@ -13,9 +13,17 @@ public class G {
 	
 	static final SootMethodRef testMethodRef;
 	
+	static final SootClass innerFeature;
+	static final String innerFeatureStr = "edu.gatech.util.innerFeature";
+	
+	static final SootMethodRef addFeatureRef;
+	
 	static{
 		innerClass = Scene.v().getSootClass(innerClassStr);
+		innerFeature = Scene.v().getSootClass(innerFeatureStr);
 		
 		testMethodRef = innerClass.getMethod("void test()").makeRef();
+		
+		addFeatureRef = innerFeature.getMethod("void addFeature(java.lang.String)").makeRef();
 	}
 }

@@ -12,6 +12,8 @@ import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
+import edu.gatech.util.innerFeature;
+
 import soot.PackManager;
 import soot.Scene;
 import soot.SceneTransformer;
@@ -36,6 +38,7 @@ public class Main extends SceneTransformer {
 		Scene.v().getApplicationClasses().remove(Scene.v().getSootClass(dummyMainClassName));
 				
 		if (DEBUG) printClasses("aft_instr.txt");
+		innerFeature.testPrint();
 	}
 	
 	public static void main(String[] args) {
@@ -111,7 +114,8 @@ public class Main extends SceneTransformer {
 	private static void loadOtherClasses()
 	{
 		String[] classNames = new String[]{
-			"edu.gatech.util.innerClass"
+			"edu.gatech.util.innerClass",
+			"edu.gatech.util.innerFeature"
 		};
 		
 		for(String cname : classNames){
