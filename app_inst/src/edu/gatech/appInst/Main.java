@@ -112,7 +112,8 @@ public class Main extends SceneTransformer {
 		String[] classNames = new String[]{
 			"edu.gatech.util.innerClass",
 			"edu.gatech.util.MethodInfo",
-			"edu.gatech.util.ObjectInfo"
+			"edu.gatech.util.ObjectInfo",
+			"edu.gatech.util.innerFeature"
 		};
 		
 		for(String cname : classNames){

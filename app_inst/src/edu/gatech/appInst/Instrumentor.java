@@ -1,10 +1,15 @@
 package edu.gatech.appInst;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import edu.gatech.util.innerFeature;
+
 import soot.ArrayType;
 import soot.Body;
+import soot.IntType;
+import soot.Local;
 import soot.PrimType;
 import soot.SootClass;
 import soot.SootMethod;
@@ -13,12 +18,15 @@ import soot.Type;
 import soot.Unit;
 import soot.Value;
 import soot.jimple.AbstractStmtSwitch;
+import soot.jimple.AddExpr;
 import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
+import soot.jimple.toolkits.annotation.logic.Loop;
+import soot.toolkits.graph.LoopNestTree;
 import soot.util.Chain;
 
 public class Instrumentor extends AbstractStmtSwitch {
@@ -48,12 +56,41 @@ public class Instrumentor extends AbstractStmtSwitch {
 	
 	private void instrument(SootMethod method) {
 		System.out.println("Instrumenting " + method);
-		Body body = method.retrieveActiveBody();		
+		Body body = method.retrieveActiveBody();
+		LoopNestTree loopNestTree = new LoopNestTree(body);
 	
 		Chain<Unit> units = body.getUnits();
 		Iterator iter = units.snapshotIterator();
 		currentMethod = method;
 		currentUnits = units;
+		
+		if(!loopNestTree.isEmpty()) {
+			int i = 0;
+			Local[] l = new Local[loopNestTree.size()];
+			AssignStmt[] incStmt = new AssignStmt[loopNestTree.size()];
+			for (Loop loop : loopNestTree) {
+				// Stmt u = loop.getHead();
+				// System.out.println("Found a loop with head: " + u);
+				// System.out.println("JumpBack stmt " + loop.getBackJumpStmt());
+				l[i] = G.jimple.newLocal(innerFeature.getNextName(), IntType.v());
+				body.getLocals().add(l[i]);
+				AssignStmt assign = G.jimple.newAssignStmt(l[i], IntConstant.v(0));
+				units.insertAfter(assign, units.getFirst());
+				AddExpr incExpr = G.jimple.newAddExpr(l[i], IntConstant.v(1));
+				incStmt[i] = G.jimple.newAssignStmt(l[i], incExpr);
+				units.insertBefore(incStmt[i], loop.getBackJumpStmt());
+				i++;
+			}
+			Collection<Stmt> stmts = loopNestTree.last().getLoopExits();
+			for (Stmt stmt : stmts) {
+				for (int j = 0; j < loopNestTree.size(); j++) {
+					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+							StringConstant.v(l[j].getName()), incStmt[j].getLeftOp());
+					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
+					units.insertAfter(incStmt1, stmt);
+				}
+			}
+		}
 		
 		while(iter.hasNext()) {
 			
@@ -93,6 +130,12 @@ public class Instrumentor extends AbstractStmtSwitch {
 					Value returnVal = ((AssignStmt) u).getLeftOp();
 					
 					Type type = returnVal.getType();
+					if(type instanceof IntType){
+						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+								StringConstant.v(innerFeature.getNextName()), returnVal);
+						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
+						units.insertAfter(incStmt, u);
+					}
 					if(type instanceof PrimType){
 						insertInvokeStmtForPrim(G.setPrimReturnValRef, returnVal, -1, "returnVal", 
 								false, u);

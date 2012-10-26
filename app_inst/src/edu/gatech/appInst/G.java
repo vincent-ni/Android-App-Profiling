@@ -11,6 +11,9 @@ public class G {
 	static final SootClass innerClass;
 	static final String innerClassStr = "edu.gatech.util.innerClass";
 	
+	static final SootClass innerFeature;
+	static final String innerFeatureStr = "edu.gatech.util.innerFeature";
+	
 	static final SootMethodRef testMethodRef;
 	static final SootMethodRef callMethodRef;
 	static final SootMethodRef endMethodRef;
@@ -25,9 +28,11 @@ public class G {
 	static final SootMethodRef updateArrayForBaseRef;
 	static final SootMethodRef updateArrayForReturnRef;
 	static final SootMethodRef updateArrayForParamRef;
+	static final SootMethodRef addFeatureRef;
 	
 	static{
 		innerClass = Scene.v().getSootClass(innerClassStr);
+		innerFeature = Scene.v().getSootClass(innerFeatureStr);
 		
 		testMethodRef = innerClass.getMethod("void test()").makeRef();
 		callMethodRef = innerClass.getMethod("void callMethod(java.lang.String)").makeRef();
@@ -43,5 +48,6 @@ public class G {
 		updateArrayForBaseRef = innerClass.getMethod("void updateArrayForBase(java.lang.Object,java.lang.String,int)").makeRef();
 		updateArrayForReturnRef = innerClass.getMethod("void updateArrayForReturn(java.lang.Object,java.lang.String,int)").makeRef();
 		updateArrayForParamRef = innerClass.getMethod("void updateArrayForParam(java.lang.Object,int,java.lang.String,int)").makeRef();
+		addFeatureRef = innerFeature.getMethod("void addFeature(java.lang.String,int)").makeRef();
 	}
 }
