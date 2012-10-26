@@ -144,6 +144,12 @@ public class Instrumentor extends AbstractStmtSwitch {
 //								G.jimple.newStaticInvokeExpr(G.setNonPrimReturnValRef, returnVal, 
 //										StringConstant.v(type.toString()))), u);
 					}
+					if(type instanceof IntType){
+						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+						StringConstant.v(innerFeature.getNextName()), returnVal);
+						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
+						units.insertAfter(incStmt, u);
+					}
 				}
 				
 				if(exp instanceof InstanceInvokeExpr){
