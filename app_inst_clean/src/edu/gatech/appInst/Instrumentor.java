@@ -1,6 +1,5 @@
 package edu.gatech.appInst;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -67,6 +66,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 		if(!loopNestTree.isEmpty()) {
 			int i = 0;
 			Local[] l = new Local[loopNestTree.size()];
+			AssignStmt[] incStmt = new AssignStmt[loopNestTree.size()];
 			for (Loop loop : loopNestTree) {
 //				Stmt u = loop.getHead();
 //				System.out.println("Found a loop with head: " + u);
@@ -76,18 +76,18 @@ public class Instrumentor extends AbstractStmtSwitch {
 				AssignStmt assign = G.jimple.newAssignStmt(l[i], IntConstant.v(0));
 				units.insertAfter(assign, units.getFirst());
 				AddExpr incExpr = G.jimple.newAddExpr(l[i], IntConstant.v(1));
-				AssignStmt incStmt = G.jimple.newAssignStmt(l[i], incExpr);
-				units.insertBefore(incStmt, loop.getBackJumpStmt());
+				incStmt[i] = G.jimple.newAssignStmt(l[i], incExpr);
+				units.insertBefore(incStmt[i], loop.getBackJumpStmt());
 				i++;
 			}
 			Collection<Stmt> stmts = loopNestTree.last().getLoopExits();
 			for (Stmt stmt : stmts) {
-//				for (int j = 0; j < loopNestTree.size(); j++) {
-//					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef, 
-//							StringConstant.v(l[j].getName()), val);
-//					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
-//					units.insertAfter(incStmt1, stmt);
-//				}
+				for (int j = 0; j < loopNestTree.size(); j++) {
+					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef, 
+							StringConstant.v(l[j].getName()), incStmt[j].getLeftOp());
+					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
+					units.insertAfter(incStmt1, stmt);
+				}
 			}
 		}
 		
@@ -95,12 +95,12 @@ public class Instrumentor extends AbstractStmtSwitch {
 			Stmt u = (Stmt)iter.next();
 			if(u.containsInvokeExpr()) {
 				if(u instanceof AssignStmt){
-//					Value returnVal = ((AssignStmt) u).getLeftOp();
-//					if(returnVal.getType() instanceof IntType){
-//						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-//								StringConstant.v(innerFeature.getNextName()), returnVal);
-//						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
-//						units.insertAfter(incStmt, u);
+					Value returnVal = ((AssignStmt) u).getLeftOp();
+					if(returnVal.getType() instanceof IntType){
+						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+								StringConstant.v(innerFeature.getNextName()), returnVal);
+						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
+						units.insertAfter(incStmt, u);
 					}
 				}
 			}

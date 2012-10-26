@@ -11,7 +11,7 @@ public class innerFeature {
 	public static Map<String, Integer> allFeatures = new HashMap<String, Integer>();
 		
 	public static void addFeature(String name, int value) {
-		System.out.println("Addfeature " + name);
+		System.out.println("AddFeature " + name + " " + value);
 		allFeatures.put(name, value);
 	}
 	
