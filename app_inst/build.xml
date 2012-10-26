@@ -21,7 +21,7 @@
 			<javac srcdir="src" destdir="classes"
 			    debug="true" debuglevel="source,lines,vars"
 				classpath="${appInst.class.path}" includeantruntime="false"/>
-			<jar jarfile="${appInst.jar.file}" basedir="classes"/>
+			<jar jarfile="jars/appInst.jar" basedir="classes"/>
 		</sequential>
 	</target>
 	
