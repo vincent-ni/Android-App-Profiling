@@ -12,6 +12,8 @@ import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
+import edu.gatech.util.innerFeature;
+
 import soot.PackManager;
 import soot.Scene;
 import soot.SceneTransformer;
@@ -50,8 +52,8 @@ public class Main extends SceneTransformer {
 		
 		StringBuilder builder = new StringBuilder();
 		builder.append("-w -p cg off -keep-line-number -keep-bytecode-offset ");
-//		builder.append("-dynamic-class ");
-//		builder.append("edu.gatech.util.innerClass ");
+		builder.append("-dynamic-class ");
+		builder.append("edu.gatech.util.innerClass ");
 		builder.append("-soot-classpath ");
 		builder.append(inJars + File.pathSeparator + libJars + " ");
 		builder.append("-dynamic-package ");
@@ -112,8 +114,7 @@ public class Main extends SceneTransformer {
 	{
 		String[] classNames = new String[]{
 			"edu.gatech.util.innerClass",
-			"edu.gatech.util.MethodInfo",
-			"edu.gatech.util.ObjectInfo"
+			"edu.gatech.util.innerFeature"
 		};
 		
 		for(String cname : classNames){
