@@ -1,5 +1,5 @@
 <project name="appInst" default="build">
-	<property name="appInst.dir" location="/home/yjy/pag/app-profile/Android-App-Profiling/app_inst"/>
+	<property name="appInst.dir" location="$PROJ_DIR/app_inst"/>
 
 	<property name="appInst.jar.file" location="${appInst.dir}/jars/appInst.jar"/>
 	

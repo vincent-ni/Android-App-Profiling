@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="LeakLocation">
 	<property name="sdk.dir" location="$SDK_INSTALL"/>
-	<property name="appInst.dir" location="$PROJ_DIR/app_inst"/>
+	<property name="appInst.dir" location="/home/yjy/pag/app-profile/Android-App-Profiling/app_inst"/>
 
 	<property name="a3t.libraryjars" value="${appInst.dir}/jars/appInst.jar:${appInst.dir}/libs/framework.jar:${appInst.dir}/libs/core.jar:${appInst.dir}/libs/ext.jar:${appInst.dir}/libs/junit.jar:${appInst.dir}/libs/bouncycastle.jar"/>
 	<property name="app.jarfile" value="bin/app.jar" />
