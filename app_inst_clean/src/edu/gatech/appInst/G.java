@@ -23,7 +23,6 @@ public class G {
 		innerFeature = Scene.v().getSootClass(innerFeatureStr);
 		
 		testMethodRef = innerClass.getMethod("void test()").makeRef();
-		
-		addFeatureRef = innerFeature.getMethod("void addFeature(java.lang.String)").makeRef();
+		addFeatureRef = innerFeature.getMethod("void addFeature(java.lang.String, int)").makeRef();
 	}
 }

@@ -273,16 +273,21 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         return;
     }
 
-    public static void addFeature(java.lang.String, java.lang.Integer)
+    public static void addFeature(java.lang.String, int)
     {
-        java.lang.String r0;
-        java.lang.Integer r1;
-        java.util.Map $r2;
+        java.lang.String r0, $r4;
+        int i0;
+        java.io.PrintStream $r1;
+        java.lang.StringBuilder $r2, $r3;
 
         r0 := @parameter0: java.lang.String;
-        r1 := @parameter1: java.lang.Integer;
-        $r2 = <edu.gatech.util.innerFeature: java.util.Map allFeatures>;
-        interfaceinvoke $r2.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r0, r1);
+        i0 := @parameter1: int;
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("Addfeature ");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r4);
         return;
     }
 

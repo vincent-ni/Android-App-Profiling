@@ -9,13 +9,9 @@ public class innerFeature {
 	static int counter = 0;
 	
 	public static Map<String, Integer> allFeatures = new HashMap<String, Integer>();
-	
-	public static void addFeature(String name) {
+		
+	public static void addFeature(String name, int value) {
 		System.out.println("Addfeature " + name);
-		allFeatures.put(name, 0);
-	}
-	
-	public static void addFeature(String name, Integer value) {
 		allFeatures.put(name, value);
 	}
 	

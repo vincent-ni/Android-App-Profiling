@@ -1,5 +1,6 @@
 package edu.gatech.appInst;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -81,12 +82,12 @@ public class Instrumentor extends AbstractStmtSwitch {
 			}
 			Collection<Stmt> stmts = loopNestTree.last().getLoopExits();
 			for (Stmt stmt : stmts) {
-				for (int j = 0; j < loopNestTree.size(); j++) {
-					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef, 
-							StringConstant.v(l[j].getName()));
-					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
-					units.insertAfter(incStmt1, stmt);
-				}
+//				for (int j = 0; j < loopNestTree.size(); j++) {
+//					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef, 
+//							StringConstant.v(l[j].getName()), val);
+//					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
+//					units.insertAfter(incStmt1, stmt);
+//				}
 			}
 		}
 		
@@ -94,13 +95,12 @@ public class Instrumentor extends AbstractStmtSwitch {
 			Stmt u = (Stmt)iter.next();
 			if(u.containsInvokeExpr()) {
 				if(u instanceof AssignStmt){
-					Value returnVal = ((AssignStmt) u).getLeftOp();
-					Type type = returnVal.getType();
-					if (type instanceof PrimType) {
-						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(innerFeature.getNextName()));
-						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
-						units.insertAfter(incStmt, u);
+//					Value returnVal = ((AssignStmt) u).getLeftOp();
+//					if(returnVal.getType() instanceof IntType){
+//						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+//								StringConstant.v(innerFeature.getNextName()), returnVal);
+//						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
+//						units.insertAfter(incStmt, u);
 					}
 				}
 			}

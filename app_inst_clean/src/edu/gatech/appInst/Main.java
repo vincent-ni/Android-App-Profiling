@@ -38,7 +38,6 @@ public class Main extends SceneTransformer {
 		Scene.v().getApplicationClasses().remove(Scene.v().getSootClass(dummyMainClassName));
 				
 		if (DEBUG) printClasses("aft_instr.txt");
-		innerFeature.testPrint();
 	}
 	
 	public static void main(String[] args) {
