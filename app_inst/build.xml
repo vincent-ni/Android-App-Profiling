@@ -1,5 +1,7 @@
 <project name="appInst" default="build">
-	<property name="appInst.dir" location="$PROJ_DIR/app_inst"/>
+	<property environment="env"/>
+
+	<property name="appInst.dir" location="${env.PROJ_DIR}/app_inst"/>
 
 	<property name="appInst.jar.file" location="${appInst.dir}/jars/appInst.jar"/>
 	
@@ -21,7 +23,7 @@
 			<javac srcdir="src" destdir="classes"
 			    debug="true" debuglevel="source,lines,vars"
 				classpath="${appInst.class.path}" includeantruntime="false"/>
-			<jar jarfile="jars/appInst.jar" basedir="classes"/>
+			<jar jarfile="${appInst.dir}/jars/appInst.jar" basedir="classes"/>
 		</sequential>
 	</target>
 	
