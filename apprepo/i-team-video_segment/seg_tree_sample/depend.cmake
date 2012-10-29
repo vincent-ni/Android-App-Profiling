@@ -1,0 +1,2 @@
+set(DEPENDENT_PACKAGES video_framework video_display_qt segmentation sift_lib)
+

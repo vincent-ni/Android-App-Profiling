@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/cudatemplates/!svn/ver/277/trunk
+END
+CudaTemplatesConfig.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/cudatemplates/!svn/ver/254/trunk/CudaTemplatesConfig.cmake
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/cudatemplates/!svn/ver/254/trunk/configure
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/cudatemplates/!svn/ver/254/trunk/LICENSE
+END
+Doxyfile
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/cudatemplates/!svn/ver/254/trunk/Doxyfile
+END
+CudaTemplatesConfigVersion.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/cudatemplates/!svn/ver/254/trunk/CudaTemplatesConfigVersion.cmake
+END
+CTestConfig.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/254/trunk/CTestConfig.cmake
+END
+Doxyfile.in
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/cudatemplates/!svn/ver/254/trunk/Doxyfile.in
+END
+cudatemplates.spec.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/cudatemplates/!svn/ver/254/trunk/cudatemplates.spec.in
+END
+CudaTemplatesConfigVersion.cmake.in
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/cudatemplates/!svn/ver/254/trunk/CudaTemplatesConfigVersion.cmake.in
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/cudatemplates/!svn/ver/254/trunk/CMakeLists.txt
+END
+README.Debian
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/cudatemplates/!svn/ver/254/trunk/README.Debian
+END

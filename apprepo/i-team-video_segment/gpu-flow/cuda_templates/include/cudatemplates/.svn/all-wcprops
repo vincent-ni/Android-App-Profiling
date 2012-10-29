@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/cudatemplates/!svn/ver/277/trunk/include/cudatemplates
+END
+error.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/cudatemplates/!svn/ver/275/trunk/include/cudatemplates/error.hpp
+END
+devicememorypitched.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/devicememorypitched.hpp
+END
+gilreference.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/gilreference.hpp
+END
+stream.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/cudatemplates/!svn/ver/264/trunk/include/cudatemplates/stream.hpp
+END
+vector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/vector.hpp
+END
+iplreference.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/iplreference.hpp
+END
+storage.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/storage.hpp
+END
+copy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/copy.hpp
+END
+size.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/cudatemplates/!svn/ver/277/trunk/include/cudatemplates/size.hpp
+END
+layout.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/cudatemplates/!svn/ver/275/trunk/include/cudatemplates/layout.hpp
+END
+devicememorymapped.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/devicememorymapped.hpp
+END
+convert.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/convert.hpp
+END
+event.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/cudatemplates/!svn/ver/264/trunk/include/cudatemplates/event.hpp
+END
+copy_constant.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/copy_constant.hpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/CMakeLists.txt
+END
+hostmemorylocked.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/hostmemorylocked.hpp
+END
+devicememory.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/271/trunk/include/cudatemplates/devicememory.hpp
+END
+iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/iterator.hpp
+END
+cuda_gcc43_compat.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cuda_gcc43_compat.hpp
+END
+hostmemoryheap.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/hostmemoryheap.hpp
+END
+pointerstorage.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/pointerstorage.hpp
+END
+symbol.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/symbol.hpp
+END
+itkreference.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/277/trunk/include/cudatemplates/itkreference.hpp
+END
+hostmemory.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/hostmemory.hpp
+END
+cufft.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cufft.hpp
+END
+devicememoryreference.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/cudatemplates/!svn/ver/266/trunk/include/cudatemplates/devicememoryreference.hpp
+END
+cublas.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas.hpp
+END
+staticassert.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/staticassert.hpp
+END
+deviceproperties.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/cudatemplates/!svn/ver/262/trunk/include/cudatemplates/deviceproperties.hpp
+END
+array.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/array.hpp
+END
+pack.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/pack.hpp
+END
+cufft_common.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cufft_common.hpp
+END
+vecmult.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/vecmult.hpp
+END
+pointer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/pointer.hpp
+END
+image.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/image.hpp
+END
+devicememorylinear.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/devicememorylinear.hpp
+END
+hostmemoryreference.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/hostmemoryreference.hpp
+END
+dimension.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/dimension.hpp
+END

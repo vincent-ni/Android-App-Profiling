@@ -18,11 +18,11 @@ public class innerFeature {
 		return "c" + (counter++);
 	}
 
-	public static void testPrint() {
-		Iterator iter = allFeatures.entrySet().iterator();
-		while (iter.hasNext()) {
-			Map.Entry pairs = (Map.Entry)iter.next();
-			System.out.println(pairs.getKey() + " = " + pairs.getValue());
-		}
-	}
+//	public static void testPrint() {
+//		Iterator iter = allFeatures.entrySet().iterator();
+//		while (iter.hasNext()) {
+//			Map.Entry pairs = (Map.Entry)iter.next();
+//			System.out.println(pairs.getKey() + " = " + pairs.getValue());
+//		}
+//	}
 }

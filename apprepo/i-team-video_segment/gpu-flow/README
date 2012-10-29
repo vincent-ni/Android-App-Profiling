@@ -1,0 +1,76 @@
+NOTE THAT THE INCLUDED BINARIES WILL ONLY WORK ON 64bit LINUX OR 32bit WINDOWS XP! 
+(The Linux binaries were built with Ubuntu Jaunty.)
+
+Contact:
+ Manuel Werlberger: werlberger@icg.tugraz.at
+
+Prerequisites:
+ All applications and libraries of this provided package requires a CUDA enabled NVidia
+ graphics device. You need to have at least Cuda 2.2 installed to use the included library.
+ For convenience i suggest to use cmake with FindCUDA from 
+ https://gforge.sci.utah.edu/gf/project/findcuda/.
+
+Optical Flow Library: 
+ The binary library can be found in the lib directories. See the header file FlowLib.h
+ for documentation of the functionality and the doc directory for the Doxygen documentation. 
+ For easier usage you can download <cudatemplates> from http://cudatemplates.sf.net.
+
+Description:
+ The Optical Flow Library provides the user with a fast optical flow calculation between
+ two images. The algorithm uses Total Variation regularization, and a gray value
+ constancy assumption. The optical flow is dense, and provides sharp edges. In addition
+ the total variation regularization term is replaced by the so-called Huber function
+ with its origin in the field of robust statistics to remove the well-known stair-casing
+ artefacts of the total variation regularization. In addition a diffusion-tensor is used
+ as weighting function for the regularization term. This enhances the flow accuracy near
+ edges and corners due to the additional information of edge direction in the energy
+ minimization step.
+
+ To increase the robustness of optical flow calculations on difficult data, three frames
+ are taken into account using a second data fidelity term. The resulting energy
+ optimization problem can be solved with few extra costs in performance. Especially if
+ single frames contain erroneous data the three-frame method gains robustness
+ calculating the flow field.
+
+
+Example - Demo:
+ A simple commandline application is provided to test the library and show its basic
+ usage. To compile the application you need cudatemplates and boost as dependencies. The
+ CMakeLists file uses the FindCuda and FindBoost modules to search for its include
+ directories. You can download the FindCuda module from:
+ http://www.sci.utah.edu/~abe/FindCuda.html Again the <cudatemplates> can be found at
+ the previously given SF website.
+ 
+ As a result for optical flow fields a .flo file can be generated. This format is taken
+ from the Middlebury Optical Flow evaluation database and can be converted into colored
+ flow image with the help of Matlab or c++. A binary for conversion is included in the
+ cmd/bin directory for Linux. For Windows you can use the matlab files in the 
+ cmd/flow-code-matlab directory.
+ 
+ The Windows example was built using Visual Studio 2009 whereas the Linux binary was built 
+ with gcc 4.3.
+ 
+Therms of usage:
+ You are free to use this software for whatever you like. If you use this algorithm for
+ a scientific publication, please cite the following paper:
+ 
+ @INPROCEEDINGS{Zach2007_OpticalFlow,
+  author = {C. Zach and T. Pock and H. Bischof} ,
+  title = {A Duality Based Approach for Realtime TV-L1 Optical Flow} ,
+  pages = {214--223} ,
+  year = {2007} ,
+  booktitle = {Pattern Recognition (Proc. DAGM)} ,
+  address = {Heidelberg, Germany} ,
+ } 
+  
+Disclaimer:
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED 
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO 
+ EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

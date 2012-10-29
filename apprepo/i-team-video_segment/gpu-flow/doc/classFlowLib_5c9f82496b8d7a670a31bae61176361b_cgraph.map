@@ -1,0 +1,9 @@
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#ad9eda2fd05932e9f3261b013f248e41" title="CudaFlowLib::BaseData::getNumScales" alt="" coords="213,56,467,83">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#ba4f9084863b63556ad2a1216468fe9a" title="CudaFlowLib::BaseData::setNumScales" alt="" coords="213,107,467,133">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#4a4bb3e928f663c18686031ec48e2ebd" title="CudaFlowLib::BaseData::checkNumScales" alt="" coords="847,5,1116,32">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#99e35be649dfaccff2abdcc4696937f1" title="CudaFlowLib::BaseData::getRegionSize" alt="" coords="856,56,1107,83">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#11d5915109ec483e1220ac27921b0051" title="CudaFlowLib::BaseData::getSize" alt="" coords="876,208,1087,235">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#f69e89819611f5c3da8ac217fd9501d6" title="CudaFlowLib::BaseData::initData" alt="" coords="551,208,761,235">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#dc0ececfa7a49f8f9f9adbc6c3aa2d76" title="CudaFlowLib::BaseData::rebuildFlowPyramid" alt="" coords="516,107,796,133">
+<area shape="rect" href="$namespaceCudaFlowLib.html#cfd20103d798c6ea8ba833a5880f9ecd" title="CudaFlowLib::calculateOptimalCudaSize" alt="" coords="853,157,1109,184">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#35e059c6665454f9e42b137e57593519" title="CudaFlowLib::BaseData::getRegionOfs" alt="" coords="857,107,1105,133">

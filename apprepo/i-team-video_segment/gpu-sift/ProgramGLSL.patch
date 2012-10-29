@@ -1,0 +1,653 @@
+*** ProgramGLSL.cpp.orig.cpp	2010-03-03 00:07:40.000000000 -0800
+--- ProgramGLSL.cpp	2010-06-01 00:52:59.000000000 -0700
+***************
+*** 398,411 ****
+  	out<<setprecision(8);
+  
+  	out<<  "uniform sampler2DRect tex;";
+! 	out<< "\nvoid main(void){ vec4 result = vec4(0, 0, 0, 0);\n";
+  	///use multi texture coordinate because nhpixels can be at most 3
+  	out<<"vec4 pc; vec2 coord; \n";
+  	for( i = 0 ; i < npixel ; i++)
+  	{
+  		out<<"coord = gl_TexCoord[0].xy + vec2(float("<<i-nhpixel<<"),0);\n";
+  		out<<"pc=texture2DRect(tex, coord);\n";
+! 		if(GlobalUtil::_PreciseBorder)		out<<"if(coord.x < 0) pc = pc.rrbb;\n";
+  		//for each sub-pixel j  in center, the weight of sub-pixel k 
+  		xw = (i - nhpixel)*2;
+  		for( j = 0; j < 3; j++)
+--- 398,411 ----
+  	out<<setprecision(8);
+  
+  	out<<  "uniform sampler2DRect tex;";
+! 	out<< "\nvoid main(void){ vec4 result = vec4(0.0, 0.0, 0.0, 0.0);\n";
+  	///use multi texture coordinate because nhpixels can be at most 3
+  	out<<"vec4 pc; vec2 coord; \n";
+  	for( i = 0 ; i < npixel ; i++)
+  	{
+  		out<<"coord = gl_TexCoord[0].xy + vec2(float("<<i-nhpixel<<"),0);\n";
+  		out<<"pc=texture2DRect(tex, coord);\n";
+! 		if(GlobalUtil::_PreciseBorder)		out<<"if(coord.x < 0.0) pc = pc.rrbb;\n";
+  		//for each sub-pixel j  in center, the weight of sub-pixel k 
+  		xw = (i - nhpixel)*2;
+  		for( j = 0; j < 3; j++)
+***************
+*** 455,461 ****
+  	{
+  		out<<"coord = gl_TexCoord[0].xy + vec2(0, float("<<i-nhpixel<<"));\n";
+  		out<<"pc=texture2DRect(tex, coord);\n";
+! 		if(GlobalUtil::_PreciseBorder)	out<<"if(coord.y < 0) pc = pc.rgrg;\n";
+  
+  		//for each sub-pixel j  in center, the weight of sub-pixel k 
+  		yw = (i - nhpixel)*2;
+--- 455,461 ----
+  	{
+  		out<<"coord = gl_TexCoord[0].xy + vec2(0, float("<<i-nhpixel<<"));\n";
+  		out<<"pc=texture2DRect(tex, coord);\n";
+! 		if(GlobalUtil::_PreciseBorder)	out<<"if(coord.y < 0.0) pc = pc.rgrg;\n";
+  
+  		//for each sub-pixel j  in center, the weight of sub-pixel k 
+  		yw = (i - nhpixel)*2;
+***************
+*** 513,520 ****
+  	"	gg.z = texture2DRect(tex, gl_TexCoord[3].xy).r;\n"
+  	"	gg.w = texture2DRect(tex, gl_TexCoord[4].xy).r;\n"
+  	"	vec2 dxdy = (gg.yw - gg.xz); \n"
+! 	"	float grad = 0.5*length(dxdy);\n"
+! 	"	float theta = grad==0? 0.0: atan(dxdy.y, dxdy.x);\n"
+  	"	gl_FragData[0] = vec4(cc.rg, grad, theta);\n"
+  	"}\n\0");
+  
+--- 513,520 ----
+  	"	gg.z = texture2DRect(tex, gl_TexCoord[3].xy).r;\n"
+  	"	gg.w = texture2DRect(tex, gl_TexCoord[4].xy).r;\n"
+  	"	vec2 dxdy = (gg.yw - gg.xz); \n"
+! 	"	float grad = 0.5*float(length(dxdy));\n"
+! 	"	float theta = grad == 0.0? 0.0: atan(dxdy.y, dxdy.x);\n"
+  	"	gl_FragData[0] = vec4(cc.rg, grad, theta);\n"
+  	"}\n\0");
+  
+***************
+*** 605,611 ****
+  	s_display_keys= new ProgramGLSL(
+  		"uniform sampler2DRect tex; void main(void){\n"
+  	"	vec4 cc = texture2DRect(tex, gl_TexCoord[0].st);\n"
+! 	"	if(cc.r ==0.0) discard; gl_FragColor =  (cc.r==1.0? vec4(1.0, 0.0, 0,1.0):vec4(0.0,1.0,0.0,1.0));}");
+  }
+  
+  void ShaderBagGLSL::LoadKeypointShader(float threshold, float edge_threshold)
+--- 605,611 ----
+  	s_display_keys= new ProgramGLSL(
+  		"uniform sampler2DRect tex; void main(void){\n"
+  	"	vec4 cc = texture2DRect(tex, gl_TexCoord[0].st);\n"
+! 	"	if(cc.r == 0.0) discard; gl_FragColor =  (cc.r==1.0? vec4(1.0, 0.0, 0,1.0):vec4(0.0,1.0,0.0,1.0));}");
+  }
+  
+  void ShaderBagGLSL::LoadKeypointShader(float threshold, float edge_threshold)
+***************
+*** 645,652 ****
+  	"	v2.z = texture2DRect(tex, gl_TexCoord[7].xy).g;\n"
+  	"	v2.w = texture2DRect(tex, TexRU.xy).g;\n"
+  	"	vec2 dxdy = (gg.yw - gg.xz); \n"
+! 	"	float grad = 0.5*length(dxdy);\n"
+! 	"	float theta = grad==0? 0.0: atan(dxdy.y, dxdy.x);\n"
+  	"	gl_FragData[0] = vec4(cc.rg, grad, theta);\n"
+  
+  	//test against 8 neighbours
+--- 645,652 ----
+  	"	v2.z = texture2DRect(tex, gl_TexCoord[7].xy).g;\n"
+  	"	v2.w = texture2DRect(tex, TexRU.xy).g;\n"
+  	"	vec2 dxdy = (gg.yw - gg.xz); \n"
+! 	"	float grad = 0.5*float(length(dxdy));\n"
+! 	"	float theta = grad==0.0? 0.0: atan(dxdy.y, dxdy.x);\n"
+  	"	gl_FragData[0] = vec4(cc.rg, grad, theta);\n"
+  
+  	//test against 8 neighbours
+***************
+*** 877,886 ****
+  	"vec4 helper = vec4( texture2DRect(tex, gl_TexCoord[0].xy).r,  texture2DRect(tex, gl_TexCoord[1].xy).r,\n"
+  	"texture2DRect(tex, gl_TexCoord[2].xy).r, texture2DRect(tex, gl_TexCoord[3].xy).r);\n"
+  	"bvec4 helper2 = bvec4( \n"
+! 	"all(lessThan(gl_TexCoord[0].xy , bbox)) && helper.x >0,\n"
+! 	"all(lessThan(gl_TexCoord[1].xy , bbox)) && helper.y >0,\n"
+! 	"all(lessThan(gl_TexCoord[2].xy , bbox)) && helper.z >0,\n"
+! 	"all(lessThan(gl_TexCoord[3].xy , bbox)) && helper.w >0);\n"
+  	"gl_FragColor = vec4(helper2);\n"
+  	"}");
+  	_param_genlist_init_bbox = glGetUniformLocation( *program, "bbox");
+--- 877,886 ----
+  	"vec4 helper = vec4( texture2DRect(tex, gl_TexCoord[0].xy).r,  texture2DRect(tex, gl_TexCoord[1].xy).r,\n"
+  	"texture2DRect(tex, gl_TexCoord[2].xy).r, texture2DRect(tex, gl_TexCoord[3].xy).r);\n"
+  	"bvec4 helper2 = bvec4( \n"
+! 	"all(lessThan(gl_TexCoord[0].xy , bbox)) && helper.x >0.0,\n"
+! 	"all(lessThan(gl_TexCoord[1].xy , bbox)) && helper.y >0.0,\n"
+! 	"all(lessThan(gl_TexCoord[2].xy , bbox)) && helper.z >0.0,\n"
+! 	"all(lessThan(gl_TexCoord[3].xy , bbox)) && helper.w >0.0);\n"
+  	"gl_FragColor = vec4(helper2);\n"
+  	"}");
+  	_param_genlist_init_bbox = glGetUniformLocation( *program, "bbox");
+***************
+*** 986,992 ****
+  
+  	out<<"\n"
+  	"#define GAUSSIAN_WF "<<GlobalUtil::_OrientationGaussianFactor<<" \n"
+! 	"#define SAMPLE_WF ("<<GlobalUtil::_OrientationWindowFactor<< " )\n"
+  	"#define ORIENTATION_THRESHOLD "<< GlobalUtil::_MulitiOrientationThreshold << "\n"
+  	"uniform sampler2DRect tex;					\n"
+  	"uniform sampler2DRect gradTex;				\n"
+--- 986,992 ----
+  
+  	out<<"\n"
+  	"#define GAUSSIAN_WF "<<GlobalUtil::_OrientationGaussianFactor<<" \n"
+! 	"#define SAMPLE_WF ("<<GlobalUtil::_OrientationWindowFactor<<".0 )\n"
+  	"#define ORIENTATION_THRESHOLD "<< GlobalUtil::_MulitiOrientationThreshold << "\n"
+  	"uniform sampler2DRect tex;					\n"
+  	"uniform sampler2DRect gradTex;				\n"
+***************
+*** 1002,1008 ****
+  	"	bins[6] = vec4(0.0);bins[7] = vec4(0.0);bins[8] = vec4(0.0);	\n"
+  	"	vec4 loc = texture2DRect(tex, gl_TexCoord[0].xy);	\n"
+  	"	vec2 pos = loc.xy;		\n"
+! 	"	bool orientation_mode = (size.z != 0);			\n"
+  	"	float sigma = orientation_mode? abs(size.z) : loc.w; \n";
+  	if(GlobalUtil::_SubpixelLocalization || GlobalUtil::_KeepExtremumSign)
+  	{
+--- 1002,1008 ----
+  	"	bins[6] = vec4(0.0);bins[7] = vec4(0.0);bins[8] = vec4(0.0);	\n"
+  	"	vec4 loc = texture2DRect(tex, gl_TexCoord[0].xy);	\n"
+  	"	vec2 pos = loc.xy;		\n"
+! 	"	bool orientation_mode = (size.z != 0.0);			\n"
+  	"	float sigma = orientation_mode? abs(size.z) : loc.w; \n";
+  	if(GlobalUtil::_SubpixelLocalization || GlobalUtil::_KeepExtremumSign)
+  	{
+***************
+*** 1042,1048 ****
+  	"				vec4 cc = texture2DRect(gradTex, spos);				\n"
+  	"				float grad = cc.b;	float theta = cc.a;				\n"
+  	"				float idx = floor(degrees(theta)*0.1);				\n"
+! 	"				if(idx < 0 ) idx += 36;									\n"
+  	"				float weight = grad*exp(sq_dist * factor);				\n"
+  	"				float vidx = fract(idx * 0.25) * 4.0;//mod(idx, 4.0) ;							\n"
+  	"				vec4 inc = weight*vec4(equal(vec4(vidx), vec4(0.0,1.0,2.0,3.0)));";
+--- 1042,1048 ----
+  	"				vec4 cc = texture2DRect(gradTex, spos);				\n"
+  	"				float grad = cc.b;	float theta = cc.a;				\n"
+  	"				float idx = floor(degrees(theta)*0.1);				\n"
+! 	"				if(idx < 0.0 ) idx += 36.0;									\n"
+  	"				float weight = grad*exp(sq_dist * factor);				\n"
+  	"				float vidx = fract(idx * 0.25) * 4.0;//mod(idx, 4.0) ;							\n"
+  	"				vec4 inc = weight*vec4(equal(vec4(vidx), vec4(0.0,1.0,2.0,3.0)));";
+***************
+*** 1062,1087 ****
+  		//nvfp40 still does not support dynamic array indexing
+  		//unrolled binary search...
+  		out<<"\n"
+! 	"				if(idx < 16)							\n"
+  	"				{										\n"
+! 	"					if(idx < 8)							\n"
+  	"					{									\n"
+! 	"						if(idx < 4)	{	bins[0]+=inc;}	\n"
+  	"						else		{	bins[1]+=inc;}	\n"
+  	"					}else								\n"
+  	"					{									\n"
+! 	"						if(idx < 12){	bins[2]+=inc;}	\n"
+  	"						else		{	bins[3]+=inc;}	\n"
+  	"					}									\n"
+! 	"				}else if(idx < 32)						\n"
+  	"				{										\n"
+! 	"					if(idx < 24)						\n"
+  	"					{									\n"
+! 	"						if(idx <20)	{	bins[4]+=inc;}	\n"
+  	"						else		{	bins[5]+=inc;}	\n"
+  	"					}else								\n"
+  	"					{									\n"
+! 	"						if(idx < 28){	bins[6]+=inc;}	\n"
+  	"						else		{	bins[7]+=inc;}	\n"
+  	"					}									\n"
+  	"				}else 						\n"
+--- 1062,1087 ----
+  		//nvfp40 still does not support dynamic array indexing
+  		//unrolled binary search...
+  		out<<"\n"
+! 	"				if(idx < 16.0)							\n"
+  	"				{										\n"
+! 	"					if(idx < 8.0)							\n"
+  	"					{									\n"
+! 	"						if(idx < 4.0)	{	bins[0]+=inc;}	\n"
+  	"						else		{	bins[1]+=inc;}	\n"
+  	"					}else								\n"
+  	"					{									\n"
+! 	"						if(idx < 12.0){	bins[2]+=inc;}	\n"
+  	"						else		{	bins[3]+=inc;}	\n"
+  	"					}									\n"
+! 	"				}else if(idx < 32.0)						\n"
+  	"				{										\n"
+! 	"					if(idx < 24.0)						\n"
+  	"					{									\n"
+! 	"						if(idx <20.0)	{	bins[4]+=inc;}	\n"
+  	"						else		{	bins[5]+=inc;}	\n"
+  	"					}else								\n"
+  	"					{									\n"
+! 	"						if(idx < 28.0){	bins[6]+=inc;}	\n"
+  	"						else		{	bins[7]+=inc;}	\n"
+  	"					}									\n"
+  	"				}else 						\n"
+***************
+*** 1264,1270 ****
+  	out<<"\n"
+  	"	vec4 hh = maxh * ORIENTATION_THRESHOLD;	bvec4 test;	\n"
+  	"	bins[9] = bins[0];								\n"
+! 	"	float npeaks = 0.0, k = 0;						\n"
+  	"	float prevb	= bins[8].w;						\n"
+  	"	for (int i = 0; i <9 ; i++)						\n"
+  	"	{\n"
+--- 1264,1270 ----
+  	out<<"\n"
+  	"	vec4 hh = maxh * ORIENTATION_THRESHOLD;	bvec4 test;	\n"
+  	"	bins[9] = bins[0];								\n"
+! 	"	float npeaks = 0.0, k = 0.0;						\n"
+  	"	float prevb	= bins[8].w;						\n"
+  	"	for (int i = 0; i <9 ; i++)						\n"
+  	"	{\n"
+***************
+*** 1405,1411 ****
+  	"	float bsz = bwin.x + bwin.y;					\n"
+  	"	vec4 sz;					\n"
+  	"	sz.xy = max(pt - vec2(bsz), vec2(1,1));\n"
+! 	"	sz.zw = min(pt + vec2(bsz), dim - 2);		\n"
+  	"	sz = floor(sz)+0.5;"; //move sample point to pixel center
+  	//get voting for two box
+  
+--- 1405,1411 ----
+  	"	float bsz = bwin.x + bwin.y;					\n"
+  	"	vec4 sz;					\n"
+  	"	sz.xy = max(pt - vec2(bsz), vec2(1,1));\n"
+! 	"	sz.zw = min(pt + vec2(bsz), dim - 2.0);		\n"
+  	"	sz = floor(sz)+0.5;"; //move sample point to pixel center
+  	//get voting for two box
+  
+***************
+*** 1428,1442 ****
+  	"				float theta = theta0 < 0.0? theta0 + 8.0 : theta0;;\n"
+  	"				diff = nxy + offsetpt.xy;								\n"
+  	"				float ww = exp(-0.125*dot(diff, diff));\n"
+! 	"				vec2 weights = 1 - nxyn;\n"
+  	"				float weight = weights.x * weights.y *mod*ww; \n"
+  	"				float theta1 = floor(theta); \n"
+  	"				float weight2 = (theta - theta1) * weight;\n"
+  	"				float weight1 = weight - weight2;\n"
+! 	"				DA += vec4(equal(vec4(theta1),  vec4(0, 1, 2, 3)))*weight1;\n"
+! 	"				DA += vec4(equal(vec4(theta1),  vec4(7, 0, 1, 2)))*weight2; \n"
+! 	"				DB += vec4(equal(vec4(theta1),  vec4(4, 5, 6, 7)))*weight1;\n"
+! 	"				DB += vec4(equal(vec4(theta1),  vec4(3, 4, 5, 6)))*weight2; \n"
+  	"			}\n"
+  	"		}\n"
+  	"	}\n";
+--- 1428,1442 ----
+  	"				float theta = theta0 < 0.0? theta0 + 8.0 : theta0;;\n"
+  	"				diff = nxy + offsetpt.xy;								\n"
+  	"				float ww = exp(-0.125*dot(diff, diff));\n"
+! 	"				vec2 weights = 1.0 - nxyn;\n"
+  	"				float weight = weights.x * weights.y *mod*ww; \n"
+  	"				float theta1 = floor(theta); \n"
+  	"				float weight2 = (theta - theta1) * weight;\n"
+  	"				float weight1 = weight - weight2;\n"
+! 	"				DA += vec4(equal(vec4(theta1),  vec4(0.0, 1.0, 2.0, 3.0)))*weight1;\n"
+! 	"				DA += vec4(equal(vec4(theta1),  vec4(7.0, 0.0, 1.0, 2.0)))*weight2; \n"
+! 	"				DB += vec4(equal(vec4(theta1),  vec4(4.0, 5.0, 6.0, 7.0)))*weight1;\n"
+! 	"				DB += vec4(equal(vec4(theta1),  vec4(3.0, 4.0, 5.0, 6.0)))*weight2; \n"
+  	"			}\n"
+  	"		}\n"
+  	"	}\n";
+***************
+*** 1506,1514 ****
+  	"uniform sampler2DRect tex;  uniform vec4 truncate; void main(){\n"
+  	"vec4 cc = texture2DRect(tex, min(gl_TexCoord[0].xy, truncate.xy)); \n"
+  	"bvec2 ob = lessThan(gl_TexCoord[0].xy, truncate.xy);\n"
+! 	"if(ob.y) { gl_FragColor = (truncate.z ==0 ? cc.rrbb : cc.ggaa); } \n"
+  	"else if(ob.x) {gl_FragColor = (truncate.w <1.5 ? cc.rgrg : cc.baba);} \n"
+! 	"else {	vec4 weights = vec4(vec4(0, 1, 2, 3) == truncate.w);\n"
+  	"float v = dot(weights, cc); gl_FragColor = vec4(v);}}");
+  
+  	_param_margin_copy_truncate = glGetUniformLocation(*program, "truncate");
+--- 1506,1514 ----
+  	"uniform sampler2DRect tex;  uniform vec4 truncate; void main(){\n"
+  	"vec4 cc = texture2DRect(tex, min(gl_TexCoord[0].xy, truncate.xy)); \n"
+  	"bvec2 ob = lessThan(gl_TexCoord[0].xy, truncate.xy);\n"
+! 	"if(ob.y) { gl_FragColor = (truncate.z ==0.0 ? cc.rrbb : cc.ggaa); } \n"
+  	"else if(ob.x) {gl_FragColor = (truncate.w <1.5 ? cc.rgrg : cc.baba);} \n"
+! 	"else {	vec4 weights = vec4(vec4(0, 1, 2, 3) == vec4(truncate.w));\n"
+  	"float v = dot(weights, cc); gl_FragColor = vec4(v);}}");
+  
+  	_param_margin_copy_truncate = glGetUniformLocation(*program, "truncate");
+***************
+*** 1632,1639 ****
+  	"vec4 cc = vec4(equal(abs(oc.rrrr), vec4(1.0, 2.0, 3.0, 4.0))); \n"
+  	"bvec2 ff = lessThan(fract(gl_TexCoord[0].xy) , vec2(0.5));\n"
+  	"float v = ff.y ?(ff.x ? cc.r : cc.g):(ff.x ? cc.b : cc.a);\n"
+! 	"if(v == 0) discard;	\n"
+! 	"else if(oc.r > 0) gl_FragColor = vec4(1.0, 0, 0,1.0); \n"
+  	"else gl_FragColor = vec4(0.0,1.0,0.0,1.0);	}" );
+  }
+  
+--- 1632,1639 ----
+  	"vec4 cc = vec4(equal(abs(oc.rrrr), vec4(1.0, 2.0, 3.0, 4.0))); \n"
+  	"bvec2 ff = lessThan(fract(gl_TexCoord[0].xy) , vec2(0.5));\n"
+  	"float v = ff.y ?(ff.x ? cc.r : cc.g):(ff.x ? cc.b : cc.a);\n"
+! 	"if(v == 0.0) discard;	\n"
+! 	"else if(oc.r > 0.0) gl_FragColor = vec4(1.0, 0, 0,1.0); \n"
+  	"else gl_FragColor = vec4(0.0,1.0,0.0,1.0);	}" );
+  }
+  
+***************
+*** 1648,1654 ****
+  	}
+  	out<<"\n"
+  	"#define GAUSSIAN_WF "<<GlobalUtil::_OrientationGaussianFactor<<" \n"
+! 	"#define SAMPLE_WF ("<<GlobalUtil::_OrientationWindowFactor<< " )\n"
+  	"#define ORIENTATION_THRESHOLD "<< GlobalUtil::_MulitiOrientationThreshold << "\n"
+  	"uniform sampler2DRect tex;	uniform sampler2DRect gtex;\n"
+  	"uniform sampler2DRect otex; uniform vec4 size;\n"
+--- 1648,1654 ----
+  	}
+  	out<<"\n"
+  	"#define GAUSSIAN_WF "<<GlobalUtil::_OrientationGaussianFactor<<" \n"
+! 	"#define SAMPLE_WF ("<<GlobalUtil::_OrientationWindowFactor<< ".0 )\n"
+  	"#define ORIENTATION_THRESHOLD "<< GlobalUtil::_MulitiOrientationThreshold << "\n"
+  	"uniform sampler2DRect tex;	uniform sampler2DRect gtex;\n"
+  	"uniform sampler2DRect otex; uniform vec4 size;\n"
+***************
+*** 1660,1678 ****
+  	"	bins[6] = vec4(0.0);bins[7] = vec4(0.0);bins[8] = vec4(0.0);	\n"
+  	"	vec4 sift = texture2DRect(tex, gl_TexCoord[0].xy);	\n"
+  	"	vec2 pos = sift.xy; \n"
+! 	"	bool orientation_mode = (size.z != 0);		\n"
+  	"	float sigma = orientation_mode? (abs(size.z) * pow(size.w, sift.w) * sift.z) : (sift.w); \n"
+! 	"	//bool fixed_orientation = (size.z < 0);		\n"
+! 	"	if(size.z < 0) {gl_FragData[0] = vec4(pos, 0, sigma); return;}"
+  	"	float gsigma = sigma * GAUSSIAN_WF;				\n"
+  	"	vec2 win = abs(vec2(sigma)) * (SAMPLE_WF * GAUSSIAN_WF);	\n"
+  	"	vec2 dim = size.xy;							\n"
+  	"	vec4 dist_threshold = vec4(win.x*win.x+0.5);			\n"
+  	"	float factor = -0.5/(gsigma*gsigma);			\n"
+  	"	vec4 sz;	vec2 spos;						\n"
+! 	"	//if(any(pos.xy <= 1)) discard;					\n"
+  	"	sz.xy = max( pos - win, vec2(2,2));			\n"
+! 	"	sz.zw = min( pos + win, dim-3);				\n"
+  	"	sz = floor(sz*0.5) + 0.5; ";
+  		//loop to get the histogram
+  
+--- 1660,1678 ----
+  	"	bins[6] = vec4(0.0);bins[7] = vec4(0.0);bins[8] = vec4(0.0);	\n"
+  	"	vec4 sift = texture2DRect(tex, gl_TexCoord[0].xy);	\n"
+  	"	vec2 pos = sift.xy; \n"
+! 	"	bool orientation_mode = (size.z != 0.0);		\n"
+  	"	float sigma = orientation_mode? (abs(size.z) * pow(size.w, sift.w) * sift.z) : (sift.w); \n"
+! 	"	//bool fixed_orientation = (size.z < 0.0);		\n"
+! 	"	if(size.z < 0.0) {gl_FragData[0] = vec4(pos, 0, sigma); return;}"
+  	"	float gsigma = sigma * GAUSSIAN_WF;				\n"
+  	"	vec2 win = abs(vec2(sigma)) * (SAMPLE_WF * GAUSSIAN_WF);	\n"
+  	"	vec2 dim = size.xy;							\n"
+  	"	vec4 dist_threshold = vec4(win.x*win.x+0.5);			\n"
+  	"	float factor = -0.5/(gsigma*gsigma);			\n"
+  	"	vec4 sz;	vec2 spos;						\n"
+! 	"	//if(any(pos.xy <= 1.0)) discard;					\n"
+  	"	sz.xy = max( pos - win, vec2(2,2));			\n"
+! 	"	sz.zw = min( pos + win, dim-3.0);				\n"
+  	"	sz = floor(sz*0.5) + 0.5; ";
+  		//loop to get the histogram
+  
+***************
+*** 1681,1688 ****
+  	"	{																\n"
+  	"		for(spos.x = sz.x; spos.x <= sz.z;	spos.x+=1.0)			\n"
+  	"		{															\n"
+! 	"			vec2 offset = 2* spos - pos - 0.5;					\n"
+! 	"			vec4 off = vec4(offset, offset + 1);				\n"
+  	"			vec4 distsq = off.xzxz * off.xzxz + off.yyww * off.yyww;	\n"
+  	"			bvec4 inside = lessThan(distsq, dist_threshold);			\n"
+  	"			if(any(inside))										\n"
+--- 1681,1688 ----
+  	"	{																\n"
+  	"		for(spos.x = sz.x; spos.x <= sz.z;	spos.x+=1.0)			\n"
+  	"		{															\n"
+! 	"			vec2 offset = 2.0 * spos - pos - 0.5;					\n"
+! 	"			vec4 off = vec4(offset, offset + 1.0);				\n"
+  	"			vec4 distsq = off.xzxz * off.xzxz + off.yyww * off.yyww;	\n"
+  	"			bvec4 inside = lessThan(distsq, dist_threshold);			\n"
+  	"			if(any(inside))										\n"
+***************
+*** 1724,1749 ****
+  	"					{\n"
+  	"						float idx = idxv[i]; 										\n"
+  	"						vec4 inc = weight[i] * vec4(equal(vec4(vidx[i]), vec4(0,1,2,3)));	\n"
+! 	"						if(idx < 16)							\n"
+  	"						{										\n"
+! 	"							if(idx < 8)							\n"
+  	"							{									\n"
+! 	"								if(idx < 4)	{	bins[0]+=inc;}	\n"
+  	"								else		{	bins[1]+=inc;}	\n"
+  	"							}else								\n"
+  	"							{									\n"
+! 	"								if(idx < 12){	bins[2]+=inc;}	\n"
+  	"								else		{	bins[3]+=inc;}	\n"
+  	"							}									\n"
+! 	"						}else if(idx < 32)						\n"
+  	"						{										\n"
+! 	"							if(idx < 24)						\n"
+  	"							{									\n"
+! 	"								if(idx <20)	{	bins[4]+=inc;}	\n"
+  	"								else		{	bins[5]+=inc;}	\n"
+  	"							}else								\n"
+  	"							{									\n"
+! 	"								if(idx < 28){	bins[6]+=inc;}	\n"
+  	"								else		{	bins[7]+=inc;}	\n"
+  	"							}									\n"
+  	"						}else 						\n"
+--- 1724,1749 ----
+  	"					{\n"
+  	"						float idx = idxv[i]; 										\n"
+  	"						vec4 inc = weight[i] * vec4(equal(vec4(vidx[i]), vec4(0,1,2,3)));	\n"
+! 	"						if(idx < 16.0)							\n"
+  	"						{										\n"
+! 	"							if(idx < 8.0)							\n"
+  	"							{									\n"
+! 	"								if(idx < 4.0)	{	bins[0]+=inc;}	\n"
+  	"								else		{	bins[1]+=inc;}	\n"
+  	"							}else								\n"
+  	"							{									\n"
+! 	"								if(idx < 12.0){	bins[2]+=inc;}	\n"
+  	"								else		{	bins[3]+=inc;}	\n"
+  	"							}									\n"
+! 	"						}else if(idx < 32.0)						\n"
+  	"						{										\n"
+! 	"							if(idx < 24.0)						\n"
+  	"							{									\n"
+! 	"								if(idx <20.0)	{	bins[4]+=inc;}	\n"
+  	"								else		{	bins[5]+=inc;}	\n"
+  	"							}else								\n"
+  	"							{									\n"
+! 	"								if(idx < 28.0){	bins[6]+=inc;}	\n"
+  	"								else		{	bins[7]+=inc;}	\n"
+  	"							}									\n"
+  	"						}else 						\n"
+***************
+*** 1881,1887 ****
+  	char buffer[10240];
+  	float threshold0 = dog_threshold* (GlobalUtil::_SubpixelLocalization?0.8f:1.0f);
+  	float threshold1 = dog_threshold;
+! 	float threshold2 = (edge_threshold+1)*(edge_threshold+1)/edge_threshold;
+  	ostrstream out(buffer, 10240);
+  	out<<setprecision(8);
+  
+--- 1881,1887 ----
+  	char buffer[10240];
+  	float threshold0 = dog_threshold* (GlobalUtil::_SubpixelLocalization?0.8f:1.0f);
+  	float threshold1 = dog_threshold;
+! 	float threshold2 = (edge_threshold+1.0f)*(edge_threshold+1.0f)/edge_threshold;
+  	ostrstream out(buffer, 10240);
+  	out<<setprecision(8);
+  
+***************
+*** 1959,1965 ****
+  	out<<
+  	"	float fxx[4], fyy[4], fxy[4], fx[4], fy[4];\n"
+  	"	#define EDGE_SUPPRESION(i) \\\n"
+! 	"	if(key[i] != 0)\\\n"
+  	"	{\\\n"
+  	"		vec4 D2 = v1[i].xyzw - cc[i];\\\n"
+  	"		vec2 D4 = v2[i].xw - v2[i].yz;\\\n"
+--- 1959,1965 ----
+  	out<<
+  	"	float fxx[4], fyy[4], fxy[4], fx[4], fy[4];\n"
+  	"	#define EDGE_SUPPRESION(i) \\\n"
+! 	"	if(key[i] != 0.0)\\\n"
+  	"	{\\\n"
+  	"		vec4 D2 = v1[i].xyzw - cc[i];\\\n"
+  	"		vec2 D4 = v2[i].xw - v2[i].yz;\\\n"
+***************
+*** 1971,1977 ****
+  	"		float fxx_plus_fyy = fxx[i] + fyy[i];\\\n"
+  	"		float score_up = fxx_plus_fyy*fxx_plus_fyy; \\\n"
+  	"		float score_down = (fxx[i]*fyy[i] - fxy[i]*fxy[i]);\\\n"
+! 	"		if( score_down <= 0 || score_up > THRESHOLD2 * score_down)key[i] = 0;\\\n"
+  	"	}\n"
+  	"	REPEAT4(EDGE_SUPPRESION);\n"
+  	"	if(any(notEqual(key, vec4(0.0)))) {\n";
+--- 1971,1977 ----
+  	"		float fxx_plus_fyy = fxx[i] + fyy[i];\\\n"
+  	"		float score_up = fxx_plus_fyy*fxx_plus_fyy; \\\n"
+  	"		float score_down = (fxx[i]*fyy[i] - fxy[i]*fxy[i]);\\\n"
+! 	"		if( score_down <= 0.0 || score_up > THRESHOLD2 * score_down)key[i] = 0.0;\\\n"
+  	"	}\n"
+  	"	REPEAT4(EDGE_SUPPRESION);\n"
+  	"	if(any(notEqual(key, vec4(0.0)))) {\n";
+***************
+*** 2052,2058 ****
+  	out <<
+  	"	vec3 offset = vec3(0, 0, 0); \n"
+  	"	#define TESTMOVE_KEYPOINT(idx) \\\n"
+! 	"	if(key[idx] != 0) \\\n"
+  	"	{\\\n"
+  	"		cu[0] = cu[idx];	cd[0] = cd[idx];	cc[0] = cc[idx];	\\\n"
+  	"		v4[0] = v4[idx];	v5[0] = v5[idx];						\\\n"
+--- 2052,2058 ----
+  	out <<
+  	"	vec3 offset = vec3(0, 0, 0); \n"
+  	"	#define TESTMOVE_KEYPOINT(idx) \\\n"
+! 	"	if(key[idx] != 0.0) \\\n"
+  	"	{\\\n"
+  	"		cu[0] = cu[idx];	cd[0] = cd[idx];	cc[0] = cc[idx];	\\\n"
+  	"		v4[0] = v4[idx];	v5[0] = v5[idx];						\\\n"
+***************
+*** 2195,2202 ****
+  	//get a horizontal bounding box of the rotated rectangle
+  	out<<
+      "	vec4 sz;					\n"
+! 	"	sz.xy = max(pt - spt, vec2(2,2));\n"
+! 	"	sz.zw = min(pt + spt, dim - 3);		\n"
+  	"	sz = floor(sz * 0.5)+0.5;"; //move sample point to pixel center
+  	//get voting for two box
+  
+--- 2195,2202 ----
+  	//get a horizontal bounding box of the rotated rectangle
+  	out<<
+      "	vec4 sz;					\n"
+! 	"	sz.xy = max(pt - spt, vec2(2.0,2.0));\n"
+! 	"	sz.zw = min(pt + spt, dim - 3.0);		\n"
+  	"	sz = floor(sz * 0.5)+0.5;"; //move sample point to pixel center
+  	//get voting for two box
+  
+***************
+*** 2223,2239 ****
+  	"				vec4 theta0 = (- oo)*RPI;\n"
+  	"				vec4 theta = 8.0 * fract(1.0 + 0.125 * theta0);			\n"
+  	"				vec4 theta1 = floor(theta);								\n"
+! 	"				vec4 weight = (1 - nxn) * (1 - nyn) * gg; \n"
+  	"				vec4 weight2 = (theta - theta1) * weight;				\n"
+  	"				vec4 weight1 = weight - weight2;						\n"
+  	"				for(int i = 0;i < 4; i++)\n"
+  	"				{\n"
+  	"					if(inside[i])\n"
+  	"					{\n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(0, 1, 2, 3)))*weight1[i]; \n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(7, 0, 1, 2)))*weight2[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(4, 5, 6, 7)))*weight1[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(3, 4, 5, 6)))*weight2[i]; \n"
+  	"					}\n"
+  	"				}\n"
+  	"			}\n"
+--- 2223,2239 ----
+  	"				vec4 theta0 = (- oo)*RPI;\n"
+  	"				vec4 theta = 8.0 * fract(1.0 + 0.125 * theta0);			\n"
+  	"				vec4 theta1 = floor(theta);								\n"
+! 	"				vec4 weight = (1.0 - nxn) * (1.0 - nyn) * gg; \n"
+  	"				vec4 weight2 = (theta - theta1) * weight;				\n"
+  	"				vec4 weight1 = weight - weight2;						\n"
+  	"				for(int i = 0;i < 4; i++)\n"
+  	"				{\n"
+  	"					if(inside[i])\n"
+  	"					{\n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(0.0, 1.0, 2.0, 3.0)))*weight1[i]; \n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(7.0, 0.0, 1.0, 2.0)))*weight2[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(4.0, 5.0, 6.0, 7.0)))*weight1[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(3.0, 4.0, 5.0, 6.0)))*weight2[i]; \n"
+  	"					}\n"
+  	"				}\n"
+  	"			}\n"
+***************
+*** 2317,2324 ****
+  	"	vec2 bwin = abs(cscs.xy);					\n"
+  	"	float bsz = bwin.x + bwin.y;					\n"
+  	"	vec4 sz;					\n"
+! 	"	sz.xy = max(pt - vec2(bsz), vec2(2,2));\n"
+! 	"	sz.zw = min(pt + vec2(bsz), dim - 3);		\n"
+  	"	sz = floor(sz * 0.5)+0.5;"; //move sample point to pixel center
+  	//get voting for two box
+  
+--- 2317,2324 ----
+  	"	vec2 bwin = abs(cscs.xy);					\n"
+  	"	float bsz = bwin.x + bwin.y;					\n"
+  	"	vec4 sz;					\n"
+! 	"	sz.xy = max(pt - vec2(bsz), vec2(2.0,2.0));\n"
+! 	"	sz.zw = min(pt + vec2(bsz), dim - 3.0);		\n"
+  	"	sz = floor(sz * 0.5)+0.5;"; //move sample point to pixel center
+  	//get voting for two box
+  
+***************
+*** 2347,2363 ****
+  	"				vec4 theta1 = floor(theta);								\n"
+  	"				vec4 diffx = nx + offsetpt.x, diffy = ny + offsetpt.y;	\n"
+  	"				vec4 ww = exp(-0.125 * (diffx * diffx + diffy * diffy ));	\n"
+! 	"				vec4 weight = (1 - nxn) * (1 - nyn) * gg * ww; \n"
+  	"				vec4 weight2 = (theta - theta1) * weight;				\n"
+  	"				vec4 weight1 = weight - weight2;						\n"
+  	"				for(int i = 0;i < 4; i++)\n"
+  	"				{\n"
+  	"					if(inside[i])\n"
+  	"					{\n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(0, 1, 2, 3)))*weight1[i]; \n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(7, 0, 1, 2)))*weight2[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(4, 5, 6, 7)))*weight1[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(3, 4, 5, 6)))*weight2[i]; \n"
+  	"					}\n"
+  	"				}\n"
+  	"			}\n"
+--- 2347,2363 ----
+  	"				vec4 theta1 = floor(theta);								\n"
+  	"				vec4 diffx = nx + offsetpt.x, diffy = ny + offsetpt.y;	\n"
+  	"				vec4 ww = exp(-0.125 * (diffx * diffx + diffy * diffy ));	\n"
+! 	"				vec4 weight = (1.0 - nxn) * (1.0 - nyn) * gg * ww; \n"
+  	"				vec4 weight2 = (theta - theta1) * weight;				\n"
+  	"				vec4 weight1 = weight - weight2;						\n"
+  	"				for(int i = 0;i < 4; i++)\n"
+  	"				{\n"
+  	"					if(inside[i])\n"
+  	"					{\n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(0.0, 1.0, 2.0, 3.0)))*weight1[i]; \n"
+! 	"						DA += vec4(equal(vec4(theta1[i]), vec4(7.0, 0.0, 1.0, 2.0)))*weight2[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(4.0, 5.0, 6.0, 7.0)))*weight1[i]; \n"
+! 	"						DB += vec4(equal(vec4(theta1[i]), vec4(3.0, 4.0, 5.0, 6.0)))*weight2[i]; \n"
+  	"					}\n"
+  	"				}\n"
+  	"			}\n"

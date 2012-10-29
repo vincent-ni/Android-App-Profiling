@@ -66,6 +66,8 @@ public class Instrumentor extends AbstractStmtSwitch {
 		
 		if(!loopNestTree.isEmpty()) {
 			int i = 0;
+            int num = method.getParameterCount();
+			Unit u = units.getFirst();
 			Local[] l = new Local[loopNestTree.size()];
 			AssignStmt[] incStmt = new AssignStmt[loopNestTree.size()];
 			for (Loop loop : loopNestTree) {
@@ -75,7 +77,11 @@ public class Instrumentor extends AbstractStmtSwitch {
 				l[i] = G.jimple.newLocal(innerFeature.getNextName(), IntType.v());
 				body.getLocals().add(l[i]);
 				AssignStmt assign = G.jimple.newAssignStmt(l[i], IntConstant.v(0));
-				units.insertAfter(assign, units.getFirst());
+                while (num > 0) {
+					u = units.getSuccOf(u);
+					num--;
+                }
+				units.insertAfter(assign, u);
 				AddExpr incExpr = G.jimple.newAddExpr(l[i], IntConstant.v(1));
 				incStmt[i] = G.jimple.newAssignStmt(l[i], incExpr);
 				units.insertBefore(incStmt[i], loop.getBackJumpStmt());
@@ -87,7 +93,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
 							StringConstant.v(l[j].getName()), incStmt[j].getLeftOp());
 					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
-					units.insertAfter(incStmt1, stmt);
+					units.insertBefore(incStmt1, stmt);
 				}
 			}
 		}
@@ -145,8 +151,10 @@ public class Instrumentor extends AbstractStmtSwitch {
 //										StringConstant.v(type.toString()))), u);
 					}
 					if(type instanceof IntType){
+						Local l = G.jimple.newLocal(innerFeature.getNextName(), IntType.v());
+						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-						StringConstant.v(innerFeature.getNextName()), returnVal);
+						StringConstant.v(l.getName()), returnVal);
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertAfter(incStmt, u);
 					}

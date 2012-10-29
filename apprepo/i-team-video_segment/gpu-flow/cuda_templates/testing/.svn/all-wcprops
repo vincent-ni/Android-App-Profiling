@@ -1,0 +1,245 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/cudatemplates/!svn/ver/276/trunk/testing
+END
+throughput.cu
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/throughput.cu
+END
+texture_precision.cu
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/cudatemplates/!svn/ver/261/trunk/testing/texture_precision.cu
+END
+copy_instantiate.cu
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/copy_instantiate.cu
+END
+vector.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/vector.cpp
+END
+streams.cu
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/264/trunk/testing/streams.cu
+END
+pack.cu
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/pack.cu
+END
+test1d.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/test1d.cpp
+END
+kernel.cu
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/kernel.cu
+END
+color_speed_test_kernels.cu
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/color_speed_test_kernels.cu
+END
+test3d.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/test3d.cpp
+END
+buffer_object_init.cu
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/buffer_object_init.cu
+END
+compat.cu
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/compat.cu
+END
+copy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/copy.cpp
+END
+gil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/gil.cpp
+END
+border.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/border.cpp
+END
+crazyFindOGLTextureAdress.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/cudatemplates/!svn/ver/262/trunk/testing/crazyFindOGLTextureAdress.cpp
+END
+precision.cu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/precision.cu
+END
+color_speed_test.cu
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/color_speed_test.cu
+END
+cameraman.png
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/cameraman.png
+END
+fillrate.cu
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/fillrate.cu
+END
+symbol.cu
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/symbol.cu
+END
+memset.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/memset.cpp
+END
+create_test.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/create_test.pl
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/cudatemplates/!svn/ver/264/trunk/testing/CMakeLists.txt
+END
+buffer_object.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/buffer_object.cpp
+END
+crazyFindOGLTextureAdress.cu
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/cudatemplates/!svn/ver/262/trunk/testing/crazyFindOGLTextureAdress.cu
+END
+convert.cu
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/convert.cu
+END
+test2d.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/test2d.cpp
+END
+symbol_plain.cu
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/symbol_plain.cu
+END
+array.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/array.cpp
+END
+fft.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/fft.cpp
+END
+blas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/blas.cpp
+END
+ipl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/ipl.cpp
+END
+demo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/demo.cpp
+END
+texture.cu
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/texture.cu
+END
+texture_kernel.cu
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/texture_kernel.cu
+END
+itk.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/itk.cpp
+END
+ladybug.png
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/ladybug.png
+END
+array_by_value.cu
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/array_by_value.cu
+END
+mapped.cu
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/mapped.cu
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/cudatemplates/!svn/ver/275/trunk/include/cudatemplates/opengl
+END
+error.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/cudatemplates/!svn/ver/275/trunk/include/cudatemplates/opengl/error.hpp
+END
+copy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/opengl/copy.hpp
+END
+bufferobject.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/opengl/bufferobject.hpp
+END
+texture.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/opengl/texture.hpp
+END
+type.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/opengl/type.hpp
+END

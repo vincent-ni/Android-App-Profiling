@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/cudatemplates/!svn/ver/263/trunk/testing/bugs/bug6
+END
+nvcctest1.cu
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/cudatemplates/!svn/ver/263/trunk/testing/bugs/bug6/nvcctest1.cu
+END
+nvcctest2.cu
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/cudatemplates/!svn/ver/263/trunk/testing/bugs/bug6/nvcctest2.cu
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/cudatemplates/!svn/ver/263/trunk/testing/bugs/bug6/README.txt
+END

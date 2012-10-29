@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/cudatemplates/!svn/ver/276/trunk/testing/bugs
+END
+bug2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/bugs/bug2.cpp
+END
+bug1.cu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/bugs/bug1.cu
+END
+bug3.cu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/bugs/bug3.cu
+END
+bug8.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/cudatemplates/!svn/ver/276/trunk/testing/bugs/bug8.cpp
+END
+bug4.cu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/bugs/bug4.cu
+END
+bug5.cu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/cudatemplates/!svn/ver/262/trunk/testing/bugs/bug5.cu
+END
+float3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/cudatemplates/!svn/ver/254/trunk/testing/bugs/float3.cpp
+END
+bug7.cu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/cudatemplates/!svn/ver/273/trunk/testing/bugs/bug7.cu
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/cudatemplates/!svn/ver/276/trunk/testing/bugs/CMakeLists.txt
+END

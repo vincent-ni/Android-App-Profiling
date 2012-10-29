@@ -1,0 +1,6 @@
+<area shape="rect" href="$namespaceCudaFlowLib.html#de3d8f954e270c0e4a17584e3eb55225" title="CudaFlowLib::calculateGradientImages" alt="" coords="385,5,633,32">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#7d4e7eae71b0e59c3254d9e9a6a10bca" title="CudaFlowLib::BaseData::initPyramid" alt="" coords="393,107,625,133">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#c3dcd2a85dd76a2ffa79c0d6c46db5cc" title="CudaFlowLib::BaseData::rebuildPyramid" alt="" coords="383,56,636,83">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#35e059c6665454f9e42b137e57593519" title="CudaFlowLib::BaseData::getRegionOfs" alt="" coords="688,31,936,57">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#99e35be649dfaccff2abdcc4696937f1" title="CudaFlowLib::BaseData::getRegionSize" alt="" coords="687,81,937,108">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#11d5915109ec483e1220ac27921b0051" title="CudaFlowLib::BaseData::getSize" alt="" coords="707,132,917,159">

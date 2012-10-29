@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas
+END
+blas1_complex.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas1_complex.hpp
+END
+blas3.hpp.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas3.hpp.in
+END
+blas3_float.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas3_float.hpp
+END
+blas2_complex.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas2_complex.hpp
+END
+blas1_double.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas1_double.hpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/CMakeLists.txt
+END
+blas1.hpp.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas1.hpp.in
+END
+blas1_float.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas1_float.hpp
+END
+blas2.hpp.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas2.hpp.in
+END
+blas2_float.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/cudatemplates/!svn/ver/254/trunk/include/cudatemplates/cublas/blas2_float.hpp
+END

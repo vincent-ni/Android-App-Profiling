@@ -1,0 +1,118 @@
+package Segment;
+
+message DenseSegmentOptions {
+  optional string video_stream_name = 1 [default = "VideoStream"];
+
+  // Set to empty to disable use of flow.
+  optional string flow_stream_name = 2 [default = "BackwardFlowStream"];
+
+  // Name of output stream.
+  optional string segment_stream_name = 3
+    [default = "SegmentationStream"];
+
+  enum PresmoothingMode {
+		PRESMOOTH_GAUSSIAN = 0;
+		PRESMOOTH_BILATERAL = 1;
+		PRESMOOTH_FLOW_BILATERAL = 2;
+	}
+
+  optional PresmoothingMode presmoothing = 4
+    [default = PRESMOOTH_BILATERAL];
+
+  // Controls RInt via tau = k / |R| with |R| region size.
+  optional float parameter_k = 5 [default = 0.01];
+
+  // Minimum region size specified w.r.t. frame dimensions.
+  // Min size is computed as
+  // frac_min_region_size * width *
+  // frac_min_region_size * height *
+  // chunk_size.
+  optional float frac_min_region_size = 6 [default = 0.015];
+
+  // Size of a chunk in frames. Over-segmentation will be performed in chunks of
+  // chunk_size is enabled by processing_mode.
+  // The previous chunk constrains the next chunk by using an overlap of
+  // chunk_overlap_ratio and associates regions across the boundaries.
+  // If hierarchical segmentation is desired, a second pass builds a region graph from
+  // the segmentation chunks and segments it.
+  optional int32 chunk_size = 7 [default = 20];   // approx 1 s of video.
+
+  // Chunk size parameter is reduced to fit within specified maximum memory.
+  // Set to zero to ignore.
+  optional int32 max_chunk_memory_consumption = 8 [default = 1200];
+  optional float chunk_overlap_ratio = 9 [default = 0.2];
+
+  // Segments first spatial edges, then temporal ones. If deactivated, all edges
+  // will be used.
+  optional bool two_stage_oversegment = 10 [default = false];
+
+  // Merges small per-frame segments.
+  optional bool spatial_cleanup_step = 11 [default = false];
+
+  // Number of frames used as constraints within the overlap.
+  // Truncated to number of overlap frames, if neccessary.
+  optional int32 num_constraint_frames = 12 [default = 1];
+
+  optional bool thin_structure_suppression = 13 [default = true];
+  optional bool enforce_n4_connectivity = 14 [default = false];
+
+  enum ColorDistance {
+    COLOR_DISTANCE_L1 = 0;
+    COLOR_DISTANCE_L2 = 1;
+  }
+  optional ColorDistance color_distance = 15 [default = COLOR_DISTANCE_L2];
+}
+
+message RegionSegmentOptions {
+  optional string video_stream_name = 1 [default = "VideoStream"];
+
+  // Set to empty to disable use of flow.
+  optional string flow_stream_name = 2 [default = "BackwardFlowStream"];
+
+  // Input, output stream. Filter replaces result of DenseSegmentation
+  // with RegionSegmentation.
+  optional string segment_stream_name = 3
+    [default = "SegmentationStream"];
+
+  // min_region_num should be at least 6 to avoid a merge resulting in a
+  // single region.
+  optional int32 min_region_num = 4 [default = 10];
+  optional int32 max_region_num = 5 [default = 2000];
+
+  // Minimum region size specified w.r.t. frame dimensions.
+  // Min size is computed as
+  // frac_min_region_size * width *
+  // frac_min_region_size * height *
+  // chunk_size.
+  optional float frac_min_region_size = 7 [default = 0.015];
+
+  // Number of regions is reduced by 1.0f - level_cutoff_fraction at each level.
+  optional float level_cutoff_fraction = 8 [default = 0.8];
+
+  // Number of histogram bins per channel used for lab color matching.
+  optional int32 luminance_bins = 10 [default = 10];
+  optional int32 color_bins = 11 [default = 20];
+  optional int32 flow_bins = 12 [default = 16];
+
+  // Set size and overlap in chunks.
+  optional int32 chunk_set_size = 13 [default = 6];
+  optional int32 chunk_set_overlap = 14 [default = 2];
+  optional int32 constraint_chunks = 15 [default = 1];
+
+  optional bool free_video_frames = 16 [default = false];
+  optional bool free_flow_frames = 17 [default = true];
+
+  // If set RegionDescriptors will be added to the protobuffer.
+  optional bool save_descriptors = 18 [default = false];
+
+  // Additional region features besides appearance and flow.
+  optional bool segment_use_texture = 19 [default = false];
+  optional bool segment_use_boundary = 20 [default = false];
+
+  // Guarantees merge lead to spatially connected regions in all frames.
+  optional bool spatially_connected_regions_only = 21 [default = false];
+}
+
+message FrameSegmentOptions {
+
+}

@@ -1,0 +1,14 @@
+<area shape="rect" href="$classFlowLib.html#5c436dbd9c622bda01a14a2e149087e1" title="FlowLib::setModel" alt="" coords="183,157,308,184">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#18c10999e6731d0315ba2b16409e349c" title="CudaFlowLib::BaseData::flowParameters" alt="" coords="368,5,627,32">
+<area shape="rect" href="$classCudaFlowLib_1_1TVL1Data.html#44877406fa97dff59b14ca9d96e15425" title="CudaFlowLib::TVL1Data::getPreFilter" alt="" coords="380,56,615,83">
+<area shape="rect" href="$classFlowLib.html#37a708427adf04e2b339b691d91c0d62" title="FlowLib::getStrTexFilterMethod" alt="" coords="397,107,597,133">
+<area shape="rect" href="$classFlowLib.html#4e14d4fd28948c0b83c0bdb2ec28e011" title="FlowLib::getStrTexSmoothing" alt="" coords="401,157,593,184">
+<area shape="rect" href="$classFlowLib.html#9790ed0f2c4983c2b5b55e5d2674aae5" title="FlowLib::getStrTexWeight" alt="" coords="413,208,581,235">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#fd1966195dd3c1324041cf5b25705944" title="CudaFlowLib::BaseData::setFlowParameters" alt="" coords="357,259,637,285">
+<area shape="rect" href="$classFlowLib.html#7ae501b5215b4c2fdeef60b13ff1cf6d" title="FlowLib::setStructureTextureDecomposition" alt="" coords="361,309,633,336">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#163173873a18b53462d0ee0fe9690ee4" title="CudaFlowLib::BaseData::getStrTexFilterMethod" alt="" coords="685,107,981,133">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#cc37a73bd7b505f276348fd0d87157dd" title="CudaFlowLib::BaseData::getStrTexSmoothing" alt="" coords="691,157,976,184">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#bf68e1d5ca77bbf989a54f48a825606c" title="CudaFlowLib::BaseData::getStrTexWeight" alt="" coords="701,208,965,235">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#4a4bb3e928f663c18686031ec48e2ebd" title="CudaFlowLib::BaseData::checkNumScales" alt="" coords="699,259,968,285">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#99e35be649dfaccff2abdcc4696937f1" title="CudaFlowLib::BaseData::getRegionSize" alt="" coords="708,309,959,336">
+<area shape="rect" href="$classCudaFlowLib_1_1BaseData.html#11d5915109ec483e1220ac27921b0051" title="CudaFlowLib::BaseData::getSize" alt="" coords="728,360,939,387">

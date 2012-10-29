@@ -1,0 +1,28 @@
+package VideoFramework;
+
+message FlowUtilityOptions {
+  optional string flow_stream_name = 1 [default = "OpticalFlow"];
+  optional string video_stream_name = 2 [default = "VideoStream" ];
+
+  // Plots flow vectors onto video_stream
+  optional bool plot_flow = 3 [default = false];
+
+  // Discards outliers by calling ImposeLocallyConsistentGridFlow
+  // for each OpticalFlowFrame.
+  optional bool impose_grid_flow = 4 [default = true];
+
+  // Settings for ImposeLocallyConsistentGridFlow.
+  // By default 27 different grids are used.
+  optional float grid_ratio_x = 5 [default = 0.3];
+  optional float grid_ratio_y = 6 [default = 0.3];
+  optional int32 grid_num_offsets = 7 [default = 3];
+  optional int32 grid_num_scales = 8 [default = 3];
+
+  // Only points with minimum number of matches
+  // frac_feature_matches * OpticalFlowFrame::MatchedFrames
+  // are used for plotting and feature match file.
+  optional float frac_feature_matches = 9 [default = 1];
+
+  // If set, FeatureMatchList for each frame is saved to file.
+  optional string feature_match_file = 10;
+}
