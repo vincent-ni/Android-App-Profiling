@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 
+import android.util.Log;
+
 public class innerFeature {
 	static int counter = 0;
 
@@ -11,6 +13,7 @@ public class innerFeature {
 
 	public static void addFeature(String name, int value) {
 		System.out.println("AddFeature " + name + " " + value);
+		Log.e("Profile:  ", "AddFeature " + name + " " + value);
 		allFeatures.put(name, value);
 	}
 
