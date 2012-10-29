@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="libs/ant.jar"/>
 	<classpathentry kind="lib" path="libs/jigsaw-sexpr.jar"/>
 	<classpathentry kind="lib" path="libs/soot.jar"/>
+	<classpathentry kind="lib" path="libs/framework.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
