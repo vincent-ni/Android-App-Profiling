@@ -1,5 +1,6 @@
 package edu.gatech.util;
 
+import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
@@ -36,17 +37,6 @@ public class innerFeature {
 			featureKeySet.put(tag, name);
 			featureValSet.put(name, 0);
 			return name;
-		}
-	}
-
-	public static String getNextName() {
-		return "c" + (counter++);
-	}
-	public static void testPrint() {
-		Iterator iter = featureKeySet.entrySet().iterator();
-		while (iter.hasNext()) {
-			Map.Entry pairs = (Map.Entry)iter.next();
-			System.out.println(pairs.getKey() + " " + pairs.getValue() + featureValSet.get(pairs.getValue()));
 		}
 	}
 	

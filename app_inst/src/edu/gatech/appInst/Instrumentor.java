@@ -66,7 +66,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 		currentUnits = units;
 		
 		if(!loopNestTree.isEmpty()) {
-			int i = 0;
+//			int i = 0;
 //			Local[] l = new Local[loopNestTree.size()];
 //			AssignStmt[] incStmt = new AssignStmt[loopNestTree.size()];
 //			String[] name = new String[loopNestTree.size()];
@@ -75,7 +75,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 			while (num > 0) {
 				u = units.getSuccOf(u);
 				num--;
-            		}
+            }
 			for (Loop loop : loopNestTree) {
 				//Stmt stmtHead = loop.getHead();
 				//System.out.println("Found a loop with head: " + u);
@@ -168,10 +168,11 @@ public class Instrumentor extends AbstractStmtSwitch {
 //										StringConstant.v(type.toString()))), u);
 					}
 					if(type instanceof IntType){
-						Local l = G.jimple.newLocal(innerFeature.getNextName(), IntType.v());
+						String name = exp.getMethod().getSignature() + ":(return value)line" + ((LineNumberTag)u.getTag("LineNumberTag")).getLineNumber();
+						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-						StringConstant.v(l.getName()), returnVal);
+								StringConstant.v(name), StringConstant.v(l.getName()), returnVal);
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertAfter(incStmt, u);
 					}
