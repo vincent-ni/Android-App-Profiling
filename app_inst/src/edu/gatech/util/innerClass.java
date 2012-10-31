@@ -135,6 +135,7 @@ public class innerClass {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
 			writer.println(info.fileName + " : " + info.lineNum + " : "
 					+ info.methodSig + " : " + info.runTime);
+			innerFeature.testPrint(writer);
 			writer.close();
 		} catch (Exception e) {
 			e.printStackTrace();
