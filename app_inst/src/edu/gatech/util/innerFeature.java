@@ -20,12 +20,20 @@ public class innerFeature {
 	public static String getNextName() {
 		return "c" + (counter++);
 	}
-
-//	public static void testPrint() {
-//		Iterator iter = allFeatures.entrySet().iterator();
-//		while (iter.hasNext()) {
-//			Map.Entry pairs = (Map.Entry)iter.next();
-//			System.out.println(pairs.getKey() + " = " + pairs.getValue());
-//		}
-//	}
+	public static void testPrint() {
+		Iterator iter = featureKeySet.entrySet().iterator();
+		while (iter.hasNext()) {
+			Map.Entry pairs = (Map.Entry)iter.next();
+			System.out.println(pairs.getKey() + " " + pairs.getValue() + featureValSet.get(pairs.getValue()));
+		}
+	}
+	
+	public static void testPrint(PrintWriter writer) {
+		Iterator iter = featureKeySet.entrySet().iterator();
+		while (iter.hasNext()) {
+			Map.Entry pairs = (Map.Entry)iter.next();
+			System.out.println(pairs.getKey() + " " + pairs.getValue() + featureValSet.get(pairs.getValue()));
+			writer.println(pairs.getKey() + " " + pairs.getValue() + featureValSet.get(pairs.getValue()));
+		}
+	}
 }
