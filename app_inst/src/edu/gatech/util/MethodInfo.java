@@ -3,16 +3,20 @@ package edu.gatech.util;
 public class MethodInfo {
 	public int runSeq;
 	public String methodSig;
+	public String fileName;
+	public int lineNum;
 	public ObjectInfo base;
 	public ObjectInfo returnVal;
 	public ObjectInfo[] paramList;
 	public long startTime;
 	public long runTime;
 	
-	public MethodInfo(String methodSig, int runSeq, long startTime){
+	public MethodInfo(String methodSig, int runSeq, long startTime, String fileName, int lineNum){
 		this.methodSig = methodSig;
 		this.runSeq = runSeq;
 		this.startTime = startTime;
+		this.fileName = fileName;
+		this.lineNum = lineNum;
 	}
 	
 	public void setRunTime(long endTime){

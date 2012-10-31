@@ -35,7 +35,7 @@ public class G {
 		innerFeature = Scene.v().getSootClass(innerFeatureStr);
 		
 		testMethodRef = innerClass.getMethod("void test()").makeRef();
-		callMethodRef = innerClass.getMethod("void callMethod(java.lang.String)").makeRef();
+		callMethodRef = innerClass.getMethod("void callMethod(java.lang.String,java.lang.String,int)").makeRef();
 		endMethodRef = innerClass.getMethod("void endMethod(java.lang.String)").makeRef();
 		runningMethodRef = innerClass.getMethod("void runningMethod(java.lang.String)").makeRef();
 		setNonPrimBaseRef = innerClass.getMethod("void setNonPrimBase(java.lang.Object,java.lang.String)").makeRef();

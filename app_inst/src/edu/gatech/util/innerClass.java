@@ -1,16 +1,18 @@
 package edu.gatech.util;
 
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
 import android.util.Log;
-
-//import android.util.Log;
 
 public class innerClass {
 	
@@ -22,12 +24,12 @@ public class innerClass {
 		System.out.println("testing");
 	}
 	
-	public static void callMethod(String method){
+	public static void callMethod(String method, String fileName, int linenum){
 		System.out.println("calling: " + method);
 		Log.e("Profile:  ", "calling: " + method);
 		runSeq++;
 		Date currentDate = new Date();
-		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime());
+		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime(), fileName, linenum);
 		allMethods.add(info);
 		methodStack.push(info);
 	}
@@ -41,6 +43,7 @@ public class innerClass {
 		System.out.println("  Seq: " + info.runSeq);
 		System.out.println("  Runtime: " + info.runTime);
 		Log.e("Profile:  ", "  Runtime: " + info.runTime);
+		printInfo(info);
 	}
 	
 	public static void runningMethod(String method){
@@ -114,7 +117,7 @@ public class innerClass {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		ObjectOutput out = null;
 		try {
-			out = new ObjectOutputStream(bos);   
+			out = new ObjectOutputStream(bos);
 			out.writeObject(obj);
 			byte[] bytes = bos.toByteArray();
 			size = bytes.length;
@@ -124,5 +127,32 @@ public class innerClass {
 //			xe.printStackTrace();
 		}
 		return size;
+	}
+	
+	public static void printInfo(MethodInfo info){
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
+			writer.println(info.fileName + " : " + info.lineNum + " : "
+					+ info.methodSig + " : " + info.runTime);
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void printAllInfo(){
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
+			for(int i = 0; i < allMethods.size(); i++){
+				MethodInfo info = allMethods.get(i);
+				writer.println(info.fileName + " : " + info.lineNum + " : "
+						+ info.methodSig + " : " + info.runTime);
+			}
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -26,6 +26,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.toolkits.annotation.logic.Loop;
+import soot.tagkit.LineNumberTag;
 import soot.toolkits.graph.LoopNestTree;
 import soot.util.Chain;
 
@@ -101,6 +102,14 @@ public class Instrumentor extends AbstractStmtSwitch {
 		while(iter.hasNext()) {
 			
 			Stmt u = (Stmt)iter.next();
+			int lineNum = 0;
+			LineNumberTag tag = (LineNumberTag)u.getTag("LineNumberTag");
+			if(tag == null){
+				System.out.println("Fatal error! Can't get the line number info");
+				System.out.println("In " + u + " of " + method.getSignature());
+				return;
+			}
+			lineNum = tag.getLineNumber();
 			
 			if(u.containsInvokeExpr()){
 				InvokeExpr exp = u.getInvokeExpr();
@@ -109,7 +118,9 @@ public class Instrumentor extends AbstractStmtSwitch {
 					continue;
 				
 				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
+						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()),
+						StringConstant.v(method.getDeclaringClass().getName()), 
+						IntConstant.v(lineNum))), u);
 				
 				currentUnits.insertAfter(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
 						G.endMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
@@ -188,6 +199,8 @@ public class Instrumentor extends AbstractStmtSwitch {
 		Type type = value.getType();
 		InvokeExpr expr;
 		
+		if(true) return;
+		
 		if(which.equals("param")){
 			expr = G.jimple.newStaticInvokeExpr(ref, IntConstant.v(index), 
 					StringConstant.v(type.toString()));
@@ -210,8 +223,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 		InvokeExpr expr;
 		
 		if(true) return;
-		if(type.toString().contains("StringBuilder"))
-			return;
+
 		if(which.equals("param")){
 			expr = G.jimple.newStaticInvokeExpr(ref, value, IntConstant.v(index), 
 					StringConstant.v(type.toString()));
