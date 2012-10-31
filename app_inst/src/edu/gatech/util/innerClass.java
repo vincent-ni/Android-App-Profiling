@@ -2,7 +2,6 @@ package edu.gatech.util;
 
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
@@ -133,7 +132,7 @@ public class innerClass {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
-			writer.println(info.fileName + " : " + info.lineNum + " : "
+			writer.println("**" + info.fileName + " : " + info.lineNum + " : "
 					+ info.methodSig + " : " + info.runTime);
 			innerFeature.testPrint(writer);
 			writer.close();
