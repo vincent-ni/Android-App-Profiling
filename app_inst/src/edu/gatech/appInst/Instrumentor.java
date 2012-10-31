@@ -67,36 +67,42 @@ public class Instrumentor extends AbstractStmtSwitch {
 		
 		if(!loopNestTree.isEmpty()) {
 			int i = 0;
-            int num = method.getParameterCount();
+//			Local[] l = new Local[loopNestTree.size()];
+//			AssignStmt[] incStmt = new AssignStmt[loopNestTree.size()];
+//			String[] name = new String[loopNestTree.size()];
+			int num = method.getParameterCount();
 			Unit u = units.getFirst();
-			Local[] l = new Local[loopNestTree.size()];
-			AssignStmt[] incStmt = new AssignStmt[loopNestTree.size()];
+			while (num > 0) {
+				u = units.getSuccOf(u);
+				num--;
+            		}
 			for (Loop loop : loopNestTree) {
-				// Stmt u = loop.getHead();
-				// System.out.println("Found a loop with head: " + u);
-				// System.out.println("JumpBack stmt " + loop.getBackJumpStmt());
-				l[i] = G.jimple.newLocal(innerFeature.getNextName(), IntType.v());
-				body.getLocals().add(l[i]);
-				AssignStmt assign = G.jimple.newAssignStmt(l[i], IntConstant.v(0));
-                while (num > 0) {
-					u = units.getSuccOf(u);
-					num--;
-                }
+				//Stmt stmtHead = loop.getHead();
+				//System.out.println("Found a loop with head: " + u);
+				//System.out.println("JumpBack stmt " + loop.getBackJumpStmt());
+				String name = method.getSignature() + ":(loop)line" + ((LineNumberTag)loop.getHead().getTag("LineNumberTag")).getLineNumber();
+				Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
+				body.getLocals().add(l);
+				AssignStmt assign = G.jimple.newAssignStmt(l, IntConstant.v(0));
 				units.insertAfter(assign, u);
-				AddExpr incExpr = G.jimple.newAddExpr(l[i], IntConstant.v(1));
-				incStmt[i] = G.jimple.newAssignStmt(l[i], incExpr);
-				units.insertBefore(incStmt[i], loop.getBackJumpStmt());
-				i++;
+				AddExpr incExpr = G.jimple.newAddExpr(l, IntConstant.v(1));
+				AssignStmt incStmt = G.jimple.newAssignStmt(l, incExpr);
+				units.insertBefore(incStmt, loop.getBackJumpStmt());
+				InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+					StringConstant.v(name), StringConstant.v(l.getName()), incStmt.getLeftOp());
+				Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
+				units.insertBefore(incStmt1, loop.getBackJumpStmt());
+				//i++;
 			}
-			Collection<Stmt> stmts = loopNestTree.last().getLoopExits();
-			for (Stmt stmt : stmts) {
-				for (int j = 0; j < loopNestTree.size(); j++) {
-					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-							StringConstant.v(l[j].getName()), incStmt[j].getLeftOp());
-					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
-					units.insertBefore(incStmt1, stmt);
-				}
-			}
+//			Collection<Stmt> stmts = loopNestTree.last().getLoopExits();
+//			for (Stmt stmt : stmts) {
+//				for (int j = 0; j < loopNestTree.size(); j++) {
+//					InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+//							StringConstant.v(name[j]), StringConstant.v(l[j].getName()), incStmt[j].getLeftOp());
+//					Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
+//					units.insertBefore(incStmt1, stmt);
+//				}
+//			}
 		}
 		
 		while(iter.hasNext()) {
