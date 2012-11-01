@@ -132,8 +132,8 @@ public class innerClass {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
-			writer.println("**" + info.fileName + " : " + info.lineNum + " : "
-					+ info.methodSig + " : " + info.runTime);
+			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : " 
+						+ info.lineNum + " : " + info.methodSig);
 			innerFeature.testPrint(writer);
 			writer.close();
 		} catch (Exception e) {
@@ -147,8 +147,8 @@ public class innerClass {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
 			for(int i = 0; i < allMethods.size(); i++){
 				MethodInfo info = allMethods.get(i);
-				writer.println(info.fileName + " : " + info.lineNum + " : "
-						+ info.methodSig + " : " + info.runTime);
+				writer.println("Time:  " + info.runTime + " : " + info.fileName + " : " 
+						+ info.lineNum + " : " + info.methodSig);
 			}
 			writer.close();
 		} catch (Exception e) {
