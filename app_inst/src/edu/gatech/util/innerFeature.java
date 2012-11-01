@@ -19,12 +19,14 @@ public class innerFeature {
 			featureKeySet.put(tag, name);
 			featureValSet.put(name, value);
 			System.out.println(tag + " " + name + " " + value);
+			Log.e("Profile", tag + " " + name + " " + value);
 		}
 		else {
 			int newVal = featureValSet.get(name);
 			if (value > 0) newVal++;
 			featureValSet.put(name, newVal);
 			System.out.println(tag + " " + name + " " + newVal);
+			Log.e("Profile", tag + " " + name + " " + newVal);
 		}
 	}
 

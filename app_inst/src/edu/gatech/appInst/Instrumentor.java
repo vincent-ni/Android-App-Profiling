@@ -79,7 +79,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 				//Stmt stmtHead = loop.getHead();
 				//System.out.println("Found a loop with head: " + u);
 				//System.out.println("JumpBack stmt " + loop.getBackJumpStmt());
-				String name = method.getSignature() + ":(loop)line" + ((LineNumberTag)loop.getHead().getTag("LineNumberTag")).getLineNumber();
+				String name = "loop:  " + method.getSignature() + ":line" + ((LineNumberTag)loop.getHead().getTag("LineNumberTag")).getLineNumber();
 				Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 				body.getLocals().add(l);
 				AssignStmt assign = G.jimple.newAssignStmt(l, IntConstant.v(0));
@@ -167,7 +167,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 //										StringConstant.v(type.toString()))), u);
 					}
 					if(type instanceof IntType){
-						String name = exp.getMethod().getSignature() + ":(return value)line" + ((LineNumberTag)u.getTag("LineNumberTag")).getLineNumber();
+						String name = "ret:  " + exp.getMethod().getSignature() + ":line" + ((LineNumberTag)u.getTag("LineNumberTag")).getLineNumber();
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,

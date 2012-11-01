@@ -743,8 +743,8 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         java.io.BufferedWriter $r2;
         java.io.FileWriter $r3;
         java.lang.Exception r5, $r17;
-        java.lang.StringBuilder $r6, $r9, $r10, $r11, $r13, $r14, $r15;
-        java.lang.String $r7, $r8, $r12, $r16;
+        java.lang.StringBuilder $r6, $r8, $r9, $r10, $r11, $r13, $r14, $r15;
+        java.lang.String $r7, $r12, $r16;
         int $i0;
         long $l1;
 
@@ -759,10 +759,10 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         specialinvoke $r1.<java.io.PrintWriter: void <init>(java.io.Writer)>($r2);
         r4 = $r1;
         $r6 = new java.lang.StringBuilder;
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("**");
         $r7 = r0.<edu.gatech.util.MethodInfo: java.lang.String fileName>;
-        $r8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r7);
-        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>($r8);
-        $r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
         $i0 = r0.<edu.gatech.util.MethodInfo: int lineNum>;
         $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
         $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
@@ -888,14 +888,14 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
 
     public static void addFeature(java.lang.String, java.lang.String, int)
     {
-        java.lang.String r0, r1, $r9, $r18, $r23, $r32, $r37;
+        java.lang.String r0, r1, $r9, $r18, $r23, $r25, $r30, $r39, $r44, $r46, $r51;
         int i0, i1;
-        java.io.PrintStream $r2, $r16, $r30;
-        java.lang.StringBuilder $r3, $r4, $r5, $r6, $r7, $r8, $r17, $r19, $r20, $r21, $r22, $r31, $r33, $r34, $r35, $r36;
-        java.util.Map $r10, $r11, $r13, $r24, $r27;
+        java.io.PrintStream $r2, $r16, $r37;
+        java.lang.StringBuilder $r3, $r4, $r5, $r6, $r7, $r8, $r17, $r19, $r20, $r21, $r22, $r24, $r26, $r27, $r28, $r29, $r38, $r40, $r41, $r42, $r43, $r45, $r47, $r48, $r49, $r50;
+        java.util.Map $r10, $r11, $r13, $r31, $r34;
         boolean $z0;
-        java.lang.Integer $r14, $r26, $r28;
-        java.lang.Object $r25;
+        java.lang.Integer $r14, $r33, $r35;
+        java.lang.Object $r32;
 
         r0 := @parameter0: java.lang.String;
         r1 := @parameter1: java.lang.String;
@@ -929,31 +929,49 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
         $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.String toString()>();
         virtualinvoke $r16.<java.io.PrintStream: void println(java.lang.String)>($r23);
+        $r24 = new java.lang.StringBuilder;
+        $r25 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r0);
+        specialinvoke $r24.<java.lang.StringBuilder: void <init>(java.lang.String)>($r25);
+        $r26 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
+        $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile", $r30);
         goto label2;
 
      label0:
-        $r24 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r25 = interfaceinvoke $r24.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1);
-        $r26 = (java.lang.Integer) $r25;
-        i1 = virtualinvoke $r26.<java.lang.Integer: int intValue()>();
+        $r31 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r32 = interfaceinvoke $r31.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1);
+        $r33 = (java.lang.Integer) $r32;
+        i1 = virtualinvoke $r33.<java.lang.Integer: int intValue()>();
         if i0 <= 0 goto label1;
 
         i1 = i1 + 1;
 
      label1:
-        $r27 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r28 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i1);
-        interfaceinvoke $r27.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, $r28);
-        $r30 = <java.lang.System: java.io.PrintStream out>;
-        $r31 = new java.lang.StringBuilder;
-        $r32 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r0);
-        specialinvoke $r31.<java.lang.StringBuilder: void <init>(java.lang.String)>($r32);
-        $r33 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r34 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r35 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r36 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
-        $r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r30.<java.io.PrintStream: void println(java.lang.String)>($r37);
+        $r34 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r35 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i1);
+        interfaceinvoke $r34.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, $r35);
+        $r37 = <java.lang.System: java.io.PrintStream out>;
+        $r38 = new java.lang.StringBuilder;
+        $r39 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r0);
+        specialinvoke $r38.<java.lang.StringBuilder: void <init>(java.lang.String)>($r39);
+        $r40 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
+        $r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r43 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
+        $r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r37.<java.io.PrintStream: void println(java.lang.String)>($r44);
+        $r45 = new java.lang.StringBuilder;
+        $r46 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r0);
+        specialinvoke $r45.<java.lang.StringBuilder: void <init>(java.lang.String)>($r46);
+        $r47 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r48 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
+        $r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r50 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
+        $r51 = virtualinvoke $r50.<java.lang.StringBuilder: java.lang.String toString()>();
+        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile", $r51);
 
      label2:
         return;
@@ -998,14 +1016,14 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
     public static void testPrint(java.io.PrintWriter)
     {
         java.io.PrintWriter r0;
-        java.util.Map $r1, $r13, $r24;
+        java.util.Map $r1, $r14, $r26;
         java.util.Iterator r2;
         java.util.Map$Entry r3;
-        java.lang.StringBuilder $r4, $r9, $r10, $r12, $r16, $r18, $r20, $r21, $r23, $r27;
+        java.lang.StringBuilder $r4, $r9, $r10, $r12, $r13, $r17, $r19, $r21, $r22, $r24, $r25, $r29;
         java.util.Set $r5;
-        java.lang.Object $r6, $r8, $r11, $r14, $r15, $r19, $r22, $r25, $r26;
+        java.lang.Object $r6, $r8, $r11, $r15, $r16, $r20, $r23, $r27, $r28;
         java.io.PrintStream $r7;
-        java.lang.String $r17, $r28;
+        java.lang.String $r18, $r30;
         boolean $z0;
 
         r0 := @parameter0: java.io.PrintWriter;
@@ -1025,25 +1043,27 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
         $r11 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
         $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
-        $r13 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r14 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r15 = interfaceinvoke $r13.<java.util.Map: java.lang.Object get(java.lang.Object)>($r14);
-        $r16 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r15);
-        $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r17);
-        $r18 = new java.lang.StringBuilder;
-        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
-        $r19 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r20 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r19);
-        $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r22 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r23 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r22);
-        $r24 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r25 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r26 = interfaceinvoke $r24.<java.util.Map: java.lang.Object get(java.lang.Object)>($r25);
-        $r27 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r26);
-        $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r0.<java.io.PrintWriter: void println(java.lang.String)>($r28);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r14 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r15 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r16 = interfaceinvoke $r14.<java.util.Map: java.lang.Object get(java.lang.Object)>($r15);
+        $r17 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r16);
+        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r18);
+        $r19 = new java.lang.StringBuilder;
+        specialinvoke $r19.<java.lang.StringBuilder: void <init>(java.lang.String)>("--");
+        $r20 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r21 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r20);
+        $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r23 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r24 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r23);
+        $r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r26 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r27 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r28 = interfaceinvoke $r26.<java.util.Map: java.lang.Object get(java.lang.Object)>($r27);
+        $r29 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r28);
+        $r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r0.<java.io.PrintWriter: void println(java.lang.String)>($r30);
 
      label1:
         $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>();
