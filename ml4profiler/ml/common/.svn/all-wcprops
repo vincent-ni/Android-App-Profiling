@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1407/trunk/mantis/ml/common
+END
+sequence2value.m
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1407/trunk/mantis/ml/common/sequence2value.m
+END
+remove_identical_cols.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1407/trunk/mantis/ml/common/remove_identical_cols.m
+END
+mean_error.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1407/trunk/mantis/ml/common/mean_error.m
+END
+polynomial_features_ling.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1407/trunk/mantis/ml/common/polynomial_features_ling.m
+END
+foba_poly_fitting_testing.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1407/trunk/mantis/ml/common/foba_poly_fitting_testing.m
+END
+get_the_best.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1407/trunk/mantis/ml/common/get_the_best.m
+END
+costy_features.m
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1407/trunk/mantis/ml/common/costy_features.m
+END
+foba_linear.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1407/trunk/mantis/ml/common/foba_linear.m
+END
+sequence2weight.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1407/trunk/mantis/ml/common/sequence2weight.m
+END
+regress_relative.m
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1407/trunk/mantis/ml/common/regress_relative.m
+END
+get_the_least.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1407/trunk/mantis/ml/common/get_the_least.m
+END
+foba_poly.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1407/trunk/mantis/ml/common/foba_poly.m
+END
+polynomial_features_inc.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1407/trunk/mantis/ml/common/polynomial_features_inc.m
+END
+multinomial_inc_sequence.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1407/trunk/mantis/ml/common/multinomial_inc_sequence.m
+END
+foba_poly_lusearch_example.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1407/trunk/mantis/ml/common/foba_poly_lusearch_example.m
+END
+sequence2term.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1407/trunk/mantis/ml/common/sequence2term.m
+END
+multinomial_sequence.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1407/trunk/mantis/ml/common/multinomial_sequence.m
+END
+preprocess_features.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1407/trunk/mantis/ml/common/preprocess_features.m
+END
+subset2whole.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1407/trunk/mantis/ml/common/subset2whole.m
+END
+selected_features.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1407/trunk/mantis/ml/common/selected_features.m
+END
+normalization.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1407/trunk/mantis/ml/common/normalization.m
+END
