@@ -45,12 +45,8 @@ while (num_chosen_terms < max_terms)
             err_sp(i) = error;
             num_existing(i)  = length(existing);
             num_selecting(i) = length(selecting);
-            if(length(existing) > 0)
-                existing_all(i,  1:num_existing(i)) = existing;
-            end
-            if(length(selecting) > 0)
-                selecting_all(i, 1:num_selecting(i)) = selecting;
-            end
+             existing_all(i,  1:num_existing(i)) = existing;
+            selecting_all(i, 1:num_selecting(i)) = selecting;
         end        
     end
     
