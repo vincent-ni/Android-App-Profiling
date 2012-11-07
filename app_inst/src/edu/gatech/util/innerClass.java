@@ -25,7 +25,7 @@ public class innerClass {
 	
 	public static void callMethod(String method, String fileName, int linenum){
 		System.out.println("calling: " + method);
-		Log.e("Profile:  ", "calling: " + method);
+		Log.e("Profile", "calling: " + method);
 		runSeq++;
 		Date currentDate = new Date();
 		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime(), fileName, linenum);
@@ -35,13 +35,13 @@ public class innerClass {
 	
 	public static void endMethod(String method){
 		System.out.println("end calling: " + method);
-		Log.e("Profile:  ", "end calling: " + method);
+		Log.e("Profile", "end calling: " + method);
 		Date currentDate = new Date();
 		MethodInfo info = methodStack.pop();
 		info.setRunTime(currentDate.getTime());
 		System.out.println("  Seq: " + info.runSeq);
 		System.out.println("  Runtime: " + info.runTime);
-		Log.e("Profile:  ", "  Runtime: " + info.runTime);
+		Log.e("Profile", "  Runtime: " + info.runTime);
 		printInfo(info);
 	}
 	
@@ -132,8 +132,8 @@ public class innerClass {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
-			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : " 
-						+ info.lineNum + " : " + info.methodSig);
+			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : line" 
+					+ info.lineNum + " : " + info.methodSig + " : " + info.runSeq);
 			innerFeature.testPrint(writer);
 			writer.close();
 		} catch (Exception e) {
@@ -147,8 +147,8 @@ public class innerClass {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
 			for(int i = 0; i < allMethods.size(); i++){
 				MethodInfo info = allMethods.get(i);
-				writer.println("Time:  " + info.runTime + " : " + info.fileName + " : " 
-						+ info.lineNum + " : " + info.methodSig);
+				writer.println("Time:  " + info.runTime + " : " + info.fileName + " : line" 
+						+ info.lineNum + " : " + info.methodSig + " : " + info.runSeq);
 			}
 			writer.close();
 		} catch (Exception e) {

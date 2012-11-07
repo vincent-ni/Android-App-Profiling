@@ -46,9 +46,9 @@ public class innerFeature {
 		Iterator iter = featureKeySet.entrySet().iterator();
 		while (iter.hasNext()) {
 			Map.Entry pairs = (Map.Entry)iter.next();
-			System.out.println(pairs.getKey() + " " + pairs.getValue() + " " + 
+			System.out.println(pairs.getKey() + " : " + pairs.getValue() + " : " + 
 						featureValSet.get(pairs.getValue()));
-			writer.println(pairs.getKey() + " " + pairs.getValue() + " " 
+			writer.println(pairs.getKey() + " : " + pairs.getValue() + " : " 
 						+ featureValSet.get(pairs.getValue()));
 		}
 	}
