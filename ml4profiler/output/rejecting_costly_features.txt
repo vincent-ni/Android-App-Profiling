@@ -1,0 +1,8 @@
+Round 2:
+% The foba poly prediction error = 1.000, using the following 1 terms model:
+% M(f) =    0.000
+% with features 
+Round 2:
+% The foba poly prediction error = 1.604, using the following 1 terms model:
+% M(f) =    6.993
+% with features 
