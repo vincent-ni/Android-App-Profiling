@@ -1,0 +1,13 @@
+# Created by Octave 3.4.3, Tue Nov 06 18:53:06 2012 EST <vincent@vincentni.gatech.edu>
+# name: var_f
+# type: matrix
+# rows: 1
+# columns: 4
+ 1 2 3 4
+
+
+# name: num_orig_feats
+# type: scalar
+4
+
+
