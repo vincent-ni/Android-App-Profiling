@@ -78,11 +78,10 @@ public class innerFeature {
 			writer.println(pairs.getKey() + " : " + pairs.getValue() + " : " 
 						+ featureValSet.get(pairs.getValue()));
 		}
-		if (methodFeatureSet.containsKey(method)) {
-			List<String> localFeatures = methodFeatureSet.get(method);
-			System.out.print("info:  " + method);
-			writer.print("info:  " + method);
-			for(String item : localFeatures){
+		for(Entry<String, List<String>> entry : methodFeatureSet.entrySet()){
+			System.out.print("info:  " + entry.getKey());
+			writer.print("info:  " + entry.getKey());
+			for(String item : entry.getValue()){
 				System.out.print(" : " + item);
 				writer.print(" : " + item);
 			}
