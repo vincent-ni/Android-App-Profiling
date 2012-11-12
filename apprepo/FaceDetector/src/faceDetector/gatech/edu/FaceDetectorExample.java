@@ -78,7 +78,6 @@ public class FaceDetectorExample extends Activity implements OnClickListener{
 			wif.release();*/
     }
     
-    @Override
     public void onClick(View view) {
     	if(view.equals(mStartButton)){
 	    	if(mStartButton.getText().equals("Start")){

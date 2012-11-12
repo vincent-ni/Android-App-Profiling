@@ -25,7 +25,7 @@ public class innerClass {
 	
 	public static void callMethod(String method, String fileName, int linenum){
 		System.out.println("calling: " + method);
-		Log.e("Profile", "calling: " + method);
+//		Log.e("Profile", "calling: " + method);
 		runSeq++;
 		Date currentDate = new Date();
 		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime(), fileName, linenum);
@@ -35,13 +35,13 @@ public class innerClass {
 	
 	public static void endMethod(String method){
 		System.out.println("end calling: " + method);
-		Log.e("Profile", "end calling: " + method);
+//		Log.e("Profile", "end calling: " + method);
 		Date currentDate = new Date();
 		MethodInfo info = methodStack.pop();
 		info.setRunTime(currentDate.getTime());
-		System.out.println("  Seq: " + info.runSeq);
-		System.out.println("  Runtime: " + info.runTime);
-		Log.e("Profile", "  Runtime: " + info.runTime);
+//		System.out.println("  Seq: " + info.runSeq);
+//		System.out.println("  Runtime: " + info.runTime);
+//		Log.e("Profile", "  Runtime: " + info.runTime);
 		printInfo(info);
 	}
 	

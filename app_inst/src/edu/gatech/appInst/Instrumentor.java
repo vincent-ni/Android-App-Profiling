@@ -89,7 +89,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 				AssignStmt incStmt = G.jimple.newAssignStmt(l, incExpr);
 				units.insertBefore(incStmt, loop.getBackJumpStmt());
 				InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-					StringConstant.v(name), StringConstant.v(l.getName()), incStmt.getLeftOp());
+						StringConstant.v(method.getSignature()), StringConstant.v(name), StringConstant.v(l.getName()), incStmt.getLeftOp());
 				Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
 				units.insertBefore(incStmt1, loop.getBackJumpStmt());
 				//i++;
@@ -173,7 +173,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(name), StringConstant.v(l.getName()), returnVal);
+								StringConstant.v(method.getSignature()), StringConstant.v(name), StringConstant.v(l.getName()), returnVal);
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertAfter(incStmt, u);
 					}

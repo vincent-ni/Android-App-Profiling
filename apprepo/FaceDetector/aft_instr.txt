@@ -123,14 +123,14 @@ public class faceDetector.gatech.edu.FaceDetection extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>", "faceDetector.gatech.edu.FaceDetection", 32);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $i0 = virtualinvoke $r6.<android.graphics.Bitmap: int getWidth()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>:(return value)line32", "c0", $i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "ret:  <android.graphics.Bitmap: int getWidth()> : line32", "c0", $i0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: int getWidth()>");
         r0.<faceDetector.gatech.edu.FaceDetection: int imageWidth> = $i0;
         $r7 = r0.<faceDetector.gatech.edu.FaceDetection: android.graphics.Bitmap myBitmap>;
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>", "faceDetector.gatech.edu.FaceDetection", 33);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $i1 = virtualinvoke $r7.<android.graphics.Bitmap: int getHeight()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>:(return value)line33", "c1", $i1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "ret:  <android.graphics.Bitmap: int getHeight()> : line33", "c1", $i1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: int getHeight()>");
         r0.<faceDetector.gatech.edu.FaceDetection: int imageHeight> = $i1;
         $r8 = new android.media.FaceDetector;
@@ -181,7 +181,7 @@ public class faceDetector.gatech.edu.FaceDetection extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: int finishARound()>", "faceDetector.gatech.edu.FaceDetection", 44);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         i1 = staticinvoke <faceDetector.gatech.edu.FaceDetection: int finishARound()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: int finishARound()>:(return value)line44", "c3", i1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void run()>", "ret:  <faceDetector.gatech.edu.FaceDetection: int finishARound()> : line44", "c3", i1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetection: int finishARound()>");
         $i2 = i1 % 10;
         if $i2 != 1 goto label2;
@@ -209,7 +209,7 @@ public class faceDetector.gatech.edu.FaceDetection extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.FaceDetection", 50);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $i3 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r4);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>:(return value)line50", "c4", $i3);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void run()>", "ret:  <java.lang.Integer: int parseInt(java.lang.String)> : line50", "c4", $i3);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Integer: int parseInt(java.lang.String)>");
         r0.<faceDetector.gatech.edu.FaceDetection: int battery> = $i3;
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: void close()>", "faceDetector.gatech.edu.FaceDetection", 51);
@@ -310,7 +310,7 @@ public class faceDetector.gatech.edu.FaceDetection extends java.lang.Thread
         $r27 := @caughtexception;
         r28 = $r27;
         c2 = c2 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void run()>:(loop)line40", "c2", c2);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void run()>", "loop:  <faceDetector.gatech.edu.FaceDetection: void run()> : line40", "c2", c2);
         goto label0;
 
      label5:
@@ -448,7 +448,7 @@ public class faceDetector.gatech.edu.FaceDetection extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetection", 93);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         $i0 = virtualinvoke $r1.<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>($r2, $r3);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>:(return value)line93", "c5", $i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: long detectFace()>", "ret:  <android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])> : line93", "c5", $i0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>");
         r0.<faceDetector.gatech.edu.FaceDetection: int numberOfFaceDetected> = $i0;
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetection", 94);
@@ -505,49 +505,49 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView$1 extends java.lang.Thr
         $r4 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
         r2.<android.graphics.BitmapFactory$Options: android.graphics.Bitmap$Config inPreferredConfig> = $r4;
         $r5 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 182);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 181);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         $r6 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>("/sdcard/DCIM/face2.jpg", r2);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>");
         $r5.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap2> = $r6;
         $r7 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
         $r8 = $r7.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap2>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 183);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 182);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         i0 = virtualinvoke $r8.<android.graphics.Bitmap: int getWidth()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>:(return value)line183", "c6", i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void run()>", "ret:  <android.graphics.Bitmap: int getWidth()> : line182", "c6", i0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: int getWidth()>");
         $r9 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
         $r10 = $r9.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap2>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 184);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 183);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         i1 = virtualinvoke $r10.<android.graphics.Bitmap: int getHeight()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>:(return value)line184", "c7", i1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void run()>", "ret:  <android.graphics.Bitmap: int getHeight()> : line183", "c7", i1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: int getHeight()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 185);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 184);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.System: long currentTimeMillis()>");
         $r11 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
         $r12 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 186);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 185);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $i3 = staticinvoke <faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>($r12);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>:(return value)line186", "c8", $i3);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void run()>", "ret:  <faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)> : line185", "c8", $i3);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>");
         $r13 = newarray (android.media.FaceDetector$Face)[$i3];
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$002(faceDetector.gatech.edu.FaceDetectorExample$myView,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 186);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$002(faceDetector.gatech.edu.FaceDetectorExample$myView,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 185);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         staticinvoke <faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$002(faceDetector.gatech.edu.FaceDetectorExample$myView,android.media.FaceDetector$Face[])>($r11, $r13);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$002(faceDetector.gatech.edu.FaceDetectorExample$myView,android.media.FaceDetector$Face[])>");
         $r15 = new android.media.FaceDetector;
         $r16 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 187);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 186);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $i4 = staticinvoke <faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>($r16);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>:(return value)line187", "c9", $i4);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void run()>", "ret:  <faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)> : line186", "c9", $i4);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: int access$100(faceDetector.gatech.edu.FaceDetectorExample$myView)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: void <init>(int,int,int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 187);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: void <init>(int,int,int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 186);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(3);
         specialinvoke $r15.<android.media.FaceDetector: void <init>(int,int,int)>(i0, i1, $i4);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector: void <init>(int,int,int)>");
@@ -556,18 +556,18 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView$1 extends java.lang.Thr
         $r18 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
         $r19 = $r18.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap2>;
         $r20 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$000(faceDetector.gatech.edu.FaceDetectorExample$myView)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 188);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$000(faceDetector.gatech.edu.FaceDetectorExample$myView)>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 187);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $r21 = staticinvoke <faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$000(faceDetector.gatech.edu.FaceDetectorExample$myView)>($r20);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] access$000(faceDetector.gatech.edu.FaceDetectorExample$myView)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 188);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 187);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         $i5 = virtualinvoke r3.<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>($r19, $r21);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>:(return value)line188", "c10", $i5);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void run()>", "ret:  <android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])> : line187", "c10", $i5);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>");
         $r17.<faceDetector.gatech.edu.FaceDetectorExample$myView: int numberOfFaceDetected2> = $i5;
         $r22 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: faceDetector.gatech.edu.FaceDetectorExample$myView this$1>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 189);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView$1", 188);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $l6 = staticinvoke <java.lang.System: long currentTimeMillis()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.System: long currentTimeMillis()>");
@@ -613,7 +613,7 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         r1 := @parameter0: faceDetector.gatech.edu.FaceDetectorExample;
         r2 := @parameter1: android.content.Context;
         r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: faceDetector.gatech.edu.FaceDetectorExample this$0> = r1;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.View: void <init>(android.content.Context)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 167);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.View: void <init>(android.content.Context)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 166);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         specialinvoke r0.<android.view.View: void <init>(android.content.Context)>(r2);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.view.View: void <init>(android.content.Context)>");
@@ -624,38 +624,38 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         r3 = $r6;
         $r7 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
         r3.<android.graphics.BitmapFactory$Options: android.graphics.Bitmap$Config inPreferredConfig> = $r7;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 173);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 172);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         $r8 = staticinvoke <android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>("/sdcard/DCIM/face1.jpg", r3);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.BitmapFactory: android.graphics.Bitmap decodeFile(java.lang.String,android.graphics.BitmapFactory$Options)>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap> = $r8;
         $r9 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 174);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 173);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $i1 = virtualinvoke $r9.<android.graphics.Bitmap: int getWidth()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getWidth()>:(return value)line174", "c11", $i1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void <init>(faceDetector.gatech.edu.FaceDetectorExample,android.content.Context)>", "ret:  <android.graphics.Bitmap: int getWidth()> : line173", "c11", $i1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: int getWidth()>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageWidth> = $i1;
         $r10 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 175);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 174);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $i2 = virtualinvoke $r10.<android.graphics.Bitmap: int getHeight()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: int getHeight()>:(return value)line175", "c12", $i2);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void <init>(faceDetector.gatech.edu.FaceDetectorExample,android.content.Context)>", "ret:  <android.graphics.Bitmap: int getHeight()> : line174", "c12", $i2);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: int getHeight()>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageHeight> = $i2;
         $r11 = new faceDetector.gatech.edu.FaceDetectorExample$myView$1;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void <init>(faceDetector.gatech.edu.FaceDetectorExample$myView,faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 177);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void <init>(faceDetector.gatech.edu.FaceDetectorExample$myView,faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 176);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         specialinvoke $r11.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void <init>(faceDetector.gatech.edu.FaceDetectorExample$myView,faceDetector.gatech.edu.FaceDetectorExample)>(r0, r1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void <init>(faceDetector.gatech.edu.FaceDetectorExample$myView,faceDetector.gatech.edu.FaceDetectorExample)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 177);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 176);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r11.<faceDetector.gatech.edu.FaceDetectorExample$myView$1: void start()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Thread: void start()>");
         $r12 = new android.graphics.Matrix;
         specialinvoke $r12.<android.graphics.Matrix: void <init>()>();
         r4 = $r12;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Matrix: boolean postScale(float,float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 195);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Matrix: boolean postScale(float,float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 194);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         virtualinvoke r4.<android.graphics.Matrix: boolean postScale(float,float)>(1.0F, 1.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Matrix: boolean postScale(float,float)>");
@@ -665,11 +665,11 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $i5 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageWidth>;
         $i6 = $i5 / 2;
         $i7 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageHeight>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 197);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 196);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(7);
         staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r13, $i4, 0, $i6, $i7, r4, 1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 199);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 198);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.System: long currentTimeMillis()>");
@@ -680,7 +680,7 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $i9 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageWidth>;
         $i10 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageHeight>;
         $i11 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int numberOfFace>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: void <init>(int,int,int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 212);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: void <init>(int,int,int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 211);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(3);
         specialinvoke $r15.<android.media.FaceDetector: void <init>(int,int,int)>($i9, $i10, $i11);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector: void <init>(int,int,int)>");
@@ -688,13 +688,13 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $r16 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector myFaceDetect>;
         $r17 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap>;
         $r18 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.media.FaceDetector$Face[] myFace>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 213);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 212);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         $i12 = virtualinvoke $r16.<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>($r17, $r18);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>:(return value)line213", "c13", $i12);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void <init>(faceDetector.gatech.edu.FaceDetectorExample,android.content.Context)>", "ret:  <android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])> : line212", "c13", $i12);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector: int findFaces(android.graphics.Bitmap,android.media.FaceDetector$Face[])>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int numberOfFaceDetected> = $i12;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 214);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 213);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $l13 = staticinvoke <java.lang.System: long currentTimeMillis()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.System: long currentTimeMillis()>");
@@ -728,23 +728,23 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         c15 = 0;
         c14 = 0;
         $r8 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: faceDetector.gatech.edu.FaceDetectorExample this$0>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.app.Activity: android.view.WindowManager getWindowManager()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 226);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.app.Activity: android.view.WindowManager getWindowManager()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 225);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $r9 = virtualinvoke $r8.<faceDetector.gatech.edu.FaceDetectorExample: android.view.WindowManager getWindowManager()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.app.Activity: android.view.WindowManager getWindowManager()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.WindowManager: android.view.Display getDefaultDisplay()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 226);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.WindowManager: android.view.Display getDefaultDisplay()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 225);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         r2 = interfaceinvoke $r9.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.view.WindowManager: android.view.Display getDefaultDisplay()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.Display: int getWidth()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 227);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.Display: int getWidth()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 226);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         i0 = virtualinvoke r2.<android.view.Display: int getWidth()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.view.Display: int getWidth()>:(return value)line227", "c16", i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)>", "ret:  <android.view.Display: int getWidth()> : line226", "c16", i0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.view.Display: int getWidth()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.Display: int getHeight()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 228);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.view.Display: int getHeight()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 227);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         i1 = virtualinvoke r2.<android.view.Display: int getHeight()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<android.view.Display: int getHeight()>:(return value)line228", "c17", i1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)>", "ret:  <android.view.Display: int getHeight()> : line227", "c17", i1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.view.Display: int getHeight()>");
         s2 = 200;
         s3 = 200;
@@ -797,34 +797,34 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $r10 = new android.graphics.Matrix;
         specialinvoke $r10.<android.graphics.Matrix: void <init>()>();
         r3 = $r10;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Matrix: boolean postScale(float,float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 250);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Matrix: boolean postScale(float,float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 249);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
         virtualinvoke r3.<android.graphics.Matrix: boolean postScale(float,float)>(f0, f1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Matrix: boolean postScale(float,float)>");
         $r11 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap>;
         $i16 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageWidth>;
         $i17 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageHeight>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 255);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 254);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(7);
         r4 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r11, 0, 0, $i16, $i17, r3, 1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 259);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 258);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(4);
         virtualinvoke r1.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>(r4, 0.0F, 0.0F, null);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>");
         $r12 = new android.graphics.Paint;
         specialinvoke $r12.<android.graphics.Paint: void <init>()>();
         r5 = $r12;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 262);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 261);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setColor(int)>(-65536);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setColor(int)>");
         $r13 = <android.graphics.Paint$Style: android.graphics.Paint$Style STROKE>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 263);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 262);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>($r13);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 264);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 263);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStrokeWidth(float)>(3.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStrokeWidth(float)>");
@@ -839,11 +839,11 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $r15 = new android.graphics.PointF;
         specialinvoke $r15.<android.graphics.PointF: void <init>()>();
         r7 = $r15;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 270);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 269);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r6.<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>(r7);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: float eyesDistance()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 271);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: float eyesDistance()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 270);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $f6 = virtualinvoke r6.<android.media.FaceDetector$Face: float eyesDistance()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector$Face: float eyesDistance()>");
@@ -872,70 +872,70 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $f25 = $f24 * f1;
         $i22 = (int) $f25;
         $f26 = (float) $i22;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 272);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 271);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(5);
         virtualinvoke r1.<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>($f11, $f16, $f21, $f26, r5);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>");
         i4 = i4 + 1;
         c14 = c14 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)>:(loop)line266", "c14", c14);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)>", "loop:  <faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)> : line265", "c14", c14);
         goto label2;
 
      label3:
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 279);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 278);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStrokeWidth(float)>(1.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStrokeWidth(float)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setTextSize(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 280);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setTextSize(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 279);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setTextSize(float)>(50.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setTextSize(float)>");
         $r16 = <android.graphics.Paint$Style: android.graphics.Paint$Style FILL>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 281);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 280);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>($r16);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 282);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 281);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setColor(int)>(-65536);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setColor(int)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 284);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 283);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(4);
         virtualinvoke r1.<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>("Task 1", 100.0F, 100.0F, r5);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 285);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 284);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStrokeWidth(float)>(5.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStrokeWidth(float)>");
         $f27 = (float) i11;
         $f28 = (float) i11;
         $f29 = (float) i8;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawLine(float,float,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 286);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawLine(float,float,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 285);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(5);
         virtualinvoke r1.<android.graphics.Canvas: void drawLine(float,float,float,float,android.graphics.Paint)>($f27, 0.0F, $f28, $f29, r5);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawLine(float,float,float,float,android.graphics.Paint)>");
         $r17 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: android.graphics.Bitmap myBitmap2>;
         $i23 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageWidth>;
         $i24 = r0.<faceDetector.gatech.edu.FaceDetectorExample$myView: int imageHeight>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 289);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 288);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(7);
         r18 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>($r17, 0, 0, $i23, $i24, r3, 1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Bitmap: android.graphics.Bitmap createBitmap(android.graphics.Bitmap,int,int,int,int,android.graphics.Matrix,boolean)>");
         $f30 = (float) i11;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 293);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 292);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(4);
         virtualinvoke r1.<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>(r18, $f30, 0.0F, null);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawBitmap(android.graphics.Bitmap,float,float,android.graphics.Paint)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 295);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 294);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setColor(int)>(-65536);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setColor(int)>");
         $r19 = <android.graphics.Paint$Style: android.graphics.Paint$Style STROKE>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 296);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 295);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>($r19);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 297);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 296);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStrokeWidth(float)>(3.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStrokeWidth(float)>");
@@ -950,11 +950,11 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $r22 = new android.graphics.PointF;
         specialinvoke $r22.<android.graphics.PointF: void <init>()>();
         r23 = $r22;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 303);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 302);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r21.<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>(r23);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector$Face: void getMidPoint(android.graphics.PointF)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: float eyesDistance()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 304);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.media.FaceDetector$Face: float eyesDistance()>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 303);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $f31 = virtualinvoke r21.<android.media.FaceDetector$Face: float eyesDistance()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.media.FaceDetector$Face: float eyesDistance()>");
@@ -985,36 +985,36 @@ class faceDetector.gatech.edu.FaceDetectorExample$myView extends android.view.Vi
         $f50 = $f49 * f1;
         $i32 = (int) $f50;
         $f51 = (float) $i32;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 305);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 304);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(5);
         virtualinvoke r1.<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>($f36, $f41, $f46, $f51, r5);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawRect(float,float,float,float,android.graphics.Paint)>");
         i25 = i25 + 1;
         c15 = c15 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)>:(loop)line299", "c15", c15);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)>", "loop:  <faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)> : line298", "c15", c15);
         goto label4;
 
      label5:
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 312);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStrokeWidth(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 311);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStrokeWidth(float)>(1.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStrokeWidth(float)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setTextSize(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 313);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setTextSize(float)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 312);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setTextSize(float)>(50.0F);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setTextSize(float)>");
         $r24 = <android.graphics.Paint$Style: android.graphics.Paint$Style FILL>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 314);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 313);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>($r24);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setStyle(android.graphics.Paint$Style)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 315);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Paint: void setColor(int)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 314);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke r5.<android.graphics.Paint: void setColor(int)>(-65536);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Paint: void setColor(int)>");
         $i33 = i11 + 100;
         $f52 = (float) $i33;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 317);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>", "faceDetector.gatech.edu.FaceDetectorExample$myView", 316);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(4);
         virtualinvoke r1.<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>("Task 2", $f52, 100.0F, r5);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.graphics.Canvas: void drawText(java.lang.String,float,float,android.graphics.Paint)>");
@@ -1141,49 +1141,49 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
         r1 := @parameter0: android.view.View;
         c18 = 0;
         $r3 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mStartButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 83);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 82);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $z0 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>($r3);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: boolean equals(java.lang.Object)>");
         if $z0 == 0 goto label4;
 
         $r4 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mStartButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: java.lang.CharSequence getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 84);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: java.lang.CharSequence getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 83);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $r5 = virtualinvoke $r4.<android.widget.Button: java.lang.CharSequence getText()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: java.lang.CharSequence getText()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 84);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 83);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $z1 = virtualinvoke $r5.<java.lang.Object: boolean equals(java.lang.Object)>("Start");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: boolean equals(java.lang.Object)>");
         if $z1 == 0 goto label2;
 
         $r6 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.os.PowerManager$WakeLock wl>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.os.PowerManager$WakeLock: void acquire()>", "faceDetector.gatech.edu.FaceDetectorExample", 85);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.os.PowerManager$WakeLock: void acquire()>", "faceDetector.gatech.edu.FaceDetectorExample", 84);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r6.<android.os.PowerManager$WakeLock: void acquire()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.os.PowerManager$WakeLock: void acquire()>");
         $r7 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mStartButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 86);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 85);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke $r7.<android.widget.Button: void setText(java.lang.CharSequence)>("Stop");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: void setText(java.lang.CharSequence)>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample: boolean stop> = 0;
         $r8 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.EditText mCPUNum>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.EditText: android.text.Editable getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 89);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.EditText: android.text.Editable getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 88);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $r9 = virtualinvoke $r8.<android.widget.EditText: android.text.Editable getText()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.EditText: android.text.Editable getText()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: java.lang.String toString()>", "faceDetector.gatech.edu.FaceDetectorExample", 89);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: java.lang.String toString()>", "faceDetector.gatech.edu.FaceDetectorExample", 88);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $r10 = virtualinvoke $r9.<java.lang.Object: java.lang.String toString()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: java.lang.String toString()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.FaceDetectorExample", 89);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.FaceDetectorExample", 88);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r10);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>:(return value)line89", "c19", i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample: void onClick(android.view.View)>", "ret:  <java.lang.Integer: int parseInt(java.lang.String)> : line88", "c19", i0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Integer: int parseInt(java.lang.String)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample", 90);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.System: long currentTimeMillis()>", "faceDetector.gatech.edu.FaceDetectorExample", 89);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $l2 = staticinvoke <java.lang.System: long currentTimeMillis()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.System: long currentTimeMillis()>");
@@ -1195,18 +1195,18 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
         if i1 >= i0 goto label1;
 
         $r11 = new faceDetector.gatech.edu.FaceDetection;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample", 93);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetection: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample", 92);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         specialinvoke $r11.<faceDetector.gatech.edu.FaceDetection: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>(r0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.FaceDetection: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>");
         r2 = $r11;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample", 94);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample", 93);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke r2.<faceDetector.gatech.edu.FaceDetection: void start()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Thread: void start()>");
         i1 = i1 + 1;
         c18 = c18 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample: void onClick(android.view.View)>:(loop)line92", "c18", c18);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.FaceDetectorExample: void onClick(android.view.View)>", "loop:  <faceDetector.gatech.edu.FaceDetectorExample: void onClick(android.view.View)> : line91", "c18", c18);
         goto label0;
 
      label1:
@@ -1214,21 +1214,21 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
 
      label2:
         $r12 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.os.PowerManager$WakeLock wl>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.os.PowerManager$WakeLock: boolean isHeld()>", "faceDetector.gatech.edu.FaceDetectorExample", 99);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.os.PowerManager$WakeLock: boolean isHeld()>", "faceDetector.gatech.edu.FaceDetectorExample", 98);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $z2 = virtualinvoke $r12.<android.os.PowerManager$WakeLock: boolean isHeld()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.os.PowerManager$WakeLock: boolean isHeld()>");
         if $z2 == 0 goto label3;
 
         $r13 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.os.PowerManager$WakeLock wl>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.os.PowerManager$WakeLock: void release()>", "faceDetector.gatech.edu.FaceDetectorExample", 100);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.os.PowerManager$WakeLock: void release()>", "faceDetector.gatech.edu.FaceDetectorExample", 99);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r13.<android.os.PowerManager$WakeLock: void release()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.os.PowerManager$WakeLock: void release()>");
 
      label3:
         $r14 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mStartButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 101);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 100);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke $r14.<android.widget.Button: void setText(java.lang.CharSequence)>("Start");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: void setText(java.lang.CharSequence)>");
@@ -1237,41 +1237,41 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
 
      label4:
         $r15 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mListenButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 105);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 104);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $z3 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>($r15);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: boolean equals(java.lang.Object)>");
         if $z3 == 0 goto label7;
 
         $r16 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mListenButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: java.lang.CharSequence getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 106);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: java.lang.CharSequence getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 105);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $r17 = virtualinvoke $r16.<android.widget.Button: java.lang.CharSequence getText()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: java.lang.CharSequence getText()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 106);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 105);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $z4 = virtualinvoke $r17.<java.lang.Object: boolean equals(java.lang.Object)>("Listen");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: boolean equals(java.lang.Object)>");
         if $z4 == 0 goto label5;
 
         $r18 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.net.wifi.WifiManager$WifiLock wif>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void acquire()>", "faceDetector.gatech.edu.FaceDetectorExample", 108);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void acquire()>", "faceDetector.gatech.edu.FaceDetectorExample", 107);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r18.<android.net.wifi.WifiManager$WifiLock: void acquire()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.net.wifi.WifiManager$WifiLock: void acquire()>");
         $r19 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mListenButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 109);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 108);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke $r19.<android.widget.Button: void setText(java.lang.CharSequence)>("Listening");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: void setText(java.lang.CharSequence)>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample: boolean listen> = 1;
         $r20 = new faceDetector.gatech.edu.ProbListener;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.ProbListener: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample", 112);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.ProbListener: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample", 111);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         specialinvoke $r20.<faceDetector.gatech.edu.ProbListener: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>(r0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.ProbListener: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>");
         r21 = $r20;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample", 113);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample", 112);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke r21.<faceDetector.gatech.edu.ProbListener: void start()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Thread: void start()>");
@@ -1279,21 +1279,21 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
 
      label5:
         $r22 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.net.wifi.WifiManager$WifiLock wif>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>", "faceDetector.gatech.edu.FaceDetectorExample", 118);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>", "faceDetector.gatech.edu.FaceDetectorExample", 117);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $z5 = virtualinvoke $r22.<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>");
         if $z5 == 0 goto label6;
 
         $r23 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.net.wifi.WifiManager$WifiLock wif>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void release()>", "faceDetector.gatech.edu.FaceDetectorExample", 119);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void release()>", "faceDetector.gatech.edu.FaceDetectorExample", 118);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r23.<android.net.wifi.WifiManager$WifiLock: void release()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.net.wifi.WifiManager$WifiLock: void release()>");
 
      label6:
         $r24 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mListenButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 120);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 119);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke $r24.<android.widget.Button: void setText(java.lang.CharSequence)>("Listen");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: void setText(java.lang.CharSequence)>");
@@ -1302,41 +1302,41 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
 
      label7:
         $r25 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mSendButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 125);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 124);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $z6 = virtualinvoke r1.<java.lang.Object: boolean equals(java.lang.Object)>($r25);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: boolean equals(java.lang.Object)>");
         if $z6 == 0 goto label10;
 
         $r26 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mSendButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: java.lang.CharSequence getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 126);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: java.lang.CharSequence getText()>", "faceDetector.gatech.edu.FaceDetectorExample", 125);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $r27 = virtualinvoke $r26.<android.widget.Button: java.lang.CharSequence getText()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: java.lang.CharSequence getText()>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 126);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Object: boolean equals(java.lang.Object)>", "faceDetector.gatech.edu.FaceDetectorExample", 125);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         $z7 = virtualinvoke $r27.<java.lang.Object: boolean equals(java.lang.Object)>("Send");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Object: boolean equals(java.lang.Object)>");
         if $z7 == 0 goto label8;
 
         $r28 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.net.wifi.WifiManager$WifiLock wif>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void acquire()>", "faceDetector.gatech.edu.FaceDetectorExample", 128);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void acquire()>", "faceDetector.gatech.edu.FaceDetectorExample", 127);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r28.<android.net.wifi.WifiManager$WifiLock: void acquire()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.net.wifi.WifiManager$WifiLock: void acquire()>");
         $r29 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mSendButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 129);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 128);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke $r29.<android.widget.Button: void setText(java.lang.CharSequence)>("Sending");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: void setText(java.lang.CharSequence)>");
         r0.<faceDetector.gatech.edu.FaceDetectorExample: boolean send> = 1;
         $r30 = new faceDetector.gatech.edu.TCPSender;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample", 132);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>", "faceDetector.gatech.edu.FaceDetectorExample", 131);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         specialinvoke $r30.<faceDetector.gatech.edu.TCPSender: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>(r0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<faceDetector.gatech.edu.TCPSender: void <init>(faceDetector.gatech.edu.FaceDetectorExample)>");
         r31 = $r30;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample", 133);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Thread: void start()>", "faceDetector.gatech.edu.FaceDetectorExample", 132);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke r31.<faceDetector.gatech.edu.TCPSender: void start()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Thread: void start()>");
@@ -1344,21 +1344,21 @@ public class faceDetector.gatech.edu.FaceDetectorExample extends android.app.Act
 
      label8:
         $r32 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.net.wifi.WifiManager$WifiLock wif>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>", "faceDetector.gatech.edu.FaceDetectorExample", 138);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>", "faceDetector.gatech.edu.FaceDetectorExample", 137);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         $z8 = virtualinvoke $r32.<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.net.wifi.WifiManager$WifiLock: boolean isHeld()>");
         if $z8 == 0 goto label9;
 
         $r33 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.net.wifi.WifiManager$WifiLock wif>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void release()>", "faceDetector.gatech.edu.FaceDetectorExample", 139);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.net.wifi.WifiManager$WifiLock: void release()>", "faceDetector.gatech.edu.FaceDetectorExample", 138);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
         virtualinvoke $r33.<android.net.wifi.WifiManager$WifiLock: void release()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.net.wifi.WifiManager$WifiLock: void release()>");
 
      label9:
         $r34 = r0.<faceDetector.gatech.edu.FaceDetectorExample: android.widget.Button mSendButton>;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 140);
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<android.widget.TextView: void setText(java.lang.CharSequence)>", "faceDetector.gatech.edu.FaceDetectorExample", 139);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         virtualinvoke $r34.<android.widget.Button: void setText(java.lang.CharSequence)>("Send");
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.widget.TextView: void setText(java.lang.CharSequence)>");
@@ -1450,7 +1450,7 @@ public class faceDetector.gatech.edu.ProbListener extends java.lang.Thread
         $r9 := @caughtexception;
         r10 = $r9;
         c20 = c20 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.ProbListener: void run()>:(loop)line23", "c20", c20);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.ProbListener: void run()>", "loop:  <faceDetector.gatech.edu.ProbListener: void run()> : line23", "c20", c20);
         goto label1;
 
      label5:
@@ -1593,7 +1593,7 @@ public class faceDetector.gatech.edu.TCPReceiver extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.TCPReceiver", 36);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r4);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>:(return value)line36", "c22", i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPReceiver: void run()>", "ret:  <java.lang.Integer: int parseInt(java.lang.String)> : line36", "c22", i0);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Integer: int parseInt(java.lang.String)>");
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: void close()>", "faceDetector.gatech.edu.TCPReceiver", 37);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
@@ -1635,7 +1635,7 @@ public class faceDetector.gatech.edu.TCPReceiver extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: int read(char[],int,int)>", "faceDetector.gatech.edu.TCPReceiver", 46);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(3);
         i1 = virtualinvoke r5.<java.io.BufferedReader: int read(char[],int,int)>(r1, 0, $i7);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: int read(char[],int,int)>:(return value)line46", "c23", i1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPReceiver: void run()>", "ret:  <java.io.BufferedReader: int read(char[],int,int)> : line46", "c23", i1);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.io.BufferedReader: int read(char[],int,int)>");
         $r14 = r0.<faceDetector.gatech.edu.TCPReceiver: faceDetector.gatech.edu.FaceDetectorExample mhost>;
         $l8 = $r14.<faceDetector.gatech.edu.FaceDetectorExample: long total>;
@@ -1685,7 +1685,7 @@ public class faceDetector.gatech.edu.TCPReceiver extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.TCPReceiver", 55);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         i20 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r22);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>:(return value)line55", "c24", i20);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPReceiver: void run()>", "ret:  <java.lang.Integer: int parseInt(java.lang.String)> : line55", "c24", i20);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Integer: int parseInt(java.lang.String)>");
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: void close()>", "faceDetector.gatech.edu.TCPReceiver", 56);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
@@ -1739,7 +1739,7 @@ public class faceDetector.gatech.edu.TCPReceiver extends java.lang.Thread
 
      label2:
         c21 = c21 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPReceiver: void run()>:(loop)line44", "c21", c21);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPReceiver: void run()>", "loop:  <faceDetector.gatech.edu.TCPReceiver: void run()> : line44", "c21", c21);
         goto label1;
 
      label3:
@@ -2058,7 +2058,7 @@ public class faceDetector.gatech.edu.TCPSender extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.TCPSender", 47);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         i3 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r5);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>:(return value)line47", "c27", i3);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void run()>", "ret:  <java.lang.Integer: int parseInt(java.lang.String)> : line47", "c27", i3);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Integer: int parseInt(java.lang.String)>");
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: void close()>", "faceDetector.gatech.edu.TCPSender", 48);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
@@ -2122,7 +2122,7 @@ public class faceDetector.gatech.edu.TCPSender extends java.lang.Thread
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>", "faceDetector.gatech.edu.TCPSender", 65);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
         i9 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r18);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<java.lang.Integer: int parseInt(java.lang.String)>:(return value)line65", "c28", i9);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void run()>", "ret:  <java.lang.Integer: int parseInt(java.lang.String)> : line65", "c28", i9);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Integer: int parseInt(java.lang.String)>");
         staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<java.io.BufferedReader: void close()>", "faceDetector.gatech.edu.TCPSender", 66);
         staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
@@ -2170,7 +2170,7 @@ public class faceDetector.gatech.edu.TCPSender extends java.lang.Thread
         virtualinvoke $r26.<android.widget.TextView: boolean post(java.lang.Runnable)>($r27);
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<android.view.View: boolean post(java.lang.Runnable)>");
         c25 = c25 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void run()>:(loop)line53", "c25", c25);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void run()>", "loop:  <faceDetector.gatech.edu.TCPSender: void run()> : line53", "c25", c25);
         goto label2;
 
      label3:
@@ -2194,7 +2194,7 @@ public class faceDetector.gatech.edu.TCPSender extends java.lang.Thread
         virtualinvoke r29.<java.lang.Exception: void printStackTrace()>();
         staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<java.lang.Throwable: void printStackTrace()>");
         c26 = c26 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void run()>:(loop)line40", "c26", c26);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<faceDetector.gatech.edu.TCPSender: void run()>", "loop:  <faceDetector.gatech.edu.TCPSender: void run()> : line40", "c26", c26);
         goto label0;
 
      label6:
@@ -2337,15 +2337,15 @@ public class edu.gatech.util.innerClass extends java.lang.Object
 
     public static void callMethod(java.lang.String, java.lang.String, int)
     {
-        java.lang.String r0, r1, $r8, $r12;
-        int i0, $i1, $i3, $i4;
+        java.lang.String r0, r1, $r8;
+        int i0, $i1, $i2, $i3;
         java.io.PrintStream $r2;
-        java.lang.StringBuilder $r3, $r6, $r7, $r9, $r10, $r11;
-        java.util.Date r4, $r13;
-        edu.gatech.util.MethodInfo r5, $r14;
-        long $l5;
-        java.util.List $r15;
-        java.util.Stack $r16;
+        java.lang.StringBuilder $r3, $r6, $r7;
+        java.util.Date r4, $r9;
+        edu.gatech.util.MethodInfo r5, $r10;
+        long $l4;
+        java.util.List $r11;
+        java.util.Stack $r12;
 
         r0 := @parameter0: java.lang.String;
         r1 := @parameter1: java.lang.String;
@@ -2357,41 +2357,34 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
         $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
         virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>($r8);
-        $r9 = new java.lang.StringBuilder;
-        specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();
-        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("calling: ");
-        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
-        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile:  ", $r12);
-        $i3 = <edu.gatech.util.innerClass: int runSeq>;
-        $i4 = $i3 + 1;
-        <edu.gatech.util.innerClass: int runSeq> = $i4;
-        $r13 = new java.util.Date;
-        specialinvoke $r13.<java.util.Date: void <init>()>();
-        r4 = $r13;
-        $r14 = new edu.gatech.util.MethodInfo;
+        $i2 = <edu.gatech.util.innerClass: int runSeq>;
+        $i3 = $i2 + 1;
+        <edu.gatech.util.innerClass: int runSeq> = $i3;
+        $r9 = new java.util.Date;
+        specialinvoke $r9.<java.util.Date: void <init>()>();
+        r4 = $r9;
+        $r10 = new edu.gatech.util.MethodInfo;
         $i1 = <edu.gatech.util.innerClass: int runSeq>;
-        $l5 = virtualinvoke r4.<java.util.Date: long getTime()>();
-        specialinvoke $r14.<edu.gatech.util.MethodInfo: void <init>(java.lang.String,int,long,java.lang.String,int)>(r0, $i1, $l5, r1, i0);
-        r5 = $r14;
-        $r15 = <edu.gatech.util.innerClass: java.util.List allMethods>;
-        interfaceinvoke $r15.<java.util.List: boolean add(java.lang.Object)>(r5);
-        $r16 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
-        virtualinvoke $r16.<java.util.Stack: java.lang.Object push(java.lang.Object)>(r5);
+        $l4 = virtualinvoke r4.<java.util.Date: long getTime()>();
+        specialinvoke $r10.<edu.gatech.util.MethodInfo: void <init>(java.lang.String,int,long,java.lang.String,int)>(r0, $i1, $l4, r1, i0);
+        r5 = $r10;
+        $r11 = <edu.gatech.util.innerClass: java.util.List allMethods>;
+        interfaceinvoke $r11.<java.util.List: boolean add(java.lang.Object)>(r5);
+        $r12 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        virtualinvoke $r12.<java.util.Stack: java.lang.Object push(java.lang.Object)>(r5);
         return;
     }
 
     public static void endMethod(java.lang.String)
     {
-        java.lang.String r0, $r7, $r11, $r19, $r24, $r28;
-        java.io.PrintStream $r1, $r15, $r20;
-        java.lang.StringBuilder $r2, $r5, $r6, $r8, $r9, $r10, $r16, $r17, $r18, $r21, $r22, $r23, $r25, $r26, $r27;
-        java.util.Date r3, $r12;
+        java.lang.String r0, $r7;
+        java.io.PrintStream $r1;
+        java.lang.StringBuilder $r2, $r5, $r6;
+        java.util.Date r3, $r8;
         edu.gatech.util.MethodInfo r4;
-        java.util.Stack $r13;
-        java.lang.Object $r14;
-        long $l1, $l3, $l4;
-        int $i2;
+        java.util.Stack $r9;
+        java.lang.Object $r10;
+        long $l0;
 
         r0 := @parameter0: java.lang.String;
         $r1 = <java.lang.System: java.io.PrintStream out>;
@@ -2401,43 +2394,14 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
         $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
         virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r7);
-        $r8 = new java.lang.StringBuilder;
-        specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
-        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("end calling: ");
-        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
-        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile:  ", $r11);
-        $r12 = new java.util.Date;
-        specialinvoke $r12.<java.util.Date: void <init>()>();
-        r3 = $r12;
-        $r13 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
-        $r14 = virtualinvoke $r13.<java.util.Stack: java.lang.Object pop()>();
-        r4 = (edu.gatech.util.MethodInfo) $r14;
-        $l1 = virtualinvoke r3.<java.util.Date: long getTime()>();
-        virtualinvoke r4.<edu.gatech.util.MethodInfo: void setRunTime(long)>($l1);
-        $r15 = <java.lang.System: java.io.PrintStream out>;
-        $r16 = new java.lang.StringBuilder;
-        specialinvoke $r16.<java.lang.StringBuilder: void <init>()>();
-        $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Seq: ");
-        $i2 = r4.<edu.gatech.util.MethodInfo: int runSeq>;
-        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
-        $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r15.<java.io.PrintStream: void println(java.lang.String)>($r19);
-        $r20 = <java.lang.System: java.io.PrintStream out>;
-        $r21 = new java.lang.StringBuilder;
-        specialinvoke $r21.<java.lang.StringBuilder: void <init>()>();
-        $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Runtime: ");
-        $l3 = r4.<edu.gatech.util.MethodInfo: long runTime>;
-        $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l3);
-        $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r20.<java.io.PrintStream: void println(java.lang.String)>($r24);
-        $r25 = new java.lang.StringBuilder;
-        specialinvoke $r25.<java.lang.StringBuilder: void <init>()>();
-        $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("  Runtime: ");
-        $l4 = r4.<edu.gatech.util.MethodInfo: long runTime>;
-        $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l4);
-        $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>();
-        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile:  ", $r28);
+        $r8 = new java.util.Date;
+        specialinvoke $r8.<java.util.Date: void <init>()>();
+        r3 = $r8;
+        $r9 = <edu.gatech.util.innerClass: java.util.Stack methodStack>;
+        $r10 = virtualinvoke $r9.<java.util.Stack: java.lang.Object pop()>();
+        r4 = (edu.gatech.util.MethodInfo) $r10;
+        $l0 = virtualinvoke r3.<java.util.Date: long getTime()>();
+        virtualinvoke r4.<edu.gatech.util.MethodInfo: void setRunTime(long)>($l0);
         staticinvoke <edu.gatech.util.innerClass: void printInfo(edu.gatech.util.MethodInfo)>(r4);
         return;
     }
@@ -2736,11 +2700,11 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         java.io.PrintWriter $r1, r4;
         java.io.BufferedWriter $r2;
         java.io.FileWriter $r3;
-        java.lang.Exception r5, $r18;
-        java.lang.StringBuilder $r6, $r7, $r9, $r10, $r11, $r12, $r14, $r15, $r16;
-        java.lang.String $r8, $r13, $r17;
-        int $i0;
-        long $l1;
+        java.lang.Exception r5, $r20;
+        java.lang.StringBuilder $r6, $r7, $r8, $r9, $r11, $r12, $r13, $r14, $r16, $r17, $r18;
+        long $l0;
+        java.lang.String $r10, $r15, $r19;
+        int $i1, $i2;
 
         r0 := @parameter0: edu.gatech.util.MethodInfo;
 
@@ -2754,20 +2718,23 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         r4 = $r1;
         $r6 = new java.lang.StringBuilder;
         specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();
-        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("**");
-        $r8 = r0.<edu.gatech.util.MethodInfo: java.lang.String fileName>;
-        $r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);
-        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $i0 = r0.<edu.gatech.util.MethodInfo: int lineNum>;
-        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
-        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $r13 = r0.<edu.gatech.util.MethodInfo: java.lang.String methodSig>;
-        $r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);
-        $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $l1 = r0.<edu.gatech.util.MethodInfo: long runTime>;
-        $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);
-        $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r4.<java.io.PrintWriter: void println(java.lang.String)>($r17);
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Time:  ");
+        $l0 = r0.<edu.gatech.util.MethodInfo: long runTime>;
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r10 = r0.<edu.gatech.util.MethodInfo: java.lang.String fileName>;
+        $r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : line");
+        $i1 = r0.<edu.gatech.util.MethodInfo: int lineNum>;
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+        $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r15 = r0.<edu.gatech.util.MethodInfo: java.lang.String methodSig>;
+        $r16 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);
+        $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $i2 = r0.<edu.gatech.util.MethodInfo: int runSeq>;
+        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+        $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r4.<java.io.PrintWriter: void println(java.lang.String)>($r19);
         staticinvoke <edu.gatech.util.innerFeature: void testPrint(java.io.PrintWriter)>(r4);
         virtualinvoke r4.<java.io.PrintWriter: void close()>();
 
@@ -2775,8 +2742,8 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         goto label3;
 
      label2:
-        $r18 := @caughtexception;
-        r5 = $r18;
+        $r20 := @caughtexception;
+        r5 = $r20;
         virtualinvoke r5.<java.lang.Exception: void printStackTrace()>();
 
      label3:
@@ -2790,14 +2757,14 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         java.io.PrintWriter $r0, r3;
         java.io.BufferedWriter $r1;
         java.io.FileWriter $r2;
-        int i0, $i1, $i2;
+        int i0, $i1, $i3, $i4;
         edu.gatech.util.MethodInfo r4;
         java.util.List $r5, $r6;
         java.lang.Object $r7;
-        java.lang.StringBuilder $r8, $r10, $r11, $r12, $r13, $r15, $r16, $r17;
-        java.lang.String $r9, $r14, $r18;
-        long $l3;
-        java.lang.Exception $r19, r20;
+        java.lang.StringBuilder $r8, $r9, $r10, $r11, $r13, $r14, $r15, $r16, $r18, $r19, $r20;
+        long $l2;
+        java.lang.String $r12, $r17, $r21;
+        java.lang.Exception $r22, r23;
 
      label0:
         $r0 = new java.io.PrintWriter;
@@ -2819,19 +2786,23 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         r4 = (edu.gatech.util.MethodInfo) $r7;
         $r8 = new java.lang.StringBuilder;
         specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();
-        $r9 = r4.<edu.gatech.util.MethodInfo: java.lang.String fileName>;
-        $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Time:  ");
+        $l2 = r4.<edu.gatech.util.MethodInfo: long runTime>;
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l2);
         $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $i2 = r4.<edu.gatech.util.MethodInfo: int lineNum>;
-        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
-        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $r14 = r4.<edu.gatech.util.MethodInfo: java.lang.String methodSig>;
-        $r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);
+        $r12 = r4.<edu.gatech.util.MethodInfo: java.lang.String fileName>;
+        $r13 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);
+        $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : line");
+        $i3 = r4.<edu.gatech.util.MethodInfo: int lineNum>;
+        $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
         $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $l3 = r4.<edu.gatech.util.MethodInfo: long runTime>;
-        $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l3);
-        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r3.<java.io.PrintWriter: void println(java.lang.String)>($r18);
+        $r17 = r4.<edu.gatech.util.MethodInfo: java.lang.String methodSig>;
+        $r18 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);
+        $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $i4 = r4.<edu.gatech.util.MethodInfo: int runSeq>;
+        $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);
+        $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r3.<java.io.PrintWriter: void println(java.lang.String)>($r21);
         i0 = i0 + 1;
         goto label1;
 
@@ -2842,9 +2813,9 @@ public class edu.gatech.util.innerClass extends java.lang.Object
         goto label5;
 
      label4:
-        $r19 := @caughtexception;
-        r20 = $r19;
-        virtualinvoke r20.<java.lang.Exception: void printStackTrace()>();
+        $r22 := @caughtexception;
+        r23 = $r22;
+        virtualinvoke r23.<java.lang.Exception: void printStackTrace()>();
 
      label5:
         return;
@@ -2872,6 +2843,7 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
     static int counter;
     private static java.util.Map featureKeySet;
     public static java.util.Map featureValSet;
+    public static java.util.Map methodFeatureSet;
 
     public void <init>()
     {
@@ -2882,95 +2854,103 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         return;
     }
 
-    public static void addFeature(java.lang.String, java.lang.String, int)
+    public static void addFeature(java.lang.String, java.lang.String, java.lang.String, int)
     {
-        java.lang.String r0, r1, $r10, $r24, $r31, $r45, $r52;
+        java.lang.String r0, r1, r2, r6, $r15;
         int i0, i1;
-        java.io.PrintStream $r2, $r17, $r38;
-        java.lang.StringBuilder $r3, $r4, $r5, $r6, $r7, $r8, $r9, $r18, $r19, $r20, $r21, $r22, $r23, $r25, $r26, $r27, $r28, $r29, $r30, $r39, $r40, $r41, $r42, $r43, $r44, $r46, $r47, $r48, $r49, $r50, $r51;
-        java.util.Map $r11, $r12, $r14, $r32, $r35;
-        boolean $z0;
-        java.lang.Integer $r15, $r34, $r36;
-        java.lang.Object $r33;
+        java.io.PrintStream $r3;
+        java.lang.StringBuilder $r4, $r7, $r8, $r9, $r10, $r11, $r12, $r13, $r14;
+        boolean z0, $z1, $z2, $z4, $z5;
+        java.util.Iterator r5;
+        java.util.Map $r16, $r17, $r19, $r22, $r25, $r28, $r31, $r33;
+        java.lang.Integer $r20, $r24, $r26;
+        java.lang.Object $r23, $r34, $r36;
+        java.util.ArrayList $r29, r30;
+        java.util.List r35;
 
         r0 := @parameter0: java.lang.String;
         r1 := @parameter1: java.lang.String;
-        i0 := @parameter2: int;
-        $r2 = <java.lang.System: java.io.PrintStream out>;
-        $r3 = new java.lang.StringBuilder;
-        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
-        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Add feature: ");
-        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
-        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>($r10);
-        $r11 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
-        $z0 = interfaceinvoke $r11.<java.util.Map: boolean containsKey(java.lang.Object)>(r0);
-        if $z0 != 0 goto label0;
+        r2 := @parameter2: java.lang.String;
+        i0 := @parameter3: int;
+        $r3 = <java.lang.System: java.io.PrintStream out>;
+        $r4 = new java.lang.StringBuilder;
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
+        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Add feature: ");
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>($r15);
+        $r16 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
+        $z1 = interfaceinvoke $r16.<java.util.Map: boolean containsKey(java.lang.Object)>(r1);
+        if $z1 != 0 goto label0;
 
-        $r12 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
-        interfaceinvoke $r12.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r0, r1);
-        $r14 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r15 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i0);
-        interfaceinvoke $r14.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, $r15);
-        $r17 = <java.lang.System: java.io.PrintStream out>;
-        $r18 = new java.lang.StringBuilder;
-        specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();
-        $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
-        $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r17.<java.io.PrintStream: void println(java.lang.String)>($r24);
-        $r25 = new java.lang.StringBuilder;
-        specialinvoke $r25.<java.lang.StringBuilder: void <init>()>();
-        $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
-        $r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.String toString()>();
-        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile", $r31);
+        $r17 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
+        interfaceinvoke $r17.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r2);
+        $r19 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r20 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i0);
+        interfaceinvoke $r19.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, $r20);
         goto label2;
 
      label0:
-        $r32 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r33 = interfaceinvoke $r32.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1);
-        $r34 = (java.lang.Integer) $r33;
-        i1 = virtualinvoke $r34.<java.lang.Integer: int intValue()>();
+        $r22 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r23 = interfaceinvoke $r22.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2);
+        $r24 = (java.lang.Integer) $r23;
+        i1 = virtualinvoke $r24.<java.lang.Integer: int intValue()>();
         if i0 <= 0 goto label1;
 
         i1 = i1 + 1;
 
      label1:
-        $r35 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r36 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i1);
-        interfaceinvoke $r35.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, $r36);
-        $r38 = <java.lang.System: java.io.PrintStream out>;
-        $r39 = new java.lang.StringBuilder;
-        specialinvoke $r39.<java.lang.StringBuilder: void <init>()>();
-        $r40 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r43 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
-        $r45 = virtualinvoke $r44.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r38.<java.io.PrintStream: void println(java.lang.String)>($r45);
-        $r46 = new java.lang.StringBuilder;
-        specialinvoke $r46.<java.lang.StringBuilder: void <init>()>();
-        $r47 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r48 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r50 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r51 = virtualinvoke $r50.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
-        $r52 = virtualinvoke $r51.<java.lang.StringBuilder: java.lang.String toString()>();
-        staticinvoke <android.util.Log: int e(java.lang.String,java.lang.String)>("Profile", $r52);
+        $r25 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r26 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i1);
+        interfaceinvoke $r25.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, $r26);
 
      label2:
+        $r28 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
+        $z2 = interfaceinvoke $r28.<java.util.Map: boolean containsKey(java.lang.Object)>(r0);
+        if $z2 != 0 goto label3;
+
+        $r29 = new java.util.ArrayList;
+        specialinvoke $r29.<java.util.ArrayList: void <init>()>();
+        r30 = $r29;
+        interfaceinvoke r30.<java.util.List: boolean add(java.lang.Object)>(r2);
+        $r31 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
+        interfaceinvoke $r31.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r0, r30);
+        goto label7;
+
+     label3:
+        $r33 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
+        $r34 = interfaceinvoke $r33.<java.util.Map: java.lang.Object get(java.lang.Object)>(r0);
+        r35 = (java.util.List) $r34;
+        z0 = 0;
+        r5 = interfaceinvoke r35.<java.util.List: java.util.Iterator iterator()>();
+
+     label4:
+        $z4 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>();
+        if $z4 == 0 goto label6;
+
+        $r36 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>();
+        r6 = (java.lang.String) $r36;
+        $z5 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>(r2);
+        if $z5 == 0 goto label5;
+
+        z0 = 1;
+        goto label6;
+
+     label5:
+        goto label4;
+
+     label6:
+        if z0 != 0 goto label7;
+
+        interfaceinvoke r35.<java.util.List: boolean add(java.lang.Object)>(r2);
+
+     label7:
         return;
     }
 
@@ -3014,66 +2994,125 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
     public static void testPrint(java.io.PrintWriter)
     {
         java.io.PrintWriter r0;
-        java.util.Map $r1, $r14, $r27;
-        java.util.Iterator r2;
-        java.util.Map$Entry r3;
-        java.lang.StringBuilder $r4, $r9, $r10, $r12, $r13, $r17, $r19, $r20, $r22, $r23, $r25, $r26, $r30;
-        java.util.Set $r5;
-        boolean $z0;
-        java.lang.Object $r6, $r8, $r11, $r15, $r16, $r21, $r24, $r28, $r29;
-        java.io.PrintStream $r7;
-        java.lang.String $r18, $r31;
+        java.util.Map $r1, $r17, $r29, $r34;
+        java.util.Iterator r2, r6, r36;
+        java.util.Map$Entry r3, r5;
+        java.lang.StringBuilder $r4, $r12, $r13, $r15, $r16, $r20, $r22, $r24, $r25, $r27, $r28, $r32, $r39, $r40, $r43, $r45, $r46, $r49, $r55, $r56, $r57, $r59, $r60, $r61;
+        java.lang.String r7, $r21, $r33, $r42, $r44, $r48, $r50, $r58, $r62;
+        java.util.Set $r8, $r35;
+        boolean $z0, $z1, $z2;
+        java.lang.Object $r9, $r11, $r14, $r18, $r19, $r23, $r26, $r30, $r31, $r37, $r41, $r47, $r51, $r53;
+        java.io.PrintStream $r10, $r38, $r54, $r63;
+        java.util.List $r52;
 
         r0 := @parameter0: java.io.PrintWriter;
         $r1 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
-        $r5 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
-        r2 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
+        $r8 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
+        r2 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
 
      label0:
         $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>();
         if $z0 == 0 goto label1;
 
-        $r6 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>();
-        r3 = (java.util.Map$Entry) $r6;
-        $r7 = <java.lang.System: java.io.PrintStream out>;
+        $r9 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>();
+        r3 = (java.util.Map$Entry) $r9;
+        $r10 = <java.lang.System: java.io.PrintStream out>;
         $r4 = new java.lang.StringBuilder;
         specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
-        $r8 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r9 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
-        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r11 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
-        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r14 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r15 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r16 = interfaceinvoke $r14.<java.util.Map: java.lang.Object get(java.lang.Object)>($r15);
-        $r17 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r16);
-        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r18);
-        $r19 = new java.lang.StringBuilder;
-        specialinvoke $r19.<java.lang.StringBuilder: void <init>()>();
-        $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("--");
-        $r21 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r22 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r21);
-        $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r24 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r25 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r24);
-        $r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r27 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r28 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r29 = interfaceinvoke $r27.<java.util.Map: java.lang.Object get(java.lang.Object)>($r28);
-        $r30 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r29);
-        $r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r0.<java.io.PrintWriter: void println(java.lang.String)>($r31);
+        $r11 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r12 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
+        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r14 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r14);
+        $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r17 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r18 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r19 = interfaceinvoke $r17.<java.util.Map: java.lang.Object get(java.lang.Object)>($r18);
+        $r20 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r19);
+        $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r10.<java.io.PrintStream: void println(java.lang.String)>($r21);
+        $r22 = new java.lang.StringBuilder;
+        specialinvoke $r22.<java.lang.StringBuilder: void <init>()>();
+        $r23 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r24 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r23);
+        $r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r26 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r27 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r26);
+        $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r29 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r30 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r31 = interfaceinvoke $r29.<java.util.Map: java.lang.Object get(java.lang.Object)>($r30);
+        $r32 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r31);
+        $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r0.<java.io.PrintWriter: void println(java.lang.String)>($r33);
         goto label0;
 
      label1:
+        $r34 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
+        $r35 = interfaceinvoke $r34.<java.util.Map: java.util.Set entrySet()>();
+        r36 = interfaceinvoke $r35.<java.util.Set: java.util.Iterator iterator()>();
+
+     label2:
+        $z1 = interfaceinvoke r36.<java.util.Iterator: boolean hasNext()>();
+        if $z1 == 0 goto label5;
+
+        $r37 = interfaceinvoke r36.<java.util.Iterator: java.lang.Object next()>();
+        r5 = (java.util.Map$Entry) $r37;
+        $r38 = <java.lang.System: java.io.PrintStream out>;
+        $r39 = new java.lang.StringBuilder;
+        specialinvoke $r39.<java.lang.StringBuilder: void <init>()>();
+        $r40 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("info:  ");
+        $r41 = interfaceinvoke r5.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r42 = (java.lang.String) $r41;
+        $r43 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r42);
+        $r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r38.<java.io.PrintStream: void print(java.lang.String)>($r44);
+        $r45 = new java.lang.StringBuilder;
+        specialinvoke $r45.<java.lang.StringBuilder: void <init>()>();
+        $r46 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("info:  ");
+        $r47 = interfaceinvoke r5.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r48 = (java.lang.String) $r47;
+        $r49 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r48);
+        $r50 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r50);
+        $r51 = interfaceinvoke r5.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r52 = (java.util.List) $r51;
+        r6 = interfaceinvoke $r52.<java.util.List: java.util.Iterator iterator()>();
+
+     label3:
+        $z2 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>();
+        if $z2 == 0 goto label4;
+
+        $r53 = interfaceinvoke r6.<java.util.Iterator: java.lang.Object next()>();
+        r7 = (java.lang.String) $r53;
+        $r54 = <java.lang.System: java.io.PrintStream out>;
+        $r55 = new java.lang.StringBuilder;
+        specialinvoke $r55.<java.lang.StringBuilder: void <init>()>();
+        $r56 = virtualinvoke $r55.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r57 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r7);
+        $r58 = virtualinvoke $r57.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r54.<java.io.PrintStream: void print(java.lang.String)>($r58);
+        $r59 = new java.lang.StringBuilder;
+        specialinvoke $r59.<java.lang.StringBuilder: void <init>()>();
+        $r60 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r61 = virtualinvoke $r60.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r7);
+        $r62 = virtualinvoke $r61.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r62);
+        goto label3;
+
+     label4:
+        $r63 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r63.<java.io.PrintStream: void println()>();
+        virtualinvoke r0.<java.io.PrintWriter: void println()>();
+        goto label2;
+
+     label5:
         return;
     }
 
     static void <clinit>()
     {
-        java.util.HashMap $r0, $r1;
+        java.util.HashMap $r0, $r1, $r2;
 
         <edu.gatech.util.innerFeature: int counter> = 0;
         $r0 = new java.util.HashMap;
@@ -3082,6 +3121,9 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         $r1 = new java.util.HashMap;
         specialinvoke $r1.<java.util.HashMap: void <init>()>();
         <edu.gatech.util.innerFeature: java.util.Map featureValSet> = $r1;
+        $r2 = new java.util.HashMap;
+        specialinvoke $r2.<java.util.HashMap: void <init>()>();
+        <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet> = $r2;
         return;
     }
 }

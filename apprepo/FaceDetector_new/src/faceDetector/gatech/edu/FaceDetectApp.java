@@ -33,7 +33,6 @@ public class FaceDetectApp extends Activity implements OnClickListener{
     	super.onStop();
     }
     
-    @Override
     public void onClick(View view) {
     	if(view.equals(mStartButton)){
     		String filePath = mFilePath.getText().toString();
