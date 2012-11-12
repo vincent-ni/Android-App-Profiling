@@ -42,7 +42,7 @@ public class innerClass {
 //		System.out.println("  Seq: " + info.runSeq);
 //		System.out.println("  Runtime: " + info.runTime);
 //		Log.e("Profile", "  Runtime: " + info.runTime);
-		printInfo(info);
+		printInfo(method, info);
 	}
 	
 	public static void runningMethod(String method){
@@ -128,13 +128,13 @@ public class innerClass {
 		return size;
 	}
 	
-	public static void printInfo(MethodInfo info){
+	public static void printInfo(String method, MethodInfo info){
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
 			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : line" 
 					+ info.lineNum + " : " + info.methodSig + " : " + info.runSeq);
-			innerFeature.testPrint(writer);
+			innerFeature.testPrint(method, writer);
 			writer.close();
 		} catch (Exception e) {
 			e.printStackTrace();

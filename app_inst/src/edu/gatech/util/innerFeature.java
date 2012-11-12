@@ -69,7 +69,7 @@ public class innerFeature {
 		}
 	}
 	
-	public static void testPrint(PrintWriter writer) {
+	public static void testPrint(String method, PrintWriter writer) {
 		Iterator iter = featureKeySet.entrySet().iterator();
 		while (iter.hasNext()) {
 			Map.Entry pairs = (Map.Entry)iter.next();
@@ -78,10 +78,11 @@ public class innerFeature {
 			writer.println(pairs.getKey() + " : " + pairs.getValue() + " : " 
 						+ featureValSet.get(pairs.getValue()));
 		}
-		for(Entry<String, List<String>> entry : methodFeatureSet.entrySet()){
-			System.out.print("info:  " + entry.getKey());
-			writer.print("info:  " + entry.getKey());
-			for(String item : entry.getValue()){
+		if (methodFeatureSet.containsKey(method)) {
+			List<String> localFeatures = methodFeatureSet.get(method);
+			System.out.print("info:  " + method);
+			writer.print("info:  " + method);
+			for(String item : localFeatures){
 				System.out.print(" : " + item);
 				writer.print(" : " + item);
 			}
