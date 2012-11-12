@@ -69,7 +69,7 @@ public class innerFeature {
 		}
 	}
 	
-	public static void testPrint(String method, PrintWriter writer) {
+	public static void testPrint(PrintWriter writer) {
 		Iterator iter = featureKeySet.entrySet().iterator();
 		while (iter.hasNext()) {
 			Map.Entry pairs = (Map.Entry)iter.next();
