@@ -22,7 +22,7 @@ public class FeatInfo {
 	}
 	
 	public String generateFullInfo(){
-		return type + " : " + methodSig + " : " + " : line " + lineNum + " : "
+		return type + " : " + methodSig + " : " + " line " + lineNum + " : "
 				+ featName + " : " + value;
 	}
 }
