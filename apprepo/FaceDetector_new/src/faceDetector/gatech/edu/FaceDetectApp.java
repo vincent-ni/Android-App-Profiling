@@ -41,6 +41,9 @@ public class FaceDetectApp extends Activity implements OnClickListener{
     		Display display = getWindowManager().getDefaultDisplay(); 
 			int width = display.getWidth();
 			int height = display.getHeight();
+			System.out.println(width);
+			System.out.println(height);
+			//System.out.println(faces.length);
     		ResultView resultImg = new ResultView(faces,filePath,width, height );
     		mImageResult.setImageDrawable(resultImg);
     	}

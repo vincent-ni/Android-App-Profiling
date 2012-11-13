@@ -37,7 +37,7 @@ public class ReadLog {
 					info.setLogPath(logPath);
 					methods.add(info);
 					featStrList.clear();
-				} else {
+				} else if(strs[0].contains("ret") || strs[0].contains("loop")){
 					featStrList.add(str);
 				}
 			}

@@ -8,10 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import edu.gatech.log.helper.MethodInfo;
-
-import android.util.Log;
-
 public class innerFeature {
 	static int counter = 0;
 

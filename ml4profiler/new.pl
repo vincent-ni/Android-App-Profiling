@@ -9,8 +9,8 @@ use Cwd 'abs_path';
 my $cur_dir = getcwd;
 my $num_runs = 5;
 my $max_terms = 9;
-#my $output_dir = "/home/yjy/workspace_profiler/output/m0";
-my $output_dir = "output";
+my $output_dir = "/home/yjy/workspace_profiler/output/m0";
+#my $output_dir = "output";
 
     print "*** Building performance model\n";
 

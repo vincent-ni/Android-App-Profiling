@@ -15,7 +15,7 @@ nu = 0.5;
 degree = 3;
 threshold = 0.01;
 f_scale = 0.1;
-portion = 0.1;
+portion = 0.7;
 
 
 %% Input & output file names
