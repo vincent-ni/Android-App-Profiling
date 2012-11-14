@@ -1,9 +1,8 @@
 package edu.gatech.appInst;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import edu.gatech.util.innerFeature;
 
 import soot.ArrayType;
 import soot.Body;
@@ -28,6 +27,7 @@ import soot.jimple.toolkits.annotation.logic.Loop;
 import soot.tagkit.LineNumberTag;
 import soot.toolkits.graph.LoopNestTree;
 import soot.util.Chain;
+import edu.gatech.util.innerFeature;
 
 public class Instrumentor extends AbstractStmtSwitch {
 	private SootMethod currentMethod;
@@ -89,7 +89,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 				AssignStmt incStmt = G.jimple.newAssignStmt(l, incExpr);
 				units.insertBefore(incStmt, loop.getBackJumpStmt());
 				InvokeExpr incExpr1 = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-						StringConstant.v(method.getSignature()), StringConstant.v(name), StringConstant.v(l.getName()), incStmt.getLeftOp());
+						StringConstant.v(name), StringConstant.v(l.getName()), incStmt.getLeftOp(), IntConstant.v(0));
 				Stmt incStmt1 = G.jimple.newInvokeStmt(incExpr1);
 				units.insertBefore(incStmt1, loop.getBackJumpStmt());
 				//i++;
@@ -148,6 +148,20 @@ public class Instrumentor extends AbstractStmtSwitch {
 //								G.jimple.newStaticInvokeExpr(G.setNonPrimParamRef, arg, IntConstant.v(i), 
 //								StringConstant.v(type.toString()))), u);
 					}
+					if (type instanceof IntType) {
+//						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.setMethodParaRef,
+//								StringConstant.v(exp.getMethod().getSignature()), arg, BoolConstant.v(true));
+//						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
+//						units.insertBefore(incStmt, u);
+						String name = "para:  " + method.getSignature() + " : line" + 
+								((LineNumberTag)u.getTag("LineNumberTag")).getLineNumber() + " : " + exp.getMethod().getSignature() + " : IntPara" + (i+1);
+						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
+						body.getLocals().add(l);
+						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
+								StringConstant.v(name), StringConstant.v(l.getName()), arg, IntConstant.v(1));
+						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
+						units.insertBefore(incStmt, u);
+					}
 				}
 				
 				if(u instanceof AssignStmt){
@@ -168,12 +182,12 @@ public class Instrumentor extends AbstractStmtSwitch {
 //										StringConstant.v(type.toString()))), u);
 					}
 					if(type instanceof IntType){
-						String name = "ret:  " + exp.getMethod().getSignature() + " : line" + 
-									((LineNumberTag)u.getTag("LineNumberTag")).getLineNumber();
+						String name = "ret:  " + method.getSignature() + " : line" + 
+									((LineNumberTag)u.getTag("LineNumberTag")).getLineNumber() + " : " + exp.getMethod().getSignature();
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(method.getSignature()), StringConstant.v(name), StringConstant.v(l.getName()), returnVal);
+								StringConstant.v(name), StringConstant.v(l.getName()), returnVal, IntConstant.v(0));
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertAfter(incStmt, u);
 					}

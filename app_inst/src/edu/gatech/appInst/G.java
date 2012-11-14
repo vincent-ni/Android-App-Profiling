@@ -29,6 +29,7 @@ public class G {
 	static final SootMethodRef updateArrayForReturnRef;
 	static final SootMethodRef updateArrayForParamRef;
 	static final SootMethodRef addFeatureRef;
+	//static final SootMethodRef setMethodParaRef;
 	
 	static{
 		innerClass = Scene.v().getSootClass(innerClassStr);
@@ -48,6 +49,7 @@ public class G {
 		updateArrayForBaseRef = innerClass.getMethod("void updateArrayForBase(java.lang.Object,java.lang.String,int)").makeRef();
 		updateArrayForReturnRef = innerClass.getMethod("void updateArrayForReturn(java.lang.Object,java.lang.String,int)").makeRef();
 		updateArrayForParamRef = innerClass.getMethod("void updateArrayForParam(java.lang.Object,int,java.lang.String,int)").makeRef();
-		addFeatureRef = innerFeature.getMethod("void addFeature(java.lang.String,java.lang.String,java.lang.String,int)").makeRef();
+		addFeatureRef = innerFeature.getMethod("void addFeature(java.lang.String,java.lang.String,int,int)").makeRef();
+		//setMethodParaRef = innerFeature.getMethod("void setMethodPara(java.lang.String,int,boolean)").makeRef();
 	}
 }
