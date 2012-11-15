@@ -85,6 +85,12 @@ public class ReadLog1 {
 			}
 		}
 		
+		/*
+		 * For each method call in the app,
+		 * 1. check how many features it has
+		 * 2. allocate the feature data, according to the number of features and runs
+		 * 3. write them to files in format which ml needs 
+		 */
 		int methodCount = 0;
 		for(Entry<String, List<MethodInfo>> entry : key2MethodMap.entrySet()){
 			List<MethodInfo> methodList = entry.getValue();
@@ -165,6 +171,10 @@ public class ReadLog1 {
 			PrintWriter writer = new PrintWriter(new File(folderPath + "/" + execTimeFileName));
 			for(int i = 0; i < methodList.size(); i++){
 				writer.println(methodList.get(i).runTime);
+//				for(int j = 0; j < methodList.size(); j++){
+//					writer.print(methodList.get(i).runTime + " ");
+//				}
+//				writer.println();
 			}
 			writer.close();
 		} catch(Exception e) {
