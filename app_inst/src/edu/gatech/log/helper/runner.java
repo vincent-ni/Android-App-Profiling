@@ -13,7 +13,7 @@ public class runner {
 		String logsPath = "/home/yjy/workspace_profiler/logs";
 		String outputPath = "/home/yjy/workspace_profiler/output";
 		
-		ReadLog1 readLog = new ReadLog1();
+		ReadLog readLog = new ReadLog();
 		
 		File logsFolder = new File(logsPath);
 		for(File fileEntry : logsFolder.listFiles()){

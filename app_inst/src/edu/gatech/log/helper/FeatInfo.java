@@ -15,10 +15,24 @@ public class FeatInfo {
 	public FeatInfo(String str){
 		String[] strs = str.split(":");
 		type = strs[0].trim();
-		methodSig = (strs[1] + strs[2]).trim();
-		lineNum = Integer.parseInt(strs[3].trim().substring(4));
-		featName = strs[4].trim();
-		value = Integer.parseInt(strs[5].trim());
+		if (type.equals("loop")) {
+			methodSig = (strs[1] + strs[2]).trim();
+			lineNum = Integer.parseInt(strs[3].trim().substring(4));
+			featName = strs[4].trim();
+			value = Integer.parseInt(strs[5].trim());
+		}
+		else if (type.equals("ret")){
+			methodSig = (strs[1] + strs[2] + strs[4] + strs[5]).trim();
+			lineNum = Integer.parseInt(strs[3].trim().substring(4));
+			featName = strs[6].trim();
+			value = Integer.parseInt(strs[7].trim());
+		}
+		else {
+			methodSig = (strs[1] + strs[2] + strs[4] + strs[5] + strs[6]).trim();
+			lineNum = Integer.parseInt(strs[3].trim().substring(4));
+			featName = strs[7].trim();
+			value = Integer.parseInt(strs[8].trim());
+		}
 	}
 	
 	public String generateFullInfo(){
