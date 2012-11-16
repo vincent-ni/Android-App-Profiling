@@ -123,6 +123,9 @@ public class Instrumentor extends AbstractStmtSwitch {
 				if(exp.getMethod().getSignature().contains("void <init>()>"))
 					continue;
 				
+				if (exp.getMethod().getSignature().startsWith("<java."))
+					continue;
+				
 				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
 						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()),
 						StringConstant.v(method.getDeclaringClass().getName()), 
@@ -158,7 +161,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(name), StringConstant.v(l.getName()), arg, IntConstant.v(1));
+								StringConstant.v(name), StringConstant.v(l.getName()), arg, IntConstant.v(2));
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertBefore(incStmt, u);
 					}
@@ -187,7 +190,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(name), StringConstant.v(l.getName()), returnVal, IntConstant.v(0));
+								StringConstant.v(name), StringConstant.v(l.getName()), returnVal, IntConstant.v(1));
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertAfter(incStmt, u);
 					}

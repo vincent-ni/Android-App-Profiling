@@ -1,11 +1,11 @@
-public class edu.gatech.Test.Test extends java.lang.Object
+public class edu.gatech.Testcase.TestCase extends java.lang.Object
 {
 
     public void <init>()
     {
-        edu.gatech.Test.Test r0;
+        edu.gatech.Testcase.TestCase r0;
 
-        r0 := @this: edu.gatech.Test.Test;
+        r0 := @this: edu.gatech.Testcase.TestCase;
         specialinvoke r0.<java.lang.Object: void <init>()>();
         return;
     }
@@ -13,69 +13,90 @@ public class edu.gatech.Test.Test extends java.lang.Object
     public static void main(java.lang.String[])
     {
         java.lang.String[] r0;
-        byte b0, b1;
-        int i2, c0;
+        int i0, i1, i2, i3, i4, c0, c1, c2, c3, c4, c5;
+        java.io.PrintStream $r1, $r9;
+        java.lang.StringBuilder $r2, $r3, $r4, $r5, $r6, $r7, $r10, $r11;
+        java.lang.String $r8, $r12;
 
         r0 := @parameter0: java.lang.String[];
-        b0 = 4;
-        b1 = 5;
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: int addNumber(int,int)>", "edu.gatech.Test.Test", 7);
-        staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
-        i2 = staticinvoke <edu.gatech.Test.Test: int addNumber(int,int)>(b0, b1);
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: void main(java.lang.String[])>", "ret:  <edu.gatech.Test.Test: int addNumber(int,int)> : line7", "c0", i2);
-        staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<edu.gatech.Test.Test: int addNumber(int,int)>");
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: int addNumber(int,int)>", "edu.gatech.Test.Test", 8);
-        staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(2);
-        staticinvoke <edu.gatech.Test.Test: int addNumber(int,int)>(i2, b1);
-        staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<edu.gatech.Test.Test: int addNumber(int,int)>");
-        return;
-    }
-
-    private static int addNumber(int, int)
-    {
-        int i0, i1, i2, i3, i4, $i5, $i6, c1, c2, c3;
-
-        i0 := @parameter0: int;
-        i1 := @parameter1: int;
-        i2 = 0;
+        i0 = 0;
+        c3 = 0;
         c2 = 0;
         c1 = 0;
+        c0 = 0;
+        i1 = 0;
+        i2 = 0;
+        i3 = 0;
         goto label1;
 
      label0:
         i0 = i0 + 1;
         c2 = c2 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: int addNumber(int,int)>", "loop:  <edu.gatech.Test.Test: int addNumber(int,int)> : line12", "c2", c2);
-        i2 = i2 + 1;
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int,int)>("loop:  <edu.gatech.Testcase.TestCase: void main(java.lang.String[])> : line8", "c2", c2, 0);
+        i3 = i3 + 1;
 
      label1:
-        if i2 < 4 goto label0;
-
-        i3 = 0;
-        goto label3;
+        if i3 < 4 goto label0;
 
      label2:
         i1 = i1 + 1;
-        c1 = c1 + 1;
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: int addNumber(int,int)>", "loop:  <edu.gatech.Test.Test: int addNumber(int,int)> : line14", "c1", c1);
-        i3 = i3 + 1;
+        c0 = c0 + 1;
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int,int)>("loop:  <edu.gatech.Testcase.TestCase: void main(java.lang.String[])> : line13", "c0", c0, 0);
+        if i1 < 4 goto label2;
+
+        goto label4;
 
      label3:
-        if i3 < 5 goto label2;
+        c1 = c1 + 1;
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int,int)>("loop:  <edu.gatech.Testcase.TestCase: void main(java.lang.String[])> : line16", "c1", c1, 0);
+        i2 = i2 + 1;
 
-        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: int dummy()>", "edu.gatech.Test.Test", 16);
-        staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(0);
-        i4 = staticinvoke <edu.gatech.Test.Test: int dummy()>();
-        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,java.lang.String,int)>("<edu.gatech.Test.Test: int addNumber(int,int)>", "ret:  <edu.gatech.Test.Test: int dummy()> : line16", "c3", i4);
-        staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<edu.gatech.Test.Test: int dummy()>");
-        $i5 = i0 + i1;
-        $i6 = $i5 + i4;
-        return $i6;
+     label4:
+        if i2 < 4 goto label3;
+
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        $r2 = new java.lang.StringBuilder;
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("a ");
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", b ");
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", c ");
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i2);
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r8);
+        i4 = 0;
+        goto label6;
+
+     label5:
+        staticinvoke <edu.gatech.util.innerClass: void callMethod(java.lang.String,java.lang.String,int)>("<edu.gatech.Testcase.TestCase: int getNumber(int)>", "edu.gatech.Testcase.TestCase", 23);
+        staticinvoke <edu.gatech.util.innerClass: void setParamCount(int)>(1);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int,int)>("para:  <edu.gatech.Testcase.TestCase: void main(java.lang.String[])> : line23 : <edu.gatech.Testcase.TestCase: int getNumber(int)> : IntPara1", "c4", i0, 2);
+        i0 = staticinvoke <edu.gatech.Testcase.TestCase: int getNumber(int)>(i0);
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int,int)>("ret:  <edu.gatech.Testcase.TestCase: void main(java.lang.String[])> : line23 : <edu.gatech.Testcase.TestCase: int getNumber(int)>", "c5", i0, 1);
+        staticinvoke <edu.gatech.util.innerClass: void endMethod(java.lang.String)>("<edu.gatech.Testcase.TestCase: int getNumber(int)>");
+        c3 = c3 + 1;
+        staticinvoke <edu.gatech.util.innerFeature: void addFeature(java.lang.String,java.lang.String,int,int)>("loop:  <edu.gatech.Testcase.TestCase: void main(java.lang.String[])> : line22", "c3", c3, 0);
+        i4 = i4 + 1;
+
+     label6:
+        if i4 < 3 goto label5;
+
+        $r9 = <java.lang.System: java.io.PrintStream out>;
+        $r10 = new java.lang.StringBuilder;
+        specialinvoke $r10.<java.lang.StringBuilder: void <init>(java.lang.String)>("a ");
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r9.<java.io.PrintStream: void println(java.lang.String)>($r12);
+        return;
     }
 
-    private static int dummy()
+    static int getNumber(int)
     {
-        return 10;
+        int i0, $i1;
+
+        i0 := @parameter0: int;
+        $i1 = 2 * i0;
+        return $i1;
     }
 }
 public class edu.gatech.util.innerClass extends java.lang.Object
@@ -601,11 +622,10 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
     static int counter;
     private static java.util.Map featureKeySet;
     public static java.util.Map featureValSet;
-    public static java.util.Map methodFeatureSet;
 
     static void <clinit>()
     {
-        java.util.HashMap $r0, $r1, $r2;
+        java.util.HashMap $r0, $r1;
 
         <edu.gatech.util.innerFeature: int counter> = 0;
         $r0 = new java.util.HashMap;
@@ -614,9 +634,6 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         $r1 = new java.util.HashMap;
         specialinvoke $r1.<java.util.HashMap: void <init>()>();
         <edu.gatech.util.innerFeature: java.util.Map featureValSet> = $r1;
-        $r2 = new java.util.HashMap;
-        specialinvoke $r2.<java.util.HashMap: void <init>()>();
-        <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet> = $r2;
         return;
     }
 
@@ -629,145 +646,95 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
         return;
     }
 
-    public static void addFeature(java.lang.String, java.lang.String, java.lang.String, int)
+    public static void addFeature(java.lang.String, java.lang.String, int, int)
     {
-        java.lang.String r0, r1, r2, r6, $r14, $r44, $r46, r51, $r55;
-        int i0, i1;
-        java.io.PrintStream $r3, $r41, $r52, $r56;
-        java.lang.StringBuilder $r4, $r7, $r8, $r9, $r10, $r11, $r12, $r13, $r42, $r45, $r53, $r54;
-        boolean z0, $z1, $z2, $z4, $z5, $z7, $z8;
-        java.util.Iterator r5, r38, r49;
-        java.util.Map $r15, $r16, $r18, $r21, $r24, $r27, $r30, $r32, $r36;
-        java.lang.Integer $r19, $r23, $r25;
-        java.lang.Object $r22, $r33, $r35, $r39, $r43, $r47, $r50;
-        java.util.ArrayList $r28, r29;
-        java.util.List r34, $r48;
-        java.util.Set $r37;
-        java.util.Map$Entry r40;
+        java.lang.String r0, r1, $r11, $r24, $r34;
+        int i0, i1, i2, i3;
+        java.io.PrintStream $r2, $r13, $r19, $r31;
+        java.lang.StringBuilder $r3, $r4, $r5, $r6, $r7, $r8, $r9, $r10, $r20, $r23, $r32, $r33;
+        java.util.Map $r12, $r14, $r16, $r21, $r25, $r28, $r35;
+        boolean $z0;
+        java.lang.Integer $r17, $r27, $r30, $r36;
+        java.lang.Object $r22, $r26, $r29;
 
         r0 := @parameter0: java.lang.String;
         r1 := @parameter1: java.lang.String;
-        r2 := @parameter2: java.lang.String;
-        i0 := @parameter3: int;
-        $r3 = <java.lang.System: java.io.PrintStream out>;
-        $r4 = new java.lang.StringBuilder;
-        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("Add feature: ");
-        $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
-        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
-        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2);
-        $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
-        $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
-        $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>($r14);
-        $r15 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
-        $z1 = interfaceinvoke $r15.<java.util.Map: boolean containsKey(java.lang.Object)>(r1);
-        if $z1 != 0 goto label0;
+        i0 := @parameter2: int;
+        i1 := @parameter3: int;
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        $r3 = new java.lang.StringBuilder;
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("Add feature(tag, name, value, type): ");
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);
+        $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);
+        $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>($r11);
+        $r12 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
+        $z0 = interfaceinvoke $r12.<java.util.Map: boolean containsKey(java.lang.Object)>(r0);
+        if $z0 != 0 goto label0;
 
-        $r16 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
-        interfaceinvoke $r16.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, r2);
-        $r18 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r19 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i0);
-        interfaceinvoke $r18.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, $r19);
-        goto label2;
-
-     label0:
-        $r21 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r22 = interfaceinvoke $r21.<java.util.Map: java.lang.Object get(java.lang.Object)>(r2);
-        $r23 = (java.lang.Integer) $r22;
-        i1 = virtualinvoke $r23.<java.lang.Integer: int intValue()>();
-        if i0 <= 0 goto label1;
-
-        i1 = i1 + 1;
-
-     label1:
-        $r24 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r25 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i1);
-        interfaceinvoke $r24.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r2, $r25);
-
-     label2:
-        $r27 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
-        $z2 = interfaceinvoke $r27.<java.util.Map: boolean containsKey(java.lang.Object)>(r0);
-        if $z2 != 0 goto label3;
-
-        $r28 = new java.util.ArrayList;
-        specialinvoke $r28.<java.util.ArrayList: void <init>()>();
-        r29 = $r28;
-        interfaceinvoke r29.<java.util.List: boolean add(java.lang.Object)>(r2);
-        $r30 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
-        interfaceinvoke $r30.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r0, r29);
-        goto label7;
-
-     label3:
-        $r32 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
-        $r33 = interfaceinvoke $r32.<java.util.Map: java.lang.Object get(java.lang.Object)>(r0);
-        r34 = (java.util.List) $r33;
-        z0 = 0;
-        r5 = interfaceinvoke r34.<java.util.List: java.util.Iterator iterator()>();
+        $r13 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r13.<java.io.PrintStream: void println(java.lang.String)>("not contained");
+        $r14 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
+        interfaceinvoke $r14.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r0, r1);
+        $r16 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r17 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i0);
+        interfaceinvoke $r16.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, $r17);
         goto label5;
 
-     label4:
-        $r35 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>();
-        r6 = (java.lang.String) $r35;
-        $z4 = virtualinvoke r6.<java.lang.String: boolean equals(java.lang.Object)>(r2);
-        if $z4 == 0 goto label5;
+     label0:
+        $r19 = <java.lang.System: java.io.PrintStream out>;
+        $r20 = new java.lang.StringBuilder;
+        specialinvoke $r20.<java.lang.StringBuilder: void <init>(java.lang.String)>("contained, orig val ");
+        $r21 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r22 = interfaceinvoke $r21.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1);
+        $r23 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r22);
+        $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r19.<java.io.PrintStream: void println(java.lang.String)>($r24);
+        tableswitch(i1)
+        {
+            case 0: goto label1;
+            case 1: goto label2;
+            default: goto label3;
+        };
 
-        z0 = 1;
-        goto label6;
+     label1:
+        $r25 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r26 = interfaceinvoke $r25.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1);
+        $r27 = (java.lang.Integer) $r26;
+        i2 = virtualinvoke $r27.<java.lang.Integer: int intValue()>();
+        if i0 <= 0 goto label4;
+
+        i2 = i2 + 1;
+        goto label4;
+
+     label2:
+        $r28 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r29 = interfaceinvoke $r28.<java.util.Map: java.lang.Object get(java.lang.Object)>(r1);
+        $r30 = (java.lang.Integer) $r29;
+        i3 = virtualinvoke $r30.<java.lang.Integer: int intValue()>();
+        i2 = i3 + i0;
+        goto label4;
+
+     label3:
+        i2 = i0;
+
+     label4:
+        $r31 = <java.lang.System: java.io.PrintStream out>;
+        $r32 = new java.lang.StringBuilder;
+        specialinvoke $r32.<java.lang.StringBuilder: void <init>(java.lang.String)>("contained, new val ");
+        $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i2);
+        $r34 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r31.<java.io.PrintStream: void println(java.lang.String)>($r34);
+        $r35 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r36 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(i2);
+        interfaceinvoke $r35.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r1, $r36);
 
      label5:
-        $z5 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>();
-        if $z5 != 0 goto label4;
-
-     label6:
-        if z0 != 0 goto label7;
-
-        interfaceinvoke r34.<java.util.List: boolean add(java.lang.Object)>(r2);
-
-     label7:
-        $r36 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
-        $r37 = interfaceinvoke $r36.<java.util.Map: java.util.Set entrySet()>();
-        r38 = interfaceinvoke $r37.<java.util.Set: java.util.Iterator iterator()>();
-        goto label11;
-
-     label8:
-        $r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>();
-        r40 = (java.util.Map$Entry) $r39;
-        $r41 = <java.lang.System: java.io.PrintStream out>;
-        $r42 = new java.lang.StringBuilder;
-        specialinvoke $r42.<java.lang.StringBuilder: void <init>(java.lang.String)>("info:  ");
-        $r43 = interfaceinvoke r40.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r44 = (java.lang.String) $r43;
-        $r45 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r44);
-        $r46 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r41.<java.io.PrintStream: void print(java.lang.String)>($r46);
-        $r47 = interfaceinvoke r40.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r48 = (java.util.List) $r47;
-        r49 = interfaceinvoke $r48.<java.util.List: java.util.Iterator iterator()>();
-        goto label10;
-
-     label9:
-        $r50 = interfaceinvoke r49.<java.util.Iterator: java.lang.Object next()>();
-        r51 = (java.lang.String) $r50;
-        $r52 = <java.lang.System: java.io.PrintStream out>;
-        $r53 = new java.lang.StringBuilder;
-        specialinvoke $r53.<java.lang.StringBuilder: void <init>(java.lang.String)>(" : ");
-        $r54 = virtualinvoke $r53.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r51);
-        $r55 = virtualinvoke $r54.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r52.<java.io.PrintStream: void print(java.lang.String)>($r55);
-
-     label10:
-        $z7 = interfaceinvoke r49.<java.util.Iterator: boolean hasNext()>();
-        if $z7 != 0 goto label9;
-
-        $r56 = <java.lang.System: java.io.PrintStream out>;
-        virtualinvoke $r56.<java.io.PrintStream: void println()>();
-
-     label11:
-        $z8 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>();
-        if $z8 != 0 goto label8;
-
         return;
     }
 
@@ -810,114 +777,58 @@ public class edu.gatech.util.innerFeature extends java.lang.Object
     public static void testPrint(java.io.PrintWriter)
     {
         java.io.PrintWriter r0;
-        java.util.Map $r1, $r17, $r29, $r34;
-        java.util.Iterator r2, r5, r6;
-        java.util.Map$Entry r3, r37;
-        java.lang.StringBuilder $r4, $r12, $r13, $r15, $r16, $r20, $r22, $r24, $r25, $r27, $r28, $r32, $r39, $r42, $r44, $r47, $r53, $r54, $r56, $r57;
-        java.lang.String r7, $r21, $r33, $r41, $r43, $r46, $r48, $r55, $r58;
-        java.util.Set $r8, $r35;
-        java.lang.Object $r9, $r11, $r14, $r18, $r19, $r23, $r26, $r30, $r31, $r36, $r40, $r45, $r49, $r51;
-        java.io.PrintStream $r10, $r38, $r52, $r59;
-        boolean $z0, $z1, $z2;
-        java.util.List $r50;
+        java.util.Map $r1, $r14, $r26;
+        java.util.Iterator r2;
+        java.util.Map$Entry r3;
+        java.lang.StringBuilder $r4, $r9, $r10, $r12, $r13, $r17, $r19, $r21, $r22, $r24, $r25, $r29;
+        java.util.Set $r5;
+        java.lang.Object $r6, $r8, $r11, $r15, $r16, $r20, $r23, $r27, $r28;
+        java.io.PrintStream $r7;
+        java.lang.String $r18, $r30;
+        boolean $z0;
 
         r0 := @parameter0: java.io.PrintWriter;
         $r1 = <edu.gatech.util.innerFeature: java.util.Map featureKeySet>;
-        $r8 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
-        r2 = interfaceinvoke $r8.<java.util.Set: java.util.Iterator iterator()>();
+        $r5 = interfaceinvoke $r1.<java.util.Map: java.util.Set entrySet()>();
+        r2 = interfaceinvoke $r5.<java.util.Set: java.util.Iterator iterator()>();
         goto label1;
 
      label0:
-        $r9 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>();
-        r3 = (java.util.Map$Entry) $r9;
-        $r10 = <java.lang.System: java.io.PrintStream out>;
+        $r6 = interfaceinvoke r2.<java.util.Iterator: java.lang.Object next()>();
+        r3 = (java.util.Map$Entry) $r6;
+        $r7 = <java.lang.System: java.io.PrintStream out>;
         $r4 = new java.lang.StringBuilder;
         specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();
-        $r11 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r12 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
+        $r8 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r9 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r11 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);
         $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $r14 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r14);
-        $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $r17 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r18 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r19 = interfaceinvoke $r17.<java.util.Map: java.lang.Object get(java.lang.Object)>($r18);
-        $r20 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r19);
-        $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r10.<java.io.PrintStream: void println(java.lang.String)>($r21);
-        $r22 = new java.lang.StringBuilder;
-        specialinvoke $r22.<java.lang.StringBuilder: void <init>()>();
-        $r23 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r14 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r15 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r16 = interfaceinvoke $r14.<java.util.Map: java.lang.Object get(java.lang.Object)>($r15);
+        $r17 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r16);
+        $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>($r18);
+        $r19 = new java.lang.StringBuilder;
+        specialinvoke $r19.<java.lang.StringBuilder: void <init>()>();
+        $r20 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getKey()>();
+        $r21 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r20);
+        $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
+        $r23 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
         $r24 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r23);
         $r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $r26 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r27 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r26);
-        $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" : ");
-        $r29 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
-        $r30 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r31 = interfaceinvoke $r29.<java.util.Map: java.lang.Object get(java.lang.Object)>($r30);
-        $r32 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r31);
-        $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r0.<java.io.PrintWriter: void println(java.lang.String)>($r33);
+        $r26 = <edu.gatech.util.innerFeature: java.util.Map featureValSet>;
+        $r27 = interfaceinvoke r3.<java.util.Map$Entry: java.lang.Object getValue()>();
+        $r28 = interfaceinvoke $r26.<java.util.Map: java.lang.Object get(java.lang.Object)>($r27);
+        $r29 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r28);
+        $r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke r0.<java.io.PrintWriter: void println(java.lang.String)>($r30);
 
      label1:
         $z0 = interfaceinvoke r2.<java.util.Iterator: boolean hasNext()>();
         if $z0 != 0 goto label0;
-
-        $r34 = <edu.gatech.util.innerFeature: java.util.Map methodFeatureSet>;
-        $r35 = interfaceinvoke $r34.<java.util.Map: java.util.Set entrySet()>();
-        r5 = interfaceinvoke $r35.<java.util.Set: java.util.Iterator iterator()>();
-        goto label5;
-
-     label2:
-        $r36 = interfaceinvoke r5.<java.util.Iterator: java.lang.Object next()>();
-        r37 = (java.util.Map$Entry) $r36;
-        $r38 = <java.lang.System: java.io.PrintStream out>;
-        $r39 = new java.lang.StringBuilder;
-        specialinvoke $r39.<java.lang.StringBuilder: void <init>(java.lang.String)>("info:  ");
-        $r40 = interfaceinvoke r37.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r41 = (java.lang.String) $r40;
-        $r42 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r41);
-        $r43 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r38.<java.io.PrintStream: void print(java.lang.String)>($r43);
-        $r44 = new java.lang.StringBuilder;
-        specialinvoke $r44.<java.lang.StringBuilder: void <init>(java.lang.String)>("info:  ");
-        $r45 = interfaceinvoke r37.<java.util.Map$Entry: java.lang.Object getKey()>();
-        $r46 = (java.lang.String) $r45;
-        $r47 = virtualinvoke $r44.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r46);
-        $r48 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r48);
-        $r49 = interfaceinvoke r37.<java.util.Map$Entry: java.lang.Object getValue()>();
-        $r50 = (java.util.List) $r49;
-        r6 = interfaceinvoke $r50.<java.util.List: java.util.Iterator iterator()>();
-        goto label4;
-
-     label3:
-        $r51 = interfaceinvoke r6.<java.util.Iterator: java.lang.Object next()>();
-        r7 = (java.lang.String) $r51;
-        $r52 = <java.lang.System: java.io.PrintStream out>;
-        $r53 = new java.lang.StringBuilder;
-        specialinvoke $r53.<java.lang.StringBuilder: void <init>(java.lang.String)>(" : ");
-        $r54 = virtualinvoke $r53.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r7);
-        $r55 = virtualinvoke $r54.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke $r52.<java.io.PrintStream: void print(java.lang.String)>($r55);
-        $r56 = new java.lang.StringBuilder;
-        specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>(" : ");
-        $r57 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r7);
-        $r58 = virtualinvoke $r57.<java.lang.StringBuilder: java.lang.String toString()>();
-        virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r58);
-
-     label4:
-        $z1 = interfaceinvoke r6.<java.util.Iterator: boolean hasNext()>();
-        if $z1 != 0 goto label3;
-
-        $r59 = <java.lang.System: java.io.PrintStream out>;
-        virtualinvoke $r59.<java.io.PrintStream: void println()>();
-        virtualinvoke r0.<java.io.PrintWriter: void println()>();
-
-     label5:
-        $z2 = interfaceinvoke r5.<java.util.Iterator: boolean hasNext()>();
-        if $z2 != 0 goto label2;
 
         return;
     }

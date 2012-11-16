@@ -29,9 +29,10 @@ public class innerFeature {
 //		}
 //	}
 
-	public static void addFeature(String tag, String name, int value, int reset) {
-		System.out.println("Add feature: " + tag + " " + name + " " + value + " " + reset);
+	public static void addFeature(String tag, String name, int value, int type) {
+		System.out.println("Add feature(tag, name, value, type): " + tag + " " + name + " " + value + " " + type);
 		if(!featureKeySet.containsKey(tag)) {
+			System.out.println("not contained");
 			featureKeySet.put(tag, name);
 			featureValSet.put(name, value);
 //			System.out.println(tag + " " + name + " " + value);
@@ -39,13 +40,23 @@ public class innerFeature {
 		}
 		else {
 			int newVal;
-			if (reset == 1) {
-				newVal = value;
-			}
-			else {
+			System.out.println("contained, orig val " + featureValSet.get(name));
+			switch (type) {
+			// for loop
+			case 0:
 				newVal = featureValSet.get(name);
 				if (value > 0) newVal++;
+				break;
+			// for ret
+			case 1:
+				newVal = featureValSet.get(name);
+				newVal += value;
+				break;
+			// for parameter
+			default:
+				newVal = value;
 			}
+			System.out.println("contained, new val " + newVal);
 			featureValSet.put(name, newVal);
 //			System.out.println(tag + " " + name + " " + newVal);
 //			Log.e("Profile", tag + " " + name + " " + newVal);
@@ -65,7 +76,7 @@ public class innerFeature {
 ////					System.out.println("Found name " + name + " equals to item " + item);
 //					isFound = true;
 //					break;
-//				}
+//				}featureValSet.get(name)
 //			}
 //			if (!isFound) {
 //				features.add(name);

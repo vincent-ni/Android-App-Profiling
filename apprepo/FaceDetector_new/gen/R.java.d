@@ -11,7 +11,4 @@
 /home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/res/drawable-mdpi/face7.jpg \
 /home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/res/drawable-mdpi/face12.jpg \
 /home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/res/drawable-mdpi/face14.jpg \
-/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/bin/res/drawable-ldpi/icon.png \
-/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/bin/res/drawable-hdpi/icon.png \
-/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/bin/res/drawable-mdpi/icon.png \
 /home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/FaceDetector_new/bin/AndroidManifest.xml \
