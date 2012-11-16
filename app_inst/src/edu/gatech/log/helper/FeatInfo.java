@@ -1,16 +1,17 @@
 package edu.gatech.log.helper;
 
 public class FeatInfo {
-	public String type; // "ret" or "loop"
+	public String type; // "ret" or "loop" or "para"
 	public String methodSig;
 	public int lineNum;
 	public String featName;
 	public int value;
 	
 	/*
-	 * Two examples:
-	 * ret:  <android.view.Display: int getWidth()> : line227 : c16 : 480
-	 * loop:  <faceDetector.gatech.edu.FaceDetectorExample$myView: void onDraw(android.graphics.Canvas)> : line266 : c14 : 4
+	 * Three examples:
+	 * ret:  <faceDetector.gatech.edu.FaceDetect: faceDetector.gatech.edu.FaceInfo[] localDetectFaces(int)> : line72 : <android.graphics.Bitmap: int getHeight()> : c3 : 2048
+	 * loop:  <faceDetector.gatech.edu.FaceDetect: faceDetector.gatech.edu.FaceInfo[] localDetectFaces(int)> : line84 : c1 : 1
+	 * para:  para:  <faceDetector.gatech.edu.FaceDetectApp: void onCreate(android.os.Bundle)> : line28 : <android.app.Activity: android.view.View findViewById(int)> : IntPara1 : c10 : 2131034114
 	 */
 	public FeatInfo(String str){
 		String[] strs = str.split(":");

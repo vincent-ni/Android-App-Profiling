@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
-//import android.util.Log;
+import android.util.Log;
 
 public class innerClass {
 	
@@ -42,7 +42,7 @@ public class innerClass {
 //		System.out.println("  Seq: " + info.runSeq);
 //		System.out.println("  Runtime: " + info.runTime);
 //		Log.e("Profile", "  Runtime: " + info.runTime);
-		//printInfo(info);
+		printInfo(info);
 	}
 	
 	public static void runningMethod(String method){
