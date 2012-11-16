@@ -1,3 +1,0 @@
-# view AndroidManifest.xml #generated:12
--keep class faceDetector.gatech.edu.FaceDetectApp { <init>(...); }
-
