@@ -144,7 +144,7 @@ public class innerClass {
 	public static void printInfo(MethodInfo info){
 		PrintWriter writer;
 		try {
-			writer = new PrintWriter(new BufferedWriter(new FileWriter("/home/vincent/Workspace/log.txt", true)));
+			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
 			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : line" 
 					+ info.lineNum + " : " + info.methodSig + " : " + info.runSeq);
 //			innerFeature.testPrint(writer);

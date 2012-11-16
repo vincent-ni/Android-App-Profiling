@@ -118,8 +118,8 @@ public class ReadLog1 {
 					}
 				}
 			}
-//			if(maxRunTime < timeThrehold) 
-//				continue;
+			if(maxRunTime < timeThrehold) 
+				continue;
 			
 			String folderPath = outputPath + "/m" + (methodCount++);
 			File folder = new File(folderPath);
