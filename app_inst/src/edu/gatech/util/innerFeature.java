@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 public class innerFeature {
 	static int counter = 0;
 
-	private static Map<String, String> featureKeySet = new HashMap<String, String>();
+	public static Map<String, String> featureKeySet = new HashMap<String, String>();
 	public static Map<String, Integer> featureValSet = new HashMap<String, Integer>();
 //	public static Map<String, List<String>> methodFeatureSet = new HashMap<String, List<String>>();
 //	public static Map<String, List<Integer>> methodIntParaSet = new HashMap<String, List<Integer>>();

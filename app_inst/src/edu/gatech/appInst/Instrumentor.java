@@ -126,17 +126,6 @@ public class Instrumentor extends AbstractStmtSwitch {
 				if (exp.getMethod().getSignature().startsWith("<java."))
 					continue;
 				
-				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()),
-						StringConstant.v(method.getDeclaringClass().getName()), 
-						IntConstant.v(lineNum))), u);
-				
-				currentUnits.insertAfter(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.endMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
-				
-				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.setParamCountRef, IntConstant.v(exp.getArgCount()))), u);
-				
 				for(int i = 0; i < exp.getArgCount(); i++){
 					Value arg = exp.getArg(i);
 					Type type = arg.getType();
@@ -166,6 +155,14 @@ public class Instrumentor extends AbstractStmtSwitch {
 						units.insertBefore(incStmt, u);
 					}
 				}
+				
+				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()),
+						StringConstant.v(method.getDeclaringClass().getName()), 
+						IntConstant.v(lineNum))), u);
+				
+//				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+//						G.setParamCountRef, IntConstant.v(exp.getArgCount()))), u);
 				
 				if(u instanceof AssignStmt){
 					Value returnVal = ((AssignStmt) u).getLeftOp();
@@ -212,6 +209,9 @@ public class Instrumentor extends AbstractStmtSwitch {
 //										StringConstant.v(type.toString()))), u);
 					}
 				}
+				
+				currentUnits.insertAfter(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+						G.endMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
 			}
 		}
 	}

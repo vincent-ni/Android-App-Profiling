@@ -8,7 +8,10 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 import android.util.Log;
@@ -17,6 +20,7 @@ public class innerClass {
 	
 	public static List<MethodInfo> allMethods = new ArrayList<MethodInfo>();
 	public static Stack<MethodInfo> methodStack = new Stack<MethodInfo>();
+	public static Map<String, Integer> currentFeatKeyVals = new HashMap<String, Integer>();
 	public static int runSeq = 0;
 	
 	public static void test(){
@@ -31,6 +35,15 @@ public class innerClass {
 		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime(), fileName, linenum);
 		allMethods.add(info);
 		methodStack.push(info);
+		if (innerFeature.featureKeySet.size() > 0) {
+			Iterator iter = innerFeature.featureKeySet.entrySet().iterator();
+			while (iter.hasNext()) {
+				Map.Entry pairs = (Map.Entry)iter.next();
+				String key = (String) pairs.getKey();
+				int value = innerFeature.featureValSet.get(pairs.getValue());
+				currentFeatKeyVals.put(key, value);
+			}
+		}
 	}
 	
 	public static void endMethod(String method){
@@ -131,10 +144,18 @@ public class innerClass {
 	public static void printInfo(MethodInfo info){
 		PrintWriter writer;
 		try {
-			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
+			writer = new PrintWriter(new BufferedWriter(new FileWriter("/home/vincent/Workspace/log.txt", true)));
 			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : line" 
 					+ info.lineNum + " : " + info.methodSig + " : " + info.runSeq);
-			innerFeature.testPrint(writer);
+//			innerFeature.testPrint(writer);
+			Iterator iter = currentFeatKeyVals.entrySet().iterator();
+			while (iter.hasNext()) {
+				Map.Entry pairs = (Map.Entry)iter.next();
+				String key = (String) pairs.getKey();
+				System.out.println(key + " : " + innerFeature.featureKeySet.get(key) + " : " + pairs.getValue());
+				writer.println(key + " : " + innerFeature.featureKeySet.get(key) + " : " + pairs.getValue());
+			}
+			currentFeatKeyVals.clear();
 			writer.close();
 		} catch (Exception e) {
 			e.printStackTrace();
