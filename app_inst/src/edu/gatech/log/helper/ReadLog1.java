@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public class ReadLog1 {
 	public static Map<String, List<MethodInfo>> path2methods = new HashMap<String, List<MethodInfo>>();
@@ -19,6 +19,7 @@ public class ReadLog1 {
 	private static String methodInfoFileName = "method_info.txt";
 	private static String featureCostFileName = "feature_cost.txt";
 	private static String execTimeFileName = "exectime.txt";
+	private static String execTimeConstFileName = "exectime_const.txt";
 	private static String featureDataFileName = "feature_data.txt";
 	private static String featureNameFileName = "feature_name.txt";
 	
@@ -118,6 +119,7 @@ public class ReadLog1 {
 					}
 				}
 			}
+			
 			if(maxRunTime < timeThrehold) 
 				continue;
 			
@@ -130,7 +132,9 @@ public class ReadLog1 {
 			int featureNum = featureSet.size();
 			writeFeatureCostFile(folderPath, featureNum);
 			
-			writeExecTimeFile(folderPath, methodList);
+			int constant = maxRunTime / 10;
+			writeExecTimeConst(folderPath, constant);
+			writeExecTimeFile(folderPath, methodList, constant);
 			
 			Map<String, Integer> featName2index = new HashMap<String, Integer>();
 			int featIndex = 0;
@@ -165,6 +169,16 @@ public class ReadLog1 {
 		
 	}
 	
+	private void writeExecTimeConst(String folderPath, int constant) {
+		try{
+			PrintWriter writer = new PrintWriter(new File(folderPath + "/" + execTimeConstFileName));
+			writer.println(constant);
+			writer.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	private void writeFeatureNameFile(String folderPath, String[] featFullInfos, int featureNum){
 		try{
 			PrintWriter writer = new PrintWriter(new File(folderPath + "/" + featureNameFileName));
@@ -177,11 +191,13 @@ public class ReadLog1 {
 		}
 	}
 	
-	private void writeExecTimeFile(String folderPath, List<MethodInfo> methodList){
+	private void writeExecTimeFile(String folderPath, List<MethodInfo> methodList, int constant){
 		try{
 			PrintWriter writer = new PrintWriter(new File(folderPath + "/" + execTimeFileName));
 			for(int i = 0; i < methodList.size(); i++){
-				writer.println(methodList.get(i).runTime);
+				double runtime = (double)methodList.get(i).runTime/constant;
+				runtime = Math.round(runtime * 100);
+				writer.println(runtime/100);
 //				for(int j = 0; j < methodList.size(); j++){
 //					writer.print(methodList.get(i).runTime + " ");
 //				}

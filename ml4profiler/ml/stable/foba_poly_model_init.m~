@@ -24,7 +24,7 @@ raw_time = load(file_exectime);
 % 5
 % 15
 runtime = sum(raw_time, 2)/runs;
-%disp(runtime);
+%disp(runtime);      <-------------- note: the only uncertain thing in this file is the runtime format. I can make it run successfully, but cannot understand..
 % 3.333
 % 1.666
 % 5.000
@@ -93,8 +93,10 @@ var_data = raw_data(rand_indics, var_f);
 % 1 0 0
 % 0 0 1
 runtime = runtime(rand_indics);
-disp(runtime);
-disp(" ");
+%disp(runtime);
+% 5.000
+% 1.666
+% 3.333
 
 % For storing intermediate results
 save(file_time, 'runtime');

@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class testFormula {  
-	private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/";   	
-	private static String resultPath = "/home/yjy/workspace_profiler/output/m0/";
-	//private static String folder = "/home/vincent/Workspace/gitrepo/Android-App-Profiling/ml4profiler/"; 
-	//private static String resultPath = "/home/vincent/Workspace/output/m5/";
+	//private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/";   	
+	//private static String resultPath = "/home/yjy/workspace_profiler/output/m0/";
+	private static String folder = "/home/vincent/Workspace/gitrepo/Android-App-Profiling/ml4profiler/"; 
+	private static String resultPath = "/home/vincent/Workspace/output/m0/";
 	private static String resultFile = "currently_chosen_features.txt";
 	private static String featDataFile = "feature_data.txt";
 	private static String execTimeFile = "exectime.txt";
 	private static int expTimes = 50;
-	private static int maxTerms = 36;
+	private static int maxTerms = 3;
 	private static List<Integer> featSelected = new ArrayList<Integer>();
 	private static int[][] featData;
 	private static int[] execTime;
@@ -152,14 +152,14 @@ public class testFormula {
 			Runtime run = Runtime.getRuntime();
 			for(int t = 0; t < expTimes; t++){
 				Process process = run.exec("octave -qf -p " + folder + "ml/common " + folder
-						+ "ml/stable/foba_poly_model_init.m " + resultPath + " 1 " + maxTerms);
+						+ "ml/stable/foba_poly_model_init.m " + resultPath + " 1 " + "1");
 				int exitValue = process.waitFor();
 				if(exitValue != 0){
 					System.out.println("Fatal error");
 					return;
 				}
 				process = run.exec("octave -qf -p " + folder + "ml/common " + folder
-						+ "ml/stable/foba_poly_model.m " + resultPath + " 5 " + maxTerms);
+						+ "ml/stable/foba_poly_model.m " + resultPath + " 2 " + maxTerms);
 				exitValue = process.waitFor();
 				if(exitValue != 0){
 					System.out.println("Fatal error");
