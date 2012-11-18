@@ -30,24 +30,35 @@ public class ReadLog1 {
 			BufferedReader reader = new BufferedReader(new FileReader(new File(logPath)));
 			String str;
 			List<String> featStrList = new ArrayList<String>();
+			int currentSeq = 0;
 			while((str = reader.readLine()) != null){
 				String[] strs = str.split(":");
 				if(strs[0].contains("Time")){
 					MethodInfo methodInfo = new MethodInfo(strs);
 					methodInfo.setLogPath(logPath);
 					methods.add(methodInfo);
+					currentSeq = methodInfo.seq;
 					if(featStrList.size() > 0){
 						List<FeatInfo> features = new ArrayList<FeatInfo>();
 						for(String featStr : featStrList){
 							FeatInfo featInfo = new FeatInfo(featStr);
 							features.add(featInfo);
 						}
-						seq2features.put(methodInfo.seq + 1, features);
+						seq2features.put(currentSeq - 1, features);
 						featStrList.clear();
 					}
-				} else if(strs[0].contains("ret") || strs[0].contains("loop")){
+				} else if(strs[0].contains("ret") || strs[0].contains("loop") || strs[0].contains("para")){
 					featStrList.add(str);
 				}
+			}
+			if (featStrList.size() > 0) {
+				List<FeatInfo> features = new ArrayList<FeatInfo>();
+				for(String featStr : featStrList){
+					FeatInfo featInfo = new FeatInfo(featStr);
+					features.add(featInfo);
+				}
+				seq2features.put(currentSeq, features);
+				featStrList.clear();
 			}
 			reader.close();
 

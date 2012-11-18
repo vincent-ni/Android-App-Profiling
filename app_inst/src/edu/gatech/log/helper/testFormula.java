@@ -7,9 +7,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class testFormula {
-	private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/"; 
+public class testFormula {  
+	private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/";   	
 	private static String resultPath = "/home/yjy/workspace_profiler/output/m0/";
+	//private static String folder = "/home/vincent/Workspace/gitrepo/Android-App-Profiling/ml4profiler/"; 
+	//private static String resultPath = "/home/vincent/Workspace/output/m5/";
 	private static String resultFile = "currently_chosen_features.txt";
 	private static String featDataFile = "feature_data.txt";
 	private static String execTimeFile = "exectime.txt";

@@ -12,8 +12,10 @@ public class runner {
 //		String path = "/home/yjy/log.txt";
 		String logsPath = "/home/yjy/workspace_profiler/logs";
 		String outputPath = "/home/yjy/workspace_profiler/output";
+		//String logsPath = "/home/vincent/Workspace/logs";
+		//String outputPath = "/home/vincent/Workspace/output";
 		
-		ReadLog readLog = new ReadLog();
+		ReadLog1 readLog = new ReadLog1();
 		
 		File logsFolder = new File(logsPath);
 		for(File fileEntry : logsFolder.listFiles()){

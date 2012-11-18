@@ -1,6 +1,5 @@
 package edu.gatech.appInst;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -120,19 +119,8 @@ public class Instrumentor extends AbstractStmtSwitch {
 			if(u.containsInvokeExpr()){
 				InvokeExpr exp = u.getInvokeExpr();
 				
-				if(exp.getMethod().getSignature().contains("void <init>()>"))
+				if(InvokMethodArgFilter(exp.getMethod().getSignature()))
 					continue;
-				
-				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()),
-						StringConstant.v(method.getDeclaringClass().getName()), 
-						IntConstant.v(lineNum))), u);
-				
-				currentUnits.insertAfter(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.endMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
-				
-				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
-						G.setParamCountRef, IntConstant.v(exp.getArgCount()))), u);
 				
 				for(int i = 0; i < exp.getArgCount(); i++){
 					Value arg = exp.getArg(i);
@@ -158,11 +146,19 @@ public class Instrumentor extends AbstractStmtSwitch {
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(name), StringConstant.v(l.getName()), arg, IntConstant.v(1));
+								StringConstant.v(name), StringConstant.v(l.getName()), arg, IntConstant.v(2));
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertBefore(incStmt, u);
 					}
 				}
+				
+				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+						G.callMethodRef, StringConstant.v(exp.getMethod().getSignature()),
+						StringConstant.v(method.getDeclaringClass().getName()), 
+						IntConstant.v(lineNum))), u);
+				
+//				currentUnits.insertBefore(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+//						G.setParamCountRef, IntConstant.v(exp.getArgCount()))), u);
 				
 				if(u instanceof AssignStmt){
 					Value returnVal = ((AssignStmt) u).getLeftOp();
@@ -187,7 +183,7 @@ public class Instrumentor extends AbstractStmtSwitch {
 						Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
 						body.getLocals().add(l);
 						InvokeExpr incExpr = G.jimple.newStaticInvokeExpr(G.addFeatureRef,
-								StringConstant.v(name), StringConstant.v(l.getName()), returnVal, IntConstant.v(0));
+								StringConstant.v(name), StringConstant.v(l.getName()), returnVal, IntConstant.v(1));
 						Stmt incStmt = G.jimple.newInvokeStmt(incExpr);
 						units.insertAfter(incStmt, u);
 					}
@@ -209,8 +205,22 @@ public class Instrumentor extends AbstractStmtSwitch {
 //										StringConstant.v(type.toString()))), u);
 					}
 				}
+				
+				currentUnits.insertAfter(G.jimple.newInvokeStmt(G.jimple.newStaticInvokeExpr(
+						G.endMethodRef, StringConstant.v(exp.getMethod().getSignature()))), u);
 			}
 		}
+	}
+	
+	private boolean InvokMethodArgFilter(String invokSig){
+		// not instrument the init function for each object
+		if(invokSig.contains("void <init>()>")) return true;
+		// I guess this is for some functions for String, and so on
+		if(invokSig.startsWith("<java.")) return true;
+		// not instrument some useless function
+		if(invokSig.contains("android.app.Activity: android.view.View findViewById")
+			|| invokSig.contains("android.app.Activity: void setContentView")) return true;
+		return false;
 	}
 	
 	/*

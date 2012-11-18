@@ -1,17 +1,14 @@
 package edu.gatech.util;
 
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class innerFeature {
 	static int counter = 0;
 
-	private static Map<String, String> featureKeySet = new HashMap<String, String>();
+	public static Map<String, String> featureKeySet = new HashMap<String, String>();
 	public static Map<String, Integer> featureValSet = new HashMap<String, Integer>();
 //	public static Map<String, List<String>> methodFeatureSet = new HashMap<String, List<String>>();
 //	public static Map<String, List<Integer>> methodIntParaSet = new HashMap<String, List<Integer>>();
@@ -29,9 +26,10 @@ public class innerFeature {
 //		}
 //	}
 
-	public static void addFeature(String tag, String name, int value, int reset) {
-		System.out.println("Add feature: " + tag + " " + name + " " + value + " " + reset);
+	public static void addFeature(String tag, String name, int value, int type) {
+		System.out.println("Add feature(tag, name, value, type): " + tag + " " + name + " " + value + " " + type);
 		if(!featureKeySet.containsKey(tag)) {
+			System.out.println("not contained");
 			featureKeySet.put(tag, name);
 			featureValSet.put(name, value);
 //			System.out.println(tag + " " + name + " " + value);
@@ -39,13 +37,23 @@ public class innerFeature {
 		}
 		else {
 			int newVal;
-			if (reset == 1) {
-				newVal = value;
-			}
-			else {
+			System.out.println("contained, orig val " + featureValSet.get(name));
+			switch (type) {
+			// for loop
+			case 0:
 				newVal = featureValSet.get(name);
 				if (value > 0) newVal++;
+				break;
+			// for ret
+			case 1:
+				newVal = featureValSet.get(name);
+				newVal += value;
+				break;
+			// for parameter
+			default:
+				newVal = value;
 			}
+			System.out.println("contained, new val " + newVal);
 			featureValSet.put(name, newVal);
 //			System.out.println(tag + " " + name + " " + newVal);
 //			Log.e("Profile", tag + " " + name + " " + newVal);
@@ -65,7 +73,7 @@ public class innerFeature {
 ////					System.out.println("Found name " + name + " equals to item " + item);
 //					isFound = true;
 //					break;
-//				}
+//				}featureValSet.get(name)
 //			}
 //			if (!isFound) {
 //				features.add(name);

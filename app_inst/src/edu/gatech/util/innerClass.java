@@ -8,15 +8,20 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
-import android.util.Log;
+import edu.gatech.log.helper.FeatInfo;
 
 public class innerClass {
 	
 	public static List<MethodInfo> allMethods = new ArrayList<MethodInfo>();
 	public static Stack<MethodInfo> methodStack = new Stack<MethodInfo>();
+//	public static Map<String, Integer> currentFeatKeyVals = new HashMap<String, Integer>();
+	public static Map<Integer, List<String>> currentFeats = new HashMap<Integer, List<String>>();
 	public static int runSeq = 0;
 	
 	public static void test(){
@@ -27,10 +32,31 @@ public class innerClass {
 		System.out.println("calling: " + method);
 //		Log.e("Profile", "calling: " + method);
 		runSeq++;
+		
+		if (innerFeature.featureKeySet.size() > 0) {
+			Iterator iter = innerFeature.featureKeySet.entrySet().iterator();
+			List<String> featList = new ArrayList<String>();
+			while (iter.hasNext()) {
+				Map.Entry pairs = (Map.Entry)iter.next();
+				featList.add(pairs.getKey() + " : " + innerFeature.featureKeySet.get(pairs.getKey()) 
+							+ " : " + innerFeature.featureValSet.get(pairs.getValue()));
+			}
+			currentFeats.put(runSeq, featList);
+		}
+		
 		Date currentDate = new Date();
 		MethodInfo info = new MethodInfo(method, runSeq, currentDate.getTime(), fileName, linenum);
 		allMethods.add(info);
 		methodStack.push(info);
+//		if (innerFeature.featureKeySet.size() > 0) {
+//			Iterator iter = innerFeature.featureKeySet.entrySet().iterator();
+//			while (iter.hasNext()) {
+//				Map.Entry pairs = (Map.Entry)iter.next();
+//				String key = (String) pairs.getKey();
+//				int value = innerFeature.featureValSet.get(pairs.getValue());
+//				currentFeatKeyVals.put(key, value);
+//			}
+//		}
 	}
 	
 	public static void endMethod(String method){
@@ -134,7 +160,23 @@ public class innerClass {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter("/mnt/sdcard/log.txt", true)));
 			writer.println("Time:  " + info.runTime + " : " + info.fileName + " : line" 
 					+ info.lineNum + " : " + info.methodSig + " : " + info.runSeq);
-			innerFeature.testPrint(writer);
+//			innerFeature.testPrint(writer);
+			
+			if(currentFeats.containsKey(info.runSeq)){
+				List<String> featList = currentFeats.get(info.runSeq);
+				for(String feat : featList){
+					writer.println(feat);
+				}
+				currentFeats.remove(info.runSeq);
+			}
+//			Iterator iter = currentFeatKeyVals.entrySet().iterator();
+//			while (iter.hasNext()) {
+//				Map.Entry pairs = (Map.Entry)iter.next();
+//				String key = (String) pairs.getKey();
+//				System.out.println(key + " : " + innerFeature.featureKeySet.get(key) + " : " + pairs.getValue());
+//				writer.println(key + " : " + innerFeature.featureKeySet.get(key) + " : " + pairs.getValue());
+//			}
+//			currentFeatKeyVals.clear();
 			writer.close();
 		} catch (Exception e) {
 			e.printStackTrace();
