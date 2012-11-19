@@ -1,9 +1,0 @@
-# Created by Octave 3.2.4, Fri Nov 09 13:43:24 2012 EST <yjy@ubuntu>
-# name: var_f
-# type: matrix
-# rows: 1
-# columns: 4
- 1 2 3 4
-# name: num_orig_feats
-# type: scalar
-4

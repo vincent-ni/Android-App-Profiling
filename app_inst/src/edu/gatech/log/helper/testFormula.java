@@ -8,18 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class testFormula {  
-	//private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/";   	
-	//private static String resultPath = "/home/yjy/workspace_profiler/output/m0/";
-	private static String folder = "/home/vincent/Workspace/gitrepo/Android-App-Profiling/ml4profiler/"; 
-	private static String resultPath = "/home/vincent/Workspace/output/m0/";
+	private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/";   	
+	private static String resultPath = "/home/yjy/workspace_profiler/output/m0/";
+//	private static String folder = "/home/vincent/Workspace/gitrepo/Android-App-Profiling/ml4profiler/"; 
+//	private static String resultPath = "/home/vincent/Workspace/output/m0/";
 	private static String resultFile = "currently_chosen_features.txt";
 	private static String featDataFile = "feature_data.txt";
 	private static String execTimeFile = "exectime.txt";
 	private static int expTimes = 50;
-	private static int maxTerms = 3;
+	private static int maxTerms = 5;
 	private static List<Integer> featSelected = new ArrayList<Integer>();
 	private static int[][] featData;
-	private static int[] execTime;
+	private static double[][] normalizedData;
+	private static double[] execTime;
 	private static String formula;
 	
 	public static void main(String[] args) {
@@ -83,7 +84,8 @@ public class testFormula {
 					} else 
 						featIndex = Integer.parseInt(subExp.substring(1));
 					while(pow > 0){
-						result *= featData[featIndex - 1][run];
+						result *= normalizedData[featIndex - 1][run];
+//						result *= featData[featIndex - 1][run];
 						pow--;
 					}
 				} else {
@@ -110,6 +112,7 @@ public class testFormula {
 			
 			int runNum = featDatas.get(0).split(" ").length;
 			featData = new int[featDatas.size()][runNum];
+			normalizedData = new double[featDatas.size()][runNum];
 			
 			for(int i = 0; i < featDatas.size(); i++){
 				String[] strs = featDatas.get(i).split(" ");
@@ -119,6 +122,22 @@ public class testFormula {
 					}
 				}
 			}
+			
+			// do the normalization
+			for(int i = 0; i < featDatas.size(); i++){
+				int max = featData[i][0];
+				int min = featData[i][0];
+				for(int j = 0; j < runNum; j++){
+					if(featData[i][j] > max) max = featData[i][j];
+					if(featData[i][j] < min) min = featData[i][j];
+				}
+				double range = max - min;
+				for(int j = 0; j < runNum; j++){
+					normalizedData[i][j] = (featData[i][j] - min) / range;
+				}
+			}
+			
+			
 		} catch(Exception e){
 			e.printStackTrace();
 		}
@@ -134,12 +153,12 @@ public class testFormula {
 				str = reader.readLine();
 			}
 			reader.close();
-			execTime = new int[exectimes.size()];
+			execTime = new double[exectimes.size()];
 			
 			for(int i = 0; i < exectimes.size(); i++){
 				String data = exectimes.get(i).trim();
 //				execTime[i] = Integer.parseInt(data.substring(0, data.indexOf(" ")));
-				execTime[i] = Integer.parseInt(data);
+				execTime[i] = Double.parseDouble(data);
 			}
 		} catch(Exception e){
 			e.printStackTrace();
@@ -152,7 +171,7 @@ public class testFormula {
 			Runtime run = Runtime.getRuntime();
 			for(int t = 0; t < expTimes; t++){
 				Process process = run.exec("octave -qf -p " + folder + "ml/common " + folder
-						+ "ml/stable/foba_poly_model_init.m " + resultPath + " 1 " + "1");
+							+ "ml/stable/foba_poly_model_init.m " + resultPath + " 1 1");
 				int exitValue = process.waitFor();
 				if(exitValue != 0){
 					System.out.println("Fatal error");

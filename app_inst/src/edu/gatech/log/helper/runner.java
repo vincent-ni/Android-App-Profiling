@@ -10,10 +10,10 @@ public class runner {
 
 	public static void main(String[] args) {
 //		String path = "/home/yjy/log.txt";
-		//String logsPath = "/home/yjy/workspace_profiler/logs";
-		//String outputPath = "/home/yjy/workspace_profiler/output";
-		String logsPath = "/home/vincent/Workspace/logs";
-		String outputPath = "/home/vincent/Workspace/output";
+		String logsPath = "/home/yjy/workspace_profiler/logs";
+		String outputPath = "/home/yjy/workspace_profiler/output";
+//		String logsPath = "/home/vincent/Workspace/logs";
+//		String outputPath = "/home/vincent/Workspace/output";
 		
 		ReadLog1 readLog = new ReadLog1();
 		

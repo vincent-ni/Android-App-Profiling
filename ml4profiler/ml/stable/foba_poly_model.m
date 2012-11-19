@@ -33,11 +33,11 @@ load(file_var);
 
 costly_f = load(file_costly);
 %disp(costly_f);
-disp(num_orig_feats);
+%disp(num_orig_feats);
 raw_data = zeros(length(runtime), num_orig_feats);
-disp(raw_data);
+%disp(raw_data);
 raw_data(:, var_f) = var_data;
-disp(raw_data);
+%disp(raw_data);
 
 useful_f = setdiff(var_f, costly_f);
 features = (raw_data(:, useful_f));
