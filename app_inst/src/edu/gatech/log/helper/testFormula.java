@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class testFormula {  
-	private static String folder = "/home/yjy/pag/app-profile/Android-App-Profiling/ml4profiler/";   	
-	private static String resultPath = "/home/yjy/workspace_profiler/output/m0/";
+	private static String folder = "/home/yjy/workspace_profiler/ml/";   	
+	private static String resultPath = "/home/yjy/workspace_profiler/output/m1/";
 //	private static String folder = "/home/vincent/Workspace/gitrepo/Android-App-Profiling/ml4profiler/"; 
 //	private static String resultPath = "/home/vincent/Workspace/output/m0/";
 	private static String resultFile = "currently_chosen_features.txt";
 	private static String featDataFile = "feature_data.txt";
 	private static String execTimeFile = "exectime.txt";
-	private static int expTimes = 50;
+	private static int expTimes = 1;
 	private static int maxTerms = 5;
 	private static List<Integer> featSelected = new ArrayList<Integer>();
 	private static int[][] featData;
@@ -41,7 +41,11 @@ public class testFormula {
 		int startPos = 0, endPos = -1;
 		boolean plusOp = true;
 		double result = 0;
-		for(int i = 0; i < formula.length(); i++){
+		if(formula.charAt(0) == '-') {
+			plusOp = false;
+			startPos = 1;
+		}
+		for(int i = 1; i < formula.length(); i++){
 			if(formula.charAt(i) == '+' || formula.charAt(i) == '-'){
 				endPos = i;
 				if(plusOp) 
@@ -190,7 +194,9 @@ public class testFormula {
 				String str = reader.readLine();
 				reader.close();
 				String[] strs = str.split(" ");
-				Double error = Double.parseDouble(strs[0]);
+				Double error = (double) 0;
+				if(!strs[0].contains("Inf"))
+					error = Double.parseDouble(strs[0]);
 				if(error < miniError){
 					miniError = error;
 					featSelected.clear();
