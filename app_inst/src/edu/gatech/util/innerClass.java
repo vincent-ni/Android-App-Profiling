@@ -29,7 +29,7 @@ public class innerClass {
 	}
 	
 	public static void callMethod(String method, String fileName, int linenum){
-		System.out.println("calling: " + method);
+//		System.out.println("calling: " + method);
 //		Log.e("Profile", "calling: " + method);
 		runSeq++;
 		
@@ -60,7 +60,7 @@ public class innerClass {
 	}
 	
 	public static void endMethod(String method){
-		System.out.println("end calling: " + method);
+//		System.out.println("end calling: " + method);
 //		Log.e("Profile", "end calling: " + method);
 		Date currentDate = new Date();
 		MethodInfo info = methodStack.pop();
@@ -72,7 +72,7 @@ public class innerClass {
 	}
 	
 	public static void runningMethod(String method){
-		System.out.println("running: " + method);
+//		System.out.println("running: " + method);
 	}
 	
 	
@@ -80,7 +80,7 @@ public class innerClass {
 		MethodInfo info = methodStack.peek();
 		int size = getSerializedSize(obj);
 		info.setBase(type, obj.toString(), false, size);
-		System.out.println("    Base: " + obj.toString() + ", and the size is: " + size);
+//		System.out.println("    Base: " + obj.toString() + ", and the size is: " + size);
 	}
 	
 	public static void setPrimBase(String type){
@@ -92,7 +92,7 @@ public class innerClass {
 		MethodInfo info = methodStack.peek();
 		int size = getSerializedSize(obj);
 		info.setReturnVal(type, obj.toString(), false, size);
-		System.out.println("    ReturnVal: " + obj.toString() + ", and the size is: " + size);
+//		System.out.println("    ReturnVal: " + obj.toString() + ", and the size is: " + size);
 	}
 	
 	public static void setPrimReturnVal(String type){
@@ -104,7 +104,7 @@ public class innerClass {
 		MethodInfo info = methodStack.peek();
 		int size = getSerializedSize(obj);
 		info.setParam(index, type, obj.toString(), false, size);
-		System.out.println("    Param: " + obj.toString() + ", and the size is: " + size);
+//		System.out.println("    Param: " + obj.toString() + ", and the size is: " + size);
 	}
 	
 	public static void setPrimParam(int index, String type){

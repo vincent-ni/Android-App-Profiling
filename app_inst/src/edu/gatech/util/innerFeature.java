@@ -27,9 +27,9 @@ public class innerFeature {
 //	}
 
 	public static void addFeature(String tag, String name, int value, int type) {
-		System.out.println("Add feature(tag, name, value, type): " + tag + " " + name + " " + value + " " + type);
+//		System.out.println("Add feature(tag, name, value, type): " + tag + " " + name + " " + value + " " + type);
 		if(!featureKeySet.containsKey(tag)) {
-			System.out.println("not contained");
+//			System.out.println("not contained");
 			featureKeySet.put(tag, name);
 			featureValSet.put(name, value);
 //			System.out.println(tag + " " + name + " " + value);
@@ -37,7 +37,7 @@ public class innerFeature {
 		}
 		else {
 			int newVal;
-			System.out.println("contained, orig val " + featureValSet.get(name));
+//			System.out.println("contained, orig val " + featureValSet.get(name));
 			switch (type) {
 			// for loop
 			case 0:
@@ -53,7 +53,7 @@ public class innerFeature {
 			default:
 				newVal = value;
 			}
-			System.out.println("contained, new val " + newVal);
+//			System.out.println("contained, new val " + newVal);
 			featureValSet.put(name, newVal);
 //			System.out.println(tag + " " + name + " " + newVal);
 //			Log.e("Profile", tag + " " + name + " " + newVal);
