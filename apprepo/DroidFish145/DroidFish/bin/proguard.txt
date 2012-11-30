@@ -1,0 +1,69 @@
+# view land/res/layout-land/dialog_color_picker.xml #generated:50
+# view land/res/layout-land/dialog_color_picker.xml #generated:67
+# view res/layout/dialog_color_picker.xml #generated:51
+# view res/layout/dialog_color_picker.xml #generated:68
+-keep class net.margaritov.preference.colorpicker.ColorPickerPanelView { <init>(...); }
+
+# view res/xml/preferences.xml #generated:188
+# view res/xml/preferences.xml #generated:194
+# view res/xml/preferences.xml #generated:200
+# view res/xml/preferences.xml #generated:206
+# view res/xml/preferences.xml #generated:212
+# view res/xml/preferences.xml #generated:218
+# view res/xml/preferences.xml #generated:224
+# view res/xml/preferences.xml #generated:230
+# view res/xml/preferences.xml #generated:236
+# view res/xml/preferences.xml #generated:242
+# view res/xml/preferences.xml #generated:248
+# view res/xml/preferences.xml #generated:254
+# view res/xml/preferences.xml #generated:260
+# view res/xml/preferences.xml #generated:266
+# view res/xml/preferences.xml #generated:275
+# view res/xml/preferences.xml #generated:281
+# view res/xml/preferences.xml #generated:287
+# view res/xml/preferences.xml #generated:293
+-keep class net.margaritov.preference.colorpicker.ColorPickerPreference { <init>(...); }
+
+# view land/res/layout-land/dialog_color_picker.xml #generated:25
+# view res/layout/dialog_color_picker.xml #generated:25
+-keep class net.margaritov.preference.colorpicker.ColorPickerView { <init>(...); }
+
+# view land/res/layout-land/main.xml #generated:7
+# view res/layout/main.xml #generated:11
+# view res/layout/main_left_handed.xml #generated:101
+-keep class org.petero.droidfish.ChessBoardPlay { <init>(...); }
+
+# view AndroidManifest.xml #generated:17
+-keep class org.petero.droidfish.DroidFish { <init>(...); }
+
+# view land/res/layout-land/main.xml #generated:77
+# view res/layout/main.xml #generated:70
+# view res/layout/main_left_handed.xml #generated:72
+-keep class org.petero.droidfish.MyScrollView { <init>(...); }
+
+# view res/xml/preferences.xml #generated:33
+# view res/xml/preferences.xml #generated:540
+-keep class org.petero.droidfish.SeekBarPreference { <init>(...); }
+
+# view AndroidManifest.xml #generated:49
+-keep class org.petero.droidfish.activities.CPUWarning { <init>(...); }
+
+# view land/res/layout-land/editboard.xml #generated:8
+# view res/layout/editboard.xml #generated:12
+-keep class org.petero.droidfish.activities.ChessBoardEdit { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class org.petero.droidfish.activities.EditBoard { <init>(...); }
+
+# view AndroidManifest.xml #generated:37
+-keep class org.petero.droidfish.activities.EditPGNLoad { <init>(...); }
+
+# view AndroidManifest.xml #generated:41
+-keep class org.petero.droidfish.activities.EditPGNSave { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class org.petero.droidfish.activities.LoadScid { <init>(...); }
+
+# view AndroidManifest.xml #generated:30
+-keep class org.petero.droidfish.activities.Preferences { <init>(...); }
+

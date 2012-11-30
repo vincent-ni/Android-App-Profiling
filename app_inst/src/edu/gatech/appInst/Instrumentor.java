@@ -20,6 +20,7 @@ import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
+import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.toolkits.annotation.logic.Loop;
@@ -80,7 +81,13 @@ public class Instrumentor extends AbstractStmtSwitch {
 				//System.out.println("JumpBack stmt " + loop.getBackJumpStmt());
 				String name = "loop:  " + method.getSignature() + " : line" + 
 							((LineNumberTag)loop.getHead().getTag("LineNumberTag")).getLineNumber();
-				Local l = G.jimple.newLocal(innerFeature.getName(name), IntType.v());
+				String localName = innerFeature.getName(name);
+				if (localName.equals("c33")) continue;
+				if (localName.equals("c500")) continue;
+				if (localName.equals("c1388")) continue;
+				if (localName.equals("c2805")) continue;
+				if (localName.equals("c5002")) continue;
+				Local l = G.jimple.newLocal(localName, IntType.v());
 				body.getLocals().add(l);
 				AssignStmt assign = G.jimple.newAssignStmt(l, IntConstant.v(0));
 				units.insertAfter(assign, u);

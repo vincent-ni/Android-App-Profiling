@@ -14,10 +14,10 @@
 /* #undef AD_BACKEND_NONE */
 
 /* Use OSS for sound I/O */
-/* #undef AD_BACKEND_OSS */
+#define AD_BACKEND_OSS /**/
 
 /* Use PulseAudio library for sound I/O */
-#define AD_BACKEND_PULSEAUDIO /**/
+/* #undef AD_BACKEND_PULSEAUDIO */
 
 /* Use WinMM interface for sound I/O */
 /* #undef AD_BACKEND_WIN32 */
@@ -62,7 +62,7 @@
 #define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the `pulse-simple' library (-lpulse-simple). */
-#define HAVE_LIBPULSE_SIMPLE 1
+/* #undef HAVE_LIBPULSE_SIMPLE */
 
 /* Define to 1 if the system has the type `long long'. */
 #define HAVE_LONG_LONG 1
@@ -127,9 +127,6 @@
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "sphinxbase"
-
-/* Define to the home page for this package. */
-#define PACKAGE_URL ""
 
 /* Define to the version of this package. */
 #define PACKAGE_VERSION "0.7"
