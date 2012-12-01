@@ -1,77 +1,58 @@
 fe_warp_inverse_linear.lo: fe_warp_inverse_linear.c /usr/include/stdio.h \
- /usr/include/features.h /usr/include/i386-linux-gnu/bits/predefs.h \
- /usr/include/i386-linux-gnu/sys/cdefs.h \
- /usr/include/i386-linux-gnu/bits/wordsize.h \
- /usr/include/i386-linux-gnu/gnu/stubs.h \
- /usr/include/i386-linux-gnu/gnu/stubs-32.h \
- /usr/lib/gcc/i686-linux-gnu/4.6/include/stddef.h \
- /usr/include/i386-linux-gnu/bits/types.h \
- /usr/include/i386-linux-gnu/bits/typesizes.h /usr/include/libio.h \
- /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/i686-linux-gnu/4.6/include/stdarg.h \
- /usr/include/i386-linux-gnu/bits/stdio_lim.h \
- /usr/include/i386-linux-gnu/bits/sys_errlist.h \
- /usr/include/i386-linux-gnu/bits/stdio.h \
- /usr/include/i386-linux-gnu/bits/stdio2.h /usr/include/stdlib.h \
- /usr/include/i386-linux-gnu/bits/waitflags.h \
- /usr/include/i386-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
- /usr/include/i386-linux-gnu/bits/endian.h \
- /usr/include/i386-linux-gnu/bits/byteswap.h \
- /usr/include/i386-linux-gnu/sys/types.h /usr/include/time.h \
- /usr/include/i386-linux-gnu/sys/select.h \
- /usr/include/i386-linux-gnu/bits/select.h \
- /usr/include/i386-linux-gnu/bits/sigset.h \
- /usr/include/i386-linux-gnu/bits/time.h \
- /usr/include/i386-linux-gnu/bits/select2.h \
- /usr/include/i386-linux-gnu/sys/sysmacros.h \
- /usr/include/i386-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
- /usr/include/i386-linux-gnu/bits/stdlib.h /usr/include/math.h \
- /usr/include/i386-linux-gnu/bits/huge_val.h \
- /usr/include/i386-linux-gnu/bits/huge_valf.h \
- /usr/include/i386-linux-gnu/bits/huge_vall.h \
- /usr/include/i386-linux-gnu/bits/inf.h \
- /usr/include/i386-linux-gnu/bits/nan.h \
- /usr/include/i386-linux-gnu/bits/mathdef.h \
- /usr/include/i386-linux-gnu/bits/mathcalls.h \
- /usr/include/i386-linux-gnu/bits/mathinline.h /usr/include/string.h \
- /usr/include/xlocale.h /usr/include/i386-linux-gnu/bits/string.h \
- /usr/include/i386-linux-gnu/bits/string2.h \
- /usr/include/i386-linux-gnu/bits/string3.h \
- ../../../include/sphinxbase/strfuncs.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-32.h \
+ /usr/lib/gcc/i686-redhat-linux/4.4.6/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/i686-redhat-linux/4.4.6/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h /usr/include/string.h \
+ /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h ../../../include/sphinxbase/strfuncs.h \
  ../../../include/sphinxbase/sphinxbase_export.h \
  ../../../include/sphinxbase/prim_type.h ../../../include/sphinx_config.h \
  ../../../include/sphinxbase/err.h /usr/include/errno.h \
- /usr/include/i386-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/i386-linux-gnu/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
  /usr/include/asm-generic/errno-base.h fe_warp.h fe_internal.h \
  ../../../include/config.h ../../../include/sphinxbase/fe.h \
  ../../../include/sphinxbase/cmd_ln.h \
  ../../../include/sphinxbase/fixpoint.h \
- /usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/limits.h \
- /usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/i386-linux-gnu/bits/posix1_lim.h \
- /usr/include/i386-linux-gnu/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/i386-linux-gnu/bits/posix2_lim.h fe_warp_inverse_linear.h
+ /usr/lib/gcc/i686-redhat-linux/4.4.6/include/limits.h \
+ /usr/lib/gcc/i686-redhat-linux/4.4.6/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h fe_warp_inverse_linear.h
 
 /usr/include/stdio.h:
 
 /usr/include/features.h:
 
-/usr/include/i386-linux-gnu/bits/predefs.h:
+/usr/include/sys/cdefs.h:
 
-/usr/include/i386-linux-gnu/sys/cdefs.h:
+/usr/include/bits/wordsize.h:
 
-/usr/include/i386-linux-gnu/bits/wordsize.h:
+/usr/include/gnu/stubs.h:
 
-/usr/include/i386-linux-gnu/gnu/stubs.h:
+/usr/include/gnu/stubs-32.h:
 
-/usr/include/i386-linux-gnu/gnu/stubs-32.h:
+/usr/lib/gcc/i686-redhat-linux/4.4.6/include/stddef.h:
 
-/usr/lib/gcc/i686-linux-gnu/4.6/include/stddef.h:
+/usr/include/bits/types.h:
 
-/usr/include/i386-linux-gnu/bits/types.h:
-
-/usr/include/i386-linux-gnu/bits/typesizes.h:
+/usr/include/bits/typesizes.h:
 
 /usr/include/libio.h:
 
@@ -79,77 +60,69 @@ fe_warp_inverse_linear.lo: fe_warp_inverse_linear.c /usr/include/stdio.h \
 
 /usr/include/wchar.h:
 
-/usr/lib/gcc/i686-linux-gnu/4.6/include/stdarg.h:
+/usr/lib/gcc/i686-redhat-linux/4.4.6/include/stdarg.h:
 
-/usr/include/i386-linux-gnu/bits/stdio_lim.h:
+/usr/include/bits/stdio_lim.h:
 
-/usr/include/i386-linux-gnu/bits/sys_errlist.h:
+/usr/include/bits/sys_errlist.h:
 
-/usr/include/i386-linux-gnu/bits/stdio.h:
-
-/usr/include/i386-linux-gnu/bits/stdio2.h:
+/usr/include/bits/stdio.h:
 
 /usr/include/stdlib.h:
 
-/usr/include/i386-linux-gnu/bits/waitflags.h:
+/usr/include/bits/waitflags.h:
 
-/usr/include/i386-linux-gnu/bits/waitstatus.h:
+/usr/include/bits/waitstatus.h:
 
 /usr/include/endian.h:
 
-/usr/include/i386-linux-gnu/bits/endian.h:
+/usr/include/bits/endian.h:
 
-/usr/include/i386-linux-gnu/bits/byteswap.h:
+/usr/include/bits/byteswap.h:
 
-/usr/include/i386-linux-gnu/sys/types.h:
+/usr/include/sys/types.h:
 
 /usr/include/time.h:
 
-/usr/include/i386-linux-gnu/sys/select.h:
+/usr/include/sys/select.h:
 
-/usr/include/i386-linux-gnu/bits/select.h:
+/usr/include/bits/select.h:
 
-/usr/include/i386-linux-gnu/bits/sigset.h:
+/usr/include/bits/sigset.h:
 
-/usr/include/i386-linux-gnu/bits/time.h:
+/usr/include/bits/time.h:
 
-/usr/include/i386-linux-gnu/bits/select2.h:
+/usr/include/sys/sysmacros.h:
 
-/usr/include/i386-linux-gnu/sys/sysmacros.h:
-
-/usr/include/i386-linux-gnu/bits/pthreadtypes.h:
+/usr/include/bits/pthreadtypes.h:
 
 /usr/include/alloca.h:
 
-/usr/include/i386-linux-gnu/bits/stdlib.h:
-
 /usr/include/math.h:
 
-/usr/include/i386-linux-gnu/bits/huge_val.h:
+/usr/include/bits/huge_val.h:
 
-/usr/include/i386-linux-gnu/bits/huge_valf.h:
+/usr/include/bits/huge_valf.h:
 
-/usr/include/i386-linux-gnu/bits/huge_vall.h:
+/usr/include/bits/huge_vall.h:
 
-/usr/include/i386-linux-gnu/bits/inf.h:
+/usr/include/bits/inf.h:
 
-/usr/include/i386-linux-gnu/bits/nan.h:
+/usr/include/bits/nan.h:
 
-/usr/include/i386-linux-gnu/bits/mathdef.h:
+/usr/include/bits/mathdef.h:
 
-/usr/include/i386-linux-gnu/bits/mathcalls.h:
+/usr/include/bits/mathcalls.h:
 
-/usr/include/i386-linux-gnu/bits/mathinline.h:
+/usr/include/bits/mathinline.h:
 
 /usr/include/string.h:
 
 /usr/include/xlocale.h:
 
-/usr/include/i386-linux-gnu/bits/string.h:
+/usr/include/bits/string.h:
 
-/usr/include/i386-linux-gnu/bits/string2.h:
-
-/usr/include/i386-linux-gnu/bits/string3.h:
+/usr/include/bits/string2.h:
 
 ../../../include/sphinxbase/strfuncs.h:
 
@@ -163,11 +136,11 @@ fe_warp_inverse_linear.lo: fe_warp_inverse_linear.c /usr/include/stdio.h \
 
 /usr/include/errno.h:
 
-/usr/include/i386-linux-gnu/bits/errno.h:
+/usr/include/bits/errno.h:
 
 /usr/include/linux/errno.h:
 
-/usr/include/i386-linux-gnu/asm/errno.h:
+/usr/include/asm/errno.h:
 
 /usr/include/asm-generic/errno.h:
 
@@ -185,18 +158,18 @@ fe_internal.h:
 
 ../../../include/sphinxbase/fixpoint.h:
 
-/usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/limits.h:
+/usr/lib/gcc/i686-redhat-linux/4.4.6/include/limits.h:
 
-/usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/syslimits.h:
+/usr/lib/gcc/i686-redhat-linux/4.4.6/include/syslimits.h:
 
 /usr/include/limits.h:
 
-/usr/include/i386-linux-gnu/bits/posix1_lim.h:
+/usr/include/bits/posix1_lim.h:
 
-/usr/include/i386-linux-gnu/bits/local_lim.h:
+/usr/include/bits/local_lim.h:
 
 /usr/include/linux/limits.h:
 
-/usr/include/i386-linux-gnu/bits/posix2_lim.h:
+/usr/include/bits/posix2_lim.h:
 
 fe_warp_inverse_linear.h:

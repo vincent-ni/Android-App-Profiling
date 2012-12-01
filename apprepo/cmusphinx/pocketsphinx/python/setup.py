@@ -61,15 +61,15 @@ try:
 except KeyError:
     pygtk_includes = []
 
-# If there is no /home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase and friends use pkg-config
-if '/home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase' == '' or '/home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase' == '':
+# If there is no /home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase and friends use pkg-config
+if '/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase' == '' or '/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase' == '':
     sbconf = pkgconfig('sphinxbase')
     sb_libdirs = sbconf.get('library_dirs', [])
     sb_includes = sbconf.get('include_dirs', [])
 else:
-    sb_includes = ['/home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase/include',
-                   '/home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase/include']
-    sb_libdirs = ['/home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase/src/libsphinxbase/.libs']
+    sb_includes = ['/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase/include',
+                   '/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase/include']
+    sb_libdirs = ['/home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/pocketsphinx/../sphinxbase/src/libsphinxbase/.libs']
 
 libraries = ['pocketsphinx', 'sphinxbase']
 if sys.platform == "cygwin":

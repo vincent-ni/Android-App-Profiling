@@ -1,7 +1,7 @@
 # Utility functions and parameters for regression tests
 
 # Predefined directories you may need
-# Stupid broken CMU Facilities autoconf doesn't do /home/yjy/pag/app-profile/Android-App-Profiling/apprepo/cmusphinx/sphinxbase
+# Stupid broken CMU Facilities autoconf doesn't do /home/vincent/Workspace/gitrepo/Android-App-Profiling/apprepo/cmusphinx/sphinxbase
 builddir=../"../.."
 sourcedir=../"../.."
 tests=$sourcedir/test

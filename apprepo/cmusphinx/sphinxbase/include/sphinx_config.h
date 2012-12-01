@@ -5,7 +5,7 @@
 /* #undef AD_BACKEND_ALSA */
 
 /* Use ALSA library for sound I/O */
-#define AD_BACKEND_PULSEAUDIO /**/
+/* #undef AD_BACKEND_PULSEAUDIO */
 
 /* Use JACK library for sound I/O */
 /* #undef AD_BACKEND_JACK */
@@ -20,7 +20,7 @@
 /* #undef AD_BACKEND_OSF */
 
 /* Use OSS interface for sound I/O */
-/* #undef AD_BACKEND_OSS */
+#define AD_BACKEND_OSS /**/
 
 /* Use OSS interface for sound I/O */
 /* #undef AD_BACKEND_OSS_BSD */
